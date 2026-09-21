@@ -141,3 +141,18 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Eleventy build output
+_site/
+
+# macOS
+.DS_Store
+
+# Raw staging folders — local reference material, not part of the deployed site
+desktop/
+mobile/
+tablet/
+resources/
+blog-posts/
+context/
+_to_delete/
