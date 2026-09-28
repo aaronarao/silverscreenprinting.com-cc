@@ -7,7 +7,7 @@
     </div>
 
     <nav class="footer-nav" aria-label="Footer">
-      {{ m.navList(nav, page.url, "footer-nav") }}
+      {{ m.navList(nav, pagePath, "footer-nav") }}
     </nav>
 
     <div class="site-footer__contact">
@@ -25,7 +25,7 @@
 
   <div class="site-footer__bottom">
     <p class="site-footer__copyright">&copy; {{ build.year }} All Rights Reserved | <a href="/">{{ site.name }}</a> | <a href="{{ site.designCredit.url }}" target="_blank" rel="noopener">{{ site.designCredit.label }}</a></p>
-    <p class="site-footer__legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="{{ site.accessibilityUrl }}">Accessibility</a></p>
+    <p class="site-footer__legal"><a href="/privacy-policy">Privacy Policy</a> | <a href="{{ site.accessibilityUrl }}">Accessibility</a></p>
     {{ m.socialList(site.social) }}
   </div>
 </footer>

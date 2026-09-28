@@ -18,7 +18,7 @@
   },
   "portalUrl": "https://portal.silverscreenprinting.com/login",
   "mapboxToken": "pk.eyJ1IjoiYWFyb25hcmFvIiwiYSI6ImNtdTRkZHZncDBsNm4yeW9ob240Zm0ybHMifQ.Vo6B4jR3Sh1ApFlJ3cLEvQ",
-  "accessibilityUrl": "/accessibility-statement/",
+  "accessibilityUrl": "/accessibility-statement",
   "designCredit": {
     "label": "Website Design",
     "url": "https://www.relentlessbusinessmastery.com/"

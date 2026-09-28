@@ -3,16 +3,16 @@
   {
     "title": "Services",
     "children": [
-      { "title": "Screen Printing", "url": "/screen-print/" },
-      { "title": "Embroidery", "url": "/embroidery/" },
-      { "title": "DTF Printing", "url": "/dtf/" },
-      { "title": "DTG Printing", "url": "/dtg-printing/" },
-      { "title": "Fulfillment", "url": "/fulfillment/" }
+      { "title": "Screen Printing", "url": "/screen-print" },
+      { "title": "Embroidery", "url": "/embroidery" },
+      { "title": "DTF Printing", "url": "/dtf" },
+      { "title": "DTG Printing", "url": "/dtg-printing" },
+      { "title": "Fulfillment", "url": "/fulfillment" }
     ]
   },
-  { "title": "Specialties", "url": "/specialties/" },
-  { "title": "Technology", "url": "/technology/" },
-  { "title": "Virtual Tour", "url": "/virtual-tour/" },
-  { "title": "Blog", "url": "/news-and-events/" },
-  { "title": "Contact", "url": "/contact-us/" }
+  { "title": "Specialties", "url": "/specialties" },
+  { "title": "Technology", "url": "/technology" },
+  { "title": "Virtual Tour", "url": "/virtual-tour" },
+  { "title": "Blog", "url": "/news-and-events" },
+  { "title": "Contact", "url": "/contact-us" }
 ]
