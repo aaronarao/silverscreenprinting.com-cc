@@ -84,7 +84,7 @@
   {%- set _ = questions.push({
     "@type": "Question",
     "name": item.q,
-    "acceptedAnswer": { "@type": "Answer", "text": item.lead + " " + item.a }
+    "acceptedAnswer": { "@type": "Answer", "text": (item.lead | striptags) + " " + (item.a | striptags) }
   }) %}
   {%- endfor %}
   {%- set faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": questions } %}

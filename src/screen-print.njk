@@ -118,7 +118,4 @@ faq:
   {{ m.faq(faq) }}
 {% endcall %}
 
-{% call m.section("white", class="still-question") %}
-  <h2 class="still-question__title">Still have a question?</h2>
-  {{ m.button("Call Now", "tel:" + site.phone, "navy", "still-question__button") }}
-{% endcall %}
+{{ m.stillQuestion("Still have a question?", site.phone) }}
