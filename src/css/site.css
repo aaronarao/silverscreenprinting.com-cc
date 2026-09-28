@@ -2577,6 +2577,10 @@ h6, .h6 {
   font-size: 28px;
 }
 
+.capabilities__title a {
+  text-decoration: none;
+}
+
 .capabilities__lede {
   margin-top: 24px;
   font-weight: 400;
@@ -2700,7 +2704,7 @@ h6, .h6 {
 
 /* Where a live service page's text sizes differ from Screen Printing's. */
 
-/* Embroidery: larger FAQ questions and answers, across the full column. */
+/* Embroidery and DTG: larger FAQ questions and answers, across the full column. */
 .service-faq--large .faq {
   max-width: none;
 }
@@ -2715,13 +2719,25 @@ h6, .h6 {
   line-height: 24px;
 }
 
-/* Embroidery: the closing line is body text, not a heading font. */
-.still-question--embroidery .still-question__title {
+/* Embroidery and DTG: the closing line is body text, not a heading font. */
+.still-question--embroidery .still-question__title,
+.still-question--dtg .still-question__title {
   font-family: var(--font-body);
   font-weight: 300;
+}
+
+.still-question--embroidery .still-question__title {
   font-size: 26px;
   line-height: 39px;
 }
+
+.still-question--dtg .still-question__title {
+  font-size: 29px;
+  line-height: 43.5px;
+}
+
+/* DTG: smaller capabilities title on desktop and tablet, larger on phones. */
+.capabilities--dtg .capabilities__title { font-size: 37px; }
 
 @media (min-width: 768px) {
   .service-faq--large .faq__question {
@@ -2733,6 +2749,13 @@ h6, .h6 {
     font-size: 27px;
     line-height: 40.5px;
   }
+
+  .still-question--dtg .still-question__title {
+    font-size: 31px;
+    line-height: 46.5px;
+  }
+
+  .capabilities--dtg .capabilities__title { font-size: 39px; }
 }
 
 @media (min-width: 1025px) {
@@ -2750,6 +2773,13 @@ h6, .h6 {
     font-size: 32px;
     line-height: 48px;
   }
+
+  .still-question--dtg .still-question__title {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .capabilities--dtg .capabilities__title { font-size: 46px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
