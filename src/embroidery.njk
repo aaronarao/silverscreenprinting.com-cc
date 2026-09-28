@@ -1,0 +1,116 @@
+---
+layout: layout-default.njk
+title: Embroidery Reno | Silverscreen Decoration & Fulfillment
+description: Premium embroidery services in Reno, NV with precise stitching & 3D puff options. Scalable, high-quality solutions for standout branded apparel nationwide.
+permalink: /embroidery/
+breadcrumb: Embroidery
+# The live page's og:image (A103+Silverscreen+25_9+7351), which is in the repo as shared/embroidery-department.jpg.
+ogImage: images/shared/embroidery-department.jpg
+service:
+  type: Embroidery
+# Copied word for word from the live page. Builds both the FAQ below and the FAQPage schema (seo.njk).
+# lead: the answer's first sentence (its own paragraph on the page); a: the rest.
+faq:
+  - q: What is the minimum order quantity for custom embroidery at Silverscreen Decoration & Fulfillment?
+    lead: Silverscreen Decoration & Fulfillment does not require a minimum order quantity for our embroidery services.
+    a: Whether you need a single custom sample or a large-scale production run for corporate apparel, our Reno, NV facility is equipped to handle orders of any size. With 50 commercial embroidery machines, we provide scalable, high-quality solutions tailored to your specific business needs.
+  - q: Do you charge a digitization fee, and do I own the resulting embroidery file?
+    lead: Yes, we charge a fair rate for our in-house digitization services, and you can retain the resulting files.
+    a: Our expert digitizers ensure your logo or design is perfectly translated for precise stitching. We can also recommend high-quality external services to help you build and maintain your own permanent design library for future use.
+  - q: What types of embroidery thread do you use, and can you match my brand's Pantone colors?
+    lead: We use premium Madeira Poly Neon thread and can closely match your brand's specific Pantone colors.
+    a: We maintain a massive assortment of in-house thread colors and can custom-order any specific shade Madeira offers. This ensures your corporate uniforms and promotional products reflect your exact brand identity with flawless accuracy.
+  - q: Can you execute 3D puff embroidery, and what are the design limitations?
+    lead: Yes, we specialize in 3D puff embroidery and have virtually no limitations on executing this dynamic style.
+    a: By importing our own high-quality puff materials, we create a bold, raised, and tactile finish that is perfect for hats and outerwear. This advanced capability adds texture and dimension, ensuring your branded apparel truly stands out.
+  - q: What is the maximum design size and stitch count you can embroider?
+    lead: We can accommodate extremely large designs and unlimited stitch counts utilizing our advanced Tajima commercial embroidery machines.
+    a: Equipped with oversized magnetic hoops, our cutting-edge machinery is specifically designed to handle massive, intricate artwork on various garments. This allows us to deliver precision and uncompromising quality on even the most demanding oversized projects. If we can hoop it we can embroider it.
+  - q: Is Silverscreen Decoration & Fulfillment able to embroider complex items like hats, bags, and heavy outerwear?
+    lead: Yes, we possess the specialized expertise and equipment required to embroider complex items and high-value garments.
+    a: From delicate fabrics to heavy-duty workwear, bags, and structured hats, our experienced team excels at hard-to-perform applications. We ensure a flawless, professional finish across a diverse range of challenging apparel types.
+  - q: What backing material do you use for embroidery, and will it irritate the skin?
+    lead: We offer multiple high-quality backing options designed to provide structural stability to the design without irritating the skin.
+    a: Our team selects the appropriate backing based on the garment's fabric type and intended use. This meticulous attention to detail ensures superior comfort, wearability, and durability for all corporate wear, retail, and team apparel.
+  - q: What are your standard turnaround times for embroidery, and do you accept rush orders?
+    lead: Our standard turnaround time for embroidery projects is 5 to 7 days, and we readily accommodate firm deadlines or rush orders.
+    a: Operating 50 commercial embroidery machines across two full shifts gives us unparalleled efficiency and capacity. If you have an urgent request, our scalable operations guarantee we can meet your tightest deadlines without compromising on our unwavering quality.
+  - q: Do you offer a physical pre-production sample for approval before running the full order?
+    lead: Yes, we provide physical pre-production sew-out samples to ensure your complete satisfaction before full production begins.
+    a: We prefer working with high-quality sample art provided by the client to achieve the most accurate representation of the final product. This step ensures that every stitch aligns perfectly with your vision and brand standards.
+---
+{#- Copy matches the live page (newer than the Duda export). Section order and image placement: desktop/embroidery. -#}
+{%- import "macros.njk" as m -%}
+
+{{ m.serviceHero("Embroidery: Precision, Quality, and Scale", "images/embroidery/A103+Silverscreen+25_9+7341-HDR.jpg", "Overhead view of Silverscreen's embroidery floor in Reno, with rows of multi-head embroidery machines, work tables and shelving", true) }}
+
+{% call m.serviceIntro("20+", "years of experience", 'Elevate Your Brand with <em class="accent">Expert Embroidery Solutions</em>') %}
+  <p>At <a href="/">Silverscreen Decoration &amp; Fulfillment</a>, we combine over 20 years of quality American embroidery craftsmanship with advanced technology to deliver embroidery solutions that make a lasting impression. Our commitment to precision ensures every stitch enhances your brand’s identity, whether on <a href="/specialties">corporate uniforms, team apparel, or promotional products</a>. We provide the quality, scale, and reliability your business needs to stand out.</p>
+{% endcall %}
+
+{% call m.capabilities('Our <em class="accent">Advanced</em> Embroidery Capabilities', "Our embroidery shop in Reno, NV, adeptly manages projects of any scale with unparalleled efficiency and reliability. We utilize cutting-edge technology to ensure a flawless finish for each garment.") %}
+  {% call m.arrowList() %}
+    {% call m.arrowItem("Extensive Capacity") %}
+      <p>With 50 commercial embroidery machines running for 2 full shifts, we can manage orders of any size with accuracy and attention to detail.</p>
+    {% endcall %}
+    {% call m.arrowItem("Unwavering Quality") %}
+      <p>Our experienced team oversees every step of the process, ensuring each embroidered item meets your precise specifications and our rigorous standards.</p>
+    {% endcall %}
+    {% call m.arrowItem("Diverse Applications") %}
+      <p>We have the expertise to embroider on a wide range of items, from delicate fabrics to heavy-duty workwear, providing custom solutions for corporate apparel, sports gear, and more.</p>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
+
+{{ m.photoRow([
+  { image: "images/shared/embroidery-machines.jpg", alt: "Row of multi-head embroidery machines stitching black backpacks", width: 643 },
+  { image: "images/embroidery/Purprose+Built+-+Hats+-2.jpg", alt: "Navy snapback caps with an embroidered Purpose Built patch on a work table", width: 451 },
+  { image: "images/embroidery/A103+Silverscreen+25_9+7486.jpg", alt: "Pegboard wall of embroidery thread cones in dozens of colors", width: 317 }
+]) }}
+
+{% call m.section("white", class="offerings") %}
+  <h2 class="section-title">A Full Spectrum of Embroidery <em class="accent">Solutions</em></h2>
+  {{ m.divider() }}
+  <p class="offerings__lede">We offer a comprehensive suite of embroidery services designed to bring your brand’s vision to life with texture, dimension, and durability.</p>
+  <div class="card-grid card-grid--2">
+    {% call m.card("Standard Embroidery", "needle", "inline") %}
+      <p>Classic, high-quality stitching perfect for logos and branding on a wide variety of apparel and accessories.</p>
+    {% endcall %}
+    {% call m.card("3D Puff Embroidery", "puff", "inline") %}
+      <p>Add a bold, raised effect to your designs, creating a dynamic and tactile finish that stands out on hats and outerwear.</p>
+    {% endcall %}
+    {% call m.card("Personalizations", "personalize", "inline") %}
+      <p>Offer custom names, numbers, or titles for team uniforms, corporate wear, and personalized gifts.</p>
+    {% endcall %}
+    {% call m.card("Laser-Cut Tackle Twill", "laser", "inline") %}
+      <p>Achieve a premium, athletic look with precisely cut fabric lettering and shapes, ideal for jerseys and varsity jackets.</p>
+    {% endcall %}
+    {% call m.card("Woven Labels", "woven", "inline") %}
+      <p>Add a personalized touch to your garment.</p>
+    {% endcall %}
+    {% call m.card("Patch Application", "patch", "inline") %}
+      <p>Securely apply custom-made embroidered or woven patches to garments and accessories for a distinct, branded look.</p>
+    {% endcall %}
+  </div>
+{% endcall %}
+
+{{ m.factSheet("Learn more about our embroidery services", "/files/embroidery-facts_FINAL-copy_updated-9.24.pdf") }}
+
+{{ m.photoBand("images/embroidery/Embroidery+for+Sanmar-2.jpg", "Black and white rope caps with raised script embroidery reading Back-Off, Ghost'd and Smooth") }}
+
+{% call m.featurePanel("images/shared/embroidery-department.jpg", "Embroidery department with multi-head machines loaded with colorful thread cones and an Embroidery sign on the back wall", "Your Trusted Partner for Embroidery Apparel", "white", "navy", true) %}
+  <p>Your brand merits embellishments that embody its quality and values. With our vast experience and adaptable operations, we are the dependable partner your business can rely on for all your embroidery requirements.</p>
+  <p class="feature-panel__lead">Ready to enhance your brand with high-quality embroidery? Contact us today to discuss your project and discover how our solutions can support your business goals.</p>
+  {{ m.button("Contact Us Today", "/contact-us", "blue", "feature-panel__button") }}
+{% endcall %}
+
+{% call m.section("white", class="partners partners--service") %}
+  {{ m.logoStrip(partners) }}
+{% endcall %}
+
+{% call m.section("gray", class="service-faq service-faq--large") %}
+  <h2 class="section-title">Embroidery Services FAQ's</h2>
+  {{ m.faq(faq) }}
+{% endcall %}
+
+{{ m.stillQuestion('Have any more questions about our <a href="/embroidery">embroidery services</a>?', site.phone, "gray", "blue", "still-question--embroidery") }}

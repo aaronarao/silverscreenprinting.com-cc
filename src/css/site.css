@@ -1999,6 +1999,10 @@ h6, .h6 {
   font-size: 32px;
 }
 
+.service-hero--wide .service-hero__title {
+  max-width: 1061px;
+}
+
 @media (min-width: 768px) {
   .service-hero { min-height: 460px; }
 
@@ -2127,6 +2131,44 @@ h6, .h6 {
 
   .feature-panel__title { font-size: 55px; }
 
+}
+
+/* Feature panel variants: white band, gray or navy box with a shadow and square corners, text box on the left. */
+.feature-panel--gray .feature-panel__box,
+.feature-panel--navy .feature-panel__box {
+  border-radius: 0;
+  box-shadow: 3px 0 11px rgba(0, 0, 0, 0.25);
+}
+
+.feature-panel--gray .feature-panel__media img,
+.feature-panel--navy .feature-panel__media img {
+  border-radius: 0;
+}
+
+.feature-panel--gray .feature-panel__box { background: var(--light-gray); }
+
+.feature-panel--navy .feature-panel__box {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Lead-in line above the button ("Ready to ...?"). */
+.feature-panel__box .feature-panel__lead {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: normal;
+}
+
+@media (min-width: 768px) {
+  .feature-panel__box .feature-panel__lead { font-size: 18px; }
+}
+
+@media (min-width: 1025px) {
+  .feature-panel--reverse .feature-panel__inner { flex-direction: row-reverse; }
+
+  .feature-panel--reverse .feature-panel__box { margin: 0 -12% 0 0; }
+
+  .feature-panel__box .feature-panel__lead { line-height: 27px; }
 }
 
 /* Two-column card grid, and cards with the icon beside the title. */
@@ -2485,6 +2527,7 @@ h6, .h6 {
 .feature-panel__box p,
 .offerings__lede,
 .check-list__item p,
+.arrow-list__item p,
 .service-cta p:not(.service-cta__lead) {
   font-size: 16px;
   line-height: 24px;
@@ -2495,6 +2538,7 @@ h6, .h6 {
   .feature-panel__box p,
   .offerings__lede,
   .check-list__item p,
+  .arrow-list__item p,
   .service-cta p:not(.service-cta__lead) {
     font-size: 17px;
     line-height: 25.5px;
@@ -2526,6 +2570,186 @@ h6, .h6 {
 
 @media (min-width: 1025px) {
   .still-question__title { font-size: 38px; }
+}
+
+/* Capabilities: gray band with a title and lead-in beside a list of arrow rows (side by side on desktop). */
+.capabilities__title {
+  font-size: 28px;
+}
+
+.capabilities__lede {
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: normal;
+}
+
+.arrow-list {
+  margin-top: 40px;
+}
+
+.arrow-list__item {
+  display: grid;
+  grid-template-columns: 43px 1fr;
+  column-gap: 24px;
+}
+
+.arrow-list__item + .arrow-list__item {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 2px solid var(--blue);
+}
+
+.arrow-list .icon {
+  width: 43px;
+  height: 43px;
+  fill: var(--blue);
+}
+
+.arrow-list__title {
+  font-size: 21px;
+}
+
+.arrow-list__item p {
+  margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+  .capabilities__title { font-size: 40px; }
+
+  .capabilities__lede { font-size: 18px; }
+
+  .arrow-list__item { grid-template-columns: 49px 1fr; }
+
+  .arrow-list .icon {
+    width: 49px;
+    height: 49px;
+  }
+
+  .arrow-list__title { font-size: 22px; }
+}
+
+@media (min-width: 1025px) {
+  .capabilities__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 8%;
+  }
+
+  .capabilities__intro { flex: 0 0 36%; }
+
+  .capabilities__title { font-size: 55px; }
+
+  .capabilities__lede {
+    margin-top: 40px;
+    line-height: 27px;
+  }
+
+  .arrow-list {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .arrow-list__item { grid-template-columns: 48px 1fr; }
+
+  .arrow-list .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .arrow-list__title { font-size: 26px; }
+}
+
+/* Photo row: 2 or 3 photos edge to edge. Phones show the first two at equal widths; from tablet up
+   each photo takes its --share of the row. */
+.photo-row {
+  display: flex;
+  gap: 3px;
+}
+
+.photo-row__item {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.photo-row__item:nth-child(n + 3) {
+  display: none;
+}
+
+.photo-row__item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .photo-row { gap: 8px; }
+
+  .photo-row__item { flex: var(--share, 1) 1 0; }
+
+  .photo-row__item:nth-child(n + 3) { display: block; }
+
+  .photo-row__item img { height: 292px; }
+}
+
+@media (min-width: 1025px) {
+  .photo-row { gap: 14px; }
+
+  .photo-row__item img { height: 552px; }
+}
+
+/* Where a live service page's text sizes differ from Screen Printing's. */
+
+/* Embroidery: larger FAQ questions and answers, across the full column. */
+.service-faq--large .faq {
+  max-width: none;
+}
+
+.service-faq--large .faq__question {
+  font-size: 21px;
+  line-height: 31.5px;
+}
+
+.service-faq--large .faq__answer p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Embroidery: the closing line is body text, not a heading font. */
+.still-question--embroidery .still-question__title {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 39px;
+}
+
+@media (min-width: 768px) {
+  .service-faq--large .faq__question {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  .still-question--embroidery .still-question__title {
+    font-size: 27px;
+    line-height: 40.5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .service-faq--large .faq__question {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  .service-faq--large .faq__answer p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .still-question--embroidery .still-question__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -221,10 +221,11 @@
 
 {#- ---------- Service pages (Screen Printing, Embroidery, DTG, DTF, Fulfillment) ---------- -#}
 
-{#- serviceHero(title, image, alt): full-width photo with the page's H1 over it.
-    The photo is the page's main (LCP) image, so it loads eagerly with high priority. -#}
-{%- macro serviceHero(title, image, alt) -%}
-<section class="service-hero">
+{#- serviceHero(title, image, alt, wide): full-width photo with the page's H1 over it.
+    The photo is the page's main (LCP) image, so it loads eagerly with high priority.
+    wide=true lets a long title run across most of the column (Embroidery, DTG) instead of wrapping at 11em. -#}
+{%- macro serviceHero(title, image, alt, wide = false) -%}
+<section class="service-hero{% if wide %} service-hero--wide{% endif %}">
   <div class="service-hero__media">{% image image, alt, "100vw", "eager", "high" %}</div>
   <div class="service-hero__inner">
     <h1 class="service-hero__title">{{ title }}</h1>
@@ -249,10 +250,12 @@
 </section>
 {%- endmacro -%}
 
-{#- featurePanel(image, alt, title): blue band with a photo and a white text panel (H2 + caller) overlapping it.
-    `title` may contain the accent <em>. -#}
-{%- macro featurePanel(image, alt, title) -%}
-<section class="band band--blue feature-panel">
+{#- featurePanel(image, alt, title, band, box, reverse): a photo with a text panel (H2 + caller) overlapping it.
+    `title` may contain the accent <em>.
+    band: "blue" (default) or "white". box: "white" (default), "gray" or "navy" (the gray and navy boxes cast a shadow).
+    reverse=true puts the text panel on the left and the photo on the right on desktop. -#}
+{%- macro featurePanel(image, alt, title, band = "blue", box = "white", reverse = false) -%}
+<section class="band band--{{ band }} feature-panel{% if box != "white" %} feature-panel--{{ box }}{% endif %}{% if reverse %} feature-panel--reverse{% endif %}">
   <div class="band__inner feature-panel__inner">
     <div class="feature-panel__media">{% image image, alt, "(min-width: 1025px) 740px, 100vw" %}</div>
     <div class="feature-panel__box">
@@ -297,17 +300,72 @@
 
 {#- faq(items): accordion of questions (H3) and answers, built on <details> so it needs no script.
     items: the page's front matter `faq` list of { q, lead, a }. The FAQPage schema in seo.njk
-    is built from the same list, so the two can't drift apart. -#}
+    is built from the same list, so the two can't drift apart. `lead` and `a` may contain links
+    (they're output as HTML; the schema strips the tags). -#}
 {%- macro faq(items) -%}
 <div class="faq">
   {%- for item in items %}
   <details class="faq__item">
     <summary class="faq__summary"><h3 class="faq__question">{{ item.q }}</h3></summary>
     <div class="faq__answer">
-      <p>{{ item.lead }}</p>
-      <p>{{ item.a }}</p>
+      <p>{{ item.lead | safe }}</p>
+      <p>{{ item.a | safe }}</p>
     </div>
   </details>
   {%- endfor %}
 </div>
+{%- endmacro -%}
+
+{#- capabilities(title, lede, class): gray band with an H2 and a lead-in on the left and an arrowList (caller) on the right.
+    `title` may contain the accent <em> (it's output as HTML). Stacks below desktop. -#}
+{%- macro capabilities(title, lede, class = "") -%}
+<section class="band band--gray capabilities{% if class %} {{ class }}{% endif %}">
+  <div class="band__inner capabilities__inner">
+    <div class="capabilities__intro">
+      <h2 class="capabilities__title">{{ title | safe }}</h2>
+      <p class="capabilities__lede">{{ lede }}</p>
+    </div>
+    {{ caller() }}
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- arrowList() wraps arrowItem(title) rows: an arrow icon, an H3 title and body (caller), with a rule between rows. -#}
+{%- macro arrowList() -%}
+<ul class="arrow-list">
+  {{ caller() }}
+</ul>
+{%- endmacro -%}
+
+{%- macro arrowItem(title) -%}
+<li class="arrow-list__item">
+  {{ icons.icon("arrow") }}
+  <div>
+    <h3 class="arrow-list__title">{{ title }}</h3>
+    {{ caller() }}
+  </div>
+</li>
+{%- endmacro -%}
+
+{#- photoRow(photos): full-width row of 2 or 3 photos with thin gaps. photos: list of { image, alt, width },
+    where `width` is the photo's share of the row (e.g. 643, 451 and 317 for the live page's pixel widths).
+    Phones show the first two photos side by side, like the live site. -#}
+{%- macro photoRow(photos) -%}
+<div class="photo-row">
+  {%- for p in photos %}
+  <div class="photo-row__item" style="--share: {{ p.width }}">{% image p.image, p.alt, "50vw" %}</div>
+  {%- endfor %}
+</div>
+{%- endmacro -%}
+
+{#- stillQuestion(title, phone, band, buttonVariant, class): closing line (H2) and a Call Now button, in a
+    section() band. `title` may contain a link (it's output as HTML). band: as section(); buttonVariant: as button().
+    (Written out rather than through {% call section() %}: a call body can't see this macro's default arguments.) -#}
+{%- macro stillQuestion(title, phone, band = "white", buttonVariant = "navy", class = "") -%}
+<section class="band band--{{ band }} still-question{% if class %} {{ class }}{% endif %}">
+  <div class="band__inner">
+    <h2 class="still-question__title">{{ title | safe }}</h2>
+    {{ button("Call Now", "tel:" + phone, buttonVariant, "still-question__button") }}
+  </div>
+</section>
 {%- endmacro -%}
