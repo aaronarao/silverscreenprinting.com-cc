@@ -5,7 +5,10 @@
   // Static site only: no Worker script. _redirects and _headers at the root
   // of this directory are applied automatically.
   "assets": {
-    "directory": "./_site"
+    "directory": "./_site",
+    // Match the live site's URLs: /screen-print serves the page and
+    // /screen-print/ redirects to it.
+    "html_handling": "drop-trailing-slash"
   },
   // Required by `wrangler preview` (non-production branch builds). Empty: no
   // bindings or vars to override for previews.

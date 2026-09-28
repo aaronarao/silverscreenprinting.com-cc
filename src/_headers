@@ -1,2 +1,6 @@
 /*
   X-Robots-Tag: noindex
+
+# Show the PDF fact sheets in the browser instead of downloading them.
+/files/*
+  Content-Disposition: inline

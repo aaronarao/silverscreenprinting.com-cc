@@ -18,7 +18,7 @@ permalink: /
     <div class="hero__box">
       <h1 class="hero__title">Silverscreen<br> Decoration &amp; Fulfillment</h1>
       <p class="hero__tagline">Your Trusted Partner for Scalable Custom Apparel Decoration and Fulfillment</p>
-      {{ m.button("Let's Have a Discussion", "/contact-us/", "blue", "hero__button") }}
+      {{ m.button("Let's Have a Discussion", "/contact-us", "blue", "hero__button") }}
     </div>
   </div>
 </section>
@@ -26,7 +26,7 @@ permalink: /
 {% call m.section("gray", class="intro") %}
   <p class="intro__text">For over two decades, Silverscreen Decoration &amp; Fulfillment has equipped businesses nationwide with customized garment decoration and reliable fulfillment services. We combine American craftsmanship with advanced technology to help your brand stand out and thrive.</p>
   <div class="intro__buttons">
-    {{ m.button("Take A Virtual Tour", "/virtual-tour/", "blue") }}
+    {{ m.button("Take A Virtual Tour", "/virtual-tour", "blue") }}
     {{ m.button("What We Offer", "#services", "navy") }}
   </div>
 {% endcall %}
@@ -42,13 +42,13 @@ permalink: /
       <p>With over 110 dedicated garment decorators and more than 56,000 square feet of production space, we can handle any size project by working two shifts.</p>
     {% endcall %}
     {% call m.card("Comprehensive Services", "services") %}
-      <p><a href="/screen-print/">Screen printing</a>, <a href="/embroidery/">embroidery</a>, digital printing (<a href="/dtg-printing/">DTG</a>/<a href="/dtf/">DTF</a>), and end-to-end <a href="/fulfillment/">fulfillment</a>, all under one roof.</p>
+      <p><a href="/screen-print">Screen printing</a>, <a href="/embroidery">embroidery</a>, digital printing (<a href="/dtg-printing">DTG</a>/<a href="/dtf">DTF</a>), and end-to-end <a href="/fulfillment">fulfillment</a>, all under one roof.</p>
     {% endcall %}
     {% call m.card("Strategic Location", "location") %}
       <p>Enjoy faster shipping and shorter transit times from our Reno, NV facility. UPS hub for 1-2 day ground shipping to the western 11 states. LAT, S&amp;S Active Wear, and SANMAR, all located locally, offer next-day receipt of apparel for decoration.</p>
     {% endcall %}
     {% call m.card("Client-Focused Partnership", "partnership") %}
-      <p>Your goals influence our solutions. We function as an extension of your team. Our proprietary <a href="/technology/">customer portal</a> is built for real-time order management.</p>
+      <p>Your goals influence our solutions. We function as an extension of your team. Our proprietary <a href="/technology">customer portal</a> is built for real-time order management.</p>
     {% endcall %}
     {% call m.card("Consistent Quality", "quality") %}
       <p>Each custom garment adheres to rigorous quality standards, ensuring that you uphold a consistent and polished brand image.</p>
@@ -60,27 +60,27 @@ permalink: /
   <h2 class="section-title">What We Offer</h2>
   {{ m.divider("white") }}
 
-  {% call m.featureRow("images/shared/screen-print-press.jpg", "Automatic screen printing press on the Silverscreen production floor", '<a href="/screen-print/">Screen Printing</a>') %}
-    <p>Vibrant, bold, and built to last, our <a href="/screen-print/">screen printing</a> delivers crisp graphics and vivid colors for all your apparel needs. Designed for high-volume orders and repeated wear. Additionally, we have high-color-capacity presses and oversized capabilities.</p>
-    <div class="feature__buttons">{{ m.button("Learn More", "/screen-print/", "navy") }}</div>
+  {% call m.featureRow("images/shared/screen-print-press.jpg", "Automatic screen printing press on the Silverscreen production floor", '<a href="/screen-print">Screen Printing</a>') %}
+    <p>Vibrant, bold, and built to last, our <a href="/screen-print">screen printing</a> delivers crisp graphics and vivid colors for all your apparel needs. Designed for high-volume orders and repeated wear. Additionally, we have high-color-capacity presses and oversized capabilities.</p>
+    <div class="feature__buttons">{{ m.button("Learn More", "/screen-print", "navy") }}</div>
   {% endcall %}
 
-  {% call m.featureRow("images/shared/embroidery-machines.jpg", "Row of multi-head embroidery machines stitching black backpacks", '<a href="/embroidery/">Embroidery</a>', true) %}
-    <p>Elevate your brand’s look with precision <a href="/embroidery/">embroidery</a> on polos, jackets, hats, and more. Ideal for projecting a professional, premium image.</p>
-    <div class="feature__buttons">{{ m.button("Learn More", "/embroidery/", "navy") }}</div>
+  {% call m.featureRow("images/shared/embroidery-machines.jpg", "Row of multi-head embroidery machines stitching black backpacks", '<a href="/embroidery">Embroidery</a>', true) %}
+    <p>Elevate your brand’s look with precision <a href="/embroidery">embroidery</a> on polos, jackets, hats, and more. Ideal for projecting a professional, premium image.</p>
+    <div class="feature__buttons">{{ m.button("Learn More", "/embroidery", "navy") }}</div>
   {% endcall %}
 
-  {% call m.featureRow("images/shared/dtf-printer.jpg", "Gladiator direct-to-film (DTF) printer with its powder shaker and curing unit", 'Digital Printing (<a href="/dtg-printing/">DTG</a>/<a href="/dtf/">DTF</a>)') %}
+  {% call m.featureRow("images/shared/dtf-printer.jpg", "Gladiator direct-to-film (DTF) printer with its powder shaker and curing unit", 'Digital Printing (<a href="/dtg-printing">DTG</a>/<a href="/dtf">DTF</a>)') %}
     <p>Bring intricate, full-color designs to life with advanced digital printing. Perfect for complex artwork, photographic detail, or smaller custom runs.</p>
     <div class="feature__buttons">
-      {{ m.button("DTF (Direct-to-Film)", "/dtf/", "navy") }}
-      {{ m.button("DTG (Direct-to-Garment)", "/dtg-printing/", "navy") }}
+      {{ m.button("DTF (Direct-to-Film)", "/dtf", "navy") }}
+      {{ m.button("DTG (Direct-to-Garment)", "/dtg-printing", "navy") }}
     </div>
   {% endcall %}
 
-  {% call m.featureRow("images/shared/warehouse-aisle.jpg", "Fulfillment warehouse aisle lined with shelving full of boxed inventory and a forklift at the end", '<a href="/fulfillment/">Fulfillment Services</a>', true) %}
+  {% call m.featureRow("images/shared/warehouse-aisle.jpg", "Fulfillment warehouse aisle lined with shelving full of boxed inventory and a forklift at the end", '<a href="/fulfillment">Fulfillment Services</a>', true) %}
     <p>Expand your business with our dependable fulfillment services. We manage warehousing, inventory, pick-and-pack, and nationwide shipping—optimizing your supply chain so you can concentrate on growth.</p>
-    <div class="feature__buttons">{{ m.button("Learn More", "/fulfillment/", "navy") }}</div>
+    <div class="feature__buttons">{{ m.button("Learn More", "/fulfillment", "navy") }}</div>
   {% endcall %}
 {% endcall %}
 
@@ -89,7 +89,7 @@ permalink: /
   <div class="commitment__text">
     <h2 class="commitment__title">Our Commitment</h2>
     <p>Silverscreen Decoration &amp; Fulfillment is built on unwavering quality, operational excellence, and trusted partnerships. By combining innovative processes with time-tested expertise, we deliver consistent results and help move your business forward.</p>
-    {{ m.button("Take A Virtual Tour", "/virtual-tour/", "blue", "commitment__button") }}
+    {{ m.button("Take A Virtual Tour", "/virtual-tour", "blue", "commitment__button") }}
   </div>
 </section>
 
@@ -142,7 +142,7 @@ permalink: /
 {% call m.section("photo", class="get-in-touch", image="images/home/embroidery-hat-machines.jpg", alt="Six-head embroidery machine stitching black caps") %}
   <h2 class="h1 get-in-touch__title">Get in Touch</h2>
   <p>Are you prepared to enhance your brand with high-quality custom apparel and effortless fulfillment? Allow Silverscreen Decoration &amp; Fulfillment to serve as an extension of your team.</p>
-  {{ m.button("Contact Information", "/contact-us/", "blue", "get-in-touch__button") }}
+  {{ m.button("Contact Information", "/contact-us", "blue", "get-in-touch__button") }}
 {% endcall %}
 
 {% call m.section("white", class="lets-talk") %}
