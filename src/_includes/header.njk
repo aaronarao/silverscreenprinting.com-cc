@@ -1,0 +1,36 @@
+{%- import "macros.njk" as m -%}
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="/">{% image "images/shared/SSDF-Logo-Blue-Mirror.png", site.name + " home", "(min-width: 1025px) 216px, (min-width: 768px) 211px, 170px", "eager" %}</a>
+
+    <nav class="main-nav" aria-label="Main">
+      {{ m.navList(nav, page.url, "main-nav") }}
+    </nav>
+
+    <a class="btn site-header__portal" href="{{ site.portalUrl }}">Portal Access</a>
+
+    <div class="site-header__actions">
+      <a class="site-header__email" href="mailto:{{ site.email }}" aria-label="Email {{ site.email }}">
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m84.801 11.801h-69.602c-7 0-12.699 5.6992-12.699 12.699v4.3008l44.5 24.898c1.8984 1 4.1992 1 6 0l44.398-23.5v-5.6992c0-7-5.6992-12.699-12.699-12.699m-34.699 48.898c-2.1016 0-4.1992-0.5-6.1016-1.6016l-41.398-23.098v39.602c0 7 5.6992 12.699 12.699 12.699h69.699c7 0 12.699-5.6992 12.699-12.699v-38.301l-41.398 21.898c-1.8008 1-3.8984 1.5-6 1.5"/></svg>
+      </a>
+      <button class="site-header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-drawer" data-menu-open>
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m3.6172 10.754h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703 0 1.9727 1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703 0-1.9727-1.5977-3.5703-3.5703-3.5703h-0.054688zm0 35.676h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703s1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703s-1.5977-3.5703-3.5703-3.5703h-0.054688zm0 35.68h-0.050782c-1.9727 0-3.5703 1.5977-3.5703 3.5703 0 1.9727 1.5977 3.5703 3.5703 3.5703h0.054688 92.758 0.050782c1.9727 0 3.5703-1.5977 3.5703-3.5703 0-1.9727-1.5977-3.5703-3.5703-3.5703h-0.054688z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-overlay" data-menu-close hidden></div>
+<div class="menu-drawer" id="menu-drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu-drawer__top">
+    <button class="menu-drawer__close" type="button" aria-label="Close menu" data-menu-close>
+      <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="m82 87.883c1.625 1.625 4.2656 1.625 5.8906 0 1.6289-1.6289 1.6289-4.2656 0-5.8945l-32.414-32.41 32.406-32.406c1.6289-1.625 1.6289-4.2656 0-5.8906-1.6289-1.6289-4.2656-1.6289-5.8906 0l-32.406 32.402-32.406-32.406c-1.625-1.625-4.2656-1.625-5.8906 0-1.6289 1.6289-1.6289 4.2656 0 5.8945l32.402 32.406-32.41 32.414c-1.6289 1.625-1.6289 4.2617 0 5.8906 1.625 1.6289 4.2656 1.6289 5.8906 0l32.414-32.414z" fill-rule="evenodd"/></svg>
+    </button>
+  </div>
+  <nav class="drawer-nav" aria-label="Main">
+    {{ m.navList(nav, page.url, "drawer-nav") }}
+  </nav>
+  <div class="menu-drawer__social">
+    {{ m.socialList(site.social) }}
+  </div>
+</div>

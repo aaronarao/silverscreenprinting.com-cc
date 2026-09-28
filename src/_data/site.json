@@ -1,0 +1,29 @@
+{
+  "name": "Silverscreen Decoration & Fulfillment",
+  "shortName": "Silverscreen",
+  "url": "https://www.silverscreenprinting.com",
+  "defaultTitle": "Silverscreen Decoration & Fulfillment | Reno, Nevada",
+  "defaultDescription": "Silverscreen Decoration & Fulfillment provides scalable screen printing, embroidery, DTG/DTF digital printing & nationwide fulfilment from a Reno, NV facility.",
+  "tagline": "Build your brand. Delight your customers. Grow with confidence.",
+  "phone": "775-825-9079",
+  "email": "info@silverscreenprinting.com",
+  "address": {
+    "street": "1135 S. Rock Blvd. Suite #340",
+    "city": "Reno",
+    "state": "NV",
+    "zip": "89502",
+    "mapUrl": "https://maps.app.goo.gl/T9T4tY49nrxyBBX68"
+  },
+  "portalUrl": "https://portal.silverscreenprinting.com/login",
+  "accessibilityUrl": "/accessibility-statement/",
+  "designCredit": {
+    "label": "Website Design",
+    "url": "https://www.relentlessbusinessmastery.com/"
+  },
+  "social": [
+    { "name": "Facebook", "icon": "facebook", "url": "https://www.facebook.com/silverscreenprintingandembroidery" },
+    { "name": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/silverscreen_decoration/" },
+    { "name": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/company/silver-screen-printing/" },
+    { "name": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/@SilverscreenDecoration" }
+  ]
+}

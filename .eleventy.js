@@ -5,7 +5,8 @@ const { default: Image } = require("@11ty/eleventy-img");
 // ("auto"), so transparent PNG logos stay transparent.
 // Usage: {% image "images/home/featured.jpg", "Describe the image", "(min-width: 1024px) 50vw, 100vw" %}
 // `src` is relative to the src/ folder. Pass alt="" only for purely decorative images.
-async function imageShortcode(src, alt, sizes = "100vw") {
+// Pass "eager" as the 4th argument for above-the-fold images such as the header logo.
+async function imageShortcode(src, alt, sizes = "100vw", loading = "lazy") {
   if (alt === undefined || alt === null) {
     throw new Error(`Missing alt text for image: ${src}`);
   }
@@ -20,16 +21,32 @@ async function imageShortcode(src, alt, sizes = "100vw") {
   return Image.generateHTML(metadata, {
     alt,
     sizes,
-    loading: "lazy",
+    loading,
     decoding: "async",
   });
 }
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
+
+  // Self-hosted webfonts from @fontsource: only the weights the CSS uses.
+  for (const file of [
+    "pt-sans/files/pt-sans-latin-400-normal.woff2",
+    "pt-sans/files/pt-sans-latin-400-italic.woff2",
+    "pt-sans/files/pt-sans-latin-700-normal.woff2",
+    "comfortaa/files/comfortaa-latin-400-normal.woff2",
+  ]) {
+    eleventyConfig.addPassthroughCopy({
+      [`node_modules/@fontsource/${file}`]: `fonts/${path.basename(file)}`,
+    });
+  }
   eleventyConfig.addPassthroughCopy({ "src/favicon": "/" });
   eleventyConfig.addPassthroughCopy("src/files");
   eleventyConfig.addPassthroughCopy("src/video");
+  // Netlify-style redirects for old Duda URLs.
+  eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
 
   eleventyConfig.addShortcode("image", imageShortcode);
 
