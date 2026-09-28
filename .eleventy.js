@@ -77,6 +77,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/video");
   // Netlify-style redirects for old Duda URLs.
   eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
+  // Response headers for Cloudflare static assets. Currently noindex so the
+  // preview copy isn't indexed; remove that rule when the site moves off Duda.
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
 
   eleventyConfig.on("eleventy.before", processImages);
   eleventyConfig.addShortcode("image", imageShortcode);

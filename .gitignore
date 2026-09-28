@@ -159,3 +159,6 @@ _to_delete/
 
 # Local Claude Code preview-server config
 .claude/launch.json
+
+# Wrangler local dev state
+.wrangler/
