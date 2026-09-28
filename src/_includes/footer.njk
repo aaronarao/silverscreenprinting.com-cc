@@ -1,0 +1,31 @@
+{%- import "macros.njk" as m -%}
+<footer class="site-footer">
+  <div class="site-footer__main">
+    <div class="site-footer__brand">
+      <a class="site-footer__logo" href="/">{% image "images/shared/SSDF-Logo-Blue-Mirror.png", site.name + " home", "(min-width: 1025px) 306px, (min-width: 768px) 215px, 262px" %}</a>
+      <p class="site-footer__tagline">Partner with <a href="/">{{ site.name }}</a>. {{ site.tagline }}</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      {{ m.navList(nav, page.url, "footer-nav") }}
+    </nav>
+
+    <div class="site-footer__contact">
+      <h2 class="h4">Contact Information</h2>
+      <div>
+        <p><strong>Phone:</strong> <a href="tel:{{ site.phone }}">{{ site.phone }}</a></p>
+        <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      <p><a href="{{ site.address.mapUrl }}" target="_blank" rel="noopener">{{ site.address.street }},<br>{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</a></p>
+      <a class="btn site-footer__portal" href="{{ site.portalUrl }}">Portal Access</a>
+    </div>
+  </div>
+
+  <div class="site-footer__rule"><hr></div>
+
+  <div class="site-footer__bottom">
+    <p class="site-footer__copyright">&copy; {{ build.year }} All Rights Reserved | <a href="/">{{ site.name }}</a> | <a href="{{ site.designCredit.url }}" target="_blank" rel="noopener">{{ site.designCredit.label }}</a></p>
+    <p class="site-footer__legal"><a href="/privacy-policy/">Privacy Policy</a> | <a href="{{ site.accessibilityUrl }}">Accessibility</a></p>
+    {{ m.socialList(site.social) }}
+  </div>
+</footer>

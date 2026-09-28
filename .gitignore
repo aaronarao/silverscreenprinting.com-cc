@@ -156,3 +156,6 @@ resources/
 blog-posts/
 context/
 _to_delete/
+
+# Local Claude Code preview-server config
+.claude/launch.json

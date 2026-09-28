@@ -1,0 +1,218 @@
+{#- Shared markup: header, menu drawer and footer pieces, and the page building blocks.
+    Nunjucks macros don't see the page context, so pass in what they need. -#}
+{%- import "icons.njk" as icons -%}
+
+{%- macro chevron() -%}
+<svg class="chevron" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+{%- endmacro -%}
+
+{#- navList(nav, currentUrl, id)
+    `id` keeps submenu ids unique when the same menu appears more than once on a page. -#}
+{%- macro navList(nav, currentUrl, id) -%}
+<ul class="nav__list">
+  {%- for item in nav %}
+  {%- if item.children %}
+  {%- set subId = id + "-" + loop.index %}
+  {#- A `set` inside a for loop doesn't leak out, so capture output instead. #}
+  {%- set childActive %}{% for child in item.children %}{% if child.url == currentUrl %}1{% endif %}{% endfor %}{% endset %}
+  <li class="nav__item nav__item--has-sub">
+    <button class="nav__link{% if childActive | trim %} is-active{% endif %}" type="button" aria-expanded="false" aria-controls="{{ subId }}" data-submenu-toggle>
+      <span class="nav__text">{{ item.title }} {{ chevron() }}</span>
+    </button>
+    <ul class="nav__sub" id="{{ subId }}">
+      {%- for child in item.children %}
+      <li><a class="nav__sublink" href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </li>
+  {%- else %}
+  <li class="nav__item">
+    <a class="nav__link" href="{{ item.url }}"{% if item.url == currentUrl %} aria-current="page"{% endif %}><span class="nav__text">{{ item.title }}</span></a>
+  </li>
+  {%- endif %}
+  {%- endfor %}
+</ul>
+{%- endmacro -%}
+
+{%- macro socialIcon(icon) -%}
+{%- if icon == "facebook" -%}
+<svg viewBox="0 0 320 512" aria-hidden="true" focusable="false"><path d="M279.1 288l14.2-92.7h-88.9v-60.1c0-25.4 12.4-50.1 52.2-50.1h40.4V6.3S260.4 0 225.4 0c-73.2 0-121.1 44.4-121.1 124.7v70.6H22.9V288h81.4v224h100.2V288z"/></svg>
+{%- elif icon == "instagram" -%}
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3"/></svg>
+{%- elif icon == "linkedin" -%}
+<svg viewBox="0 0 448 512" aria-hidden="true" focusable="false"><path d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"/></svg>
+{%- elif icon == "youtube" -%}
+<svg viewBox="0 0 576 512" aria-hidden="true" focusable="false"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6C14.9 167 14.9 256.4 14.9 256.4s0 89.4 11.4 132.3c6.3 23.6 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM232.1 337.6V175.2l142.7 81.2-142.7 81.2z"/></svg>
+{%- endif -%}
+{%- endmacro -%}
+
+{%- macro socialList(social) -%}
+<ul class="social">
+  {%- for s in social %}
+  <li><a class="social__link" href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }} (opens in a new tab)">{{ socialIcon(s.icon) }}</a></li>
+  {%- endfor %}
+</ul>
+{%- endmacro -%}
+
+{#- ---------- Page building blocks ---------- -#}
+
+{#- button(label, url, variant, class)
+    variant: "blue" (default), "navy" or "steel". -#}
+{%- macro button(label, url, variant = "blue", class = "") -%}
+<a class="btn btn--{{ variant }}{% if class %} {{ class }}{% endif %}" href="{{ url }}">{{ label }}</a>
+{%- endmacro -%}
+
+{#- section(variant, id, class, image, alt): a full-width background band with a centered content column.
+    variant: "white" (default), "gray", "blue", "navy" or "photo".
+    For "photo", pass `image` (path under src/) and `alt`; the photo sits behind a navy overlay.
+    Heading accent pattern: wrap one word in <em class="accent">, e.g. Why <em class="accent">Choose</em> Silverscreen. -#}
+{%- macro section(variant = "white", id = "", class = "", image = "", alt = "") -%}
+<section class="band band--{{ variant }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  {%- if image %}
+  <div class="band__bg">{% image image, alt, "100vw" %}</div>
+  {%- endif %}
+  <div class="band__inner">
+    {{ caller() }}
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- Short gradient rule under a section title. color: "blue" (default) or "white". -#}
+{%- macro divider(color = "blue") -%}
+<hr class="divider divider--{{ color }}">
+{%- endmacro -%}
+
+{#- card(title, icon): bordered card with a centered icon (a name from icons.njk), title and body (caller). -#}
+{%- macro card(title, icon = "") -%}
+<div class="card">
+  {%- if icon %}{{ icons.icon(icon) }}{% endif %}
+  <h3 class="card__title">{{ title }}</h3>
+  <div class="card__body">{{ caller() }}</div>
+</div>
+{%- endmacro -%}
+
+{#- featureRow(image, alt, title, reverse): photo beside a title and body (caller).
+    `title` may contain links (it's output as HTML). reverse=true puts the photo on the right from tablet up. -#}
+{%- macro featureRow(image, alt, title, reverse = false) -%}
+<div class="feature{% if reverse %} feature--reverse{% endif %}">
+  <div class="feature__media">{% image image, alt, "(min-width: 1025px) 557px, (min-width: 768px) 45vw, 100vw" %}</div>
+  <div class="feature__text">
+    <h3 class="feature__title">{{ title | safe }}</h3>
+    {{ caller() }}
+  </div>
+</div>
+{%- endmacro -%}
+
+{#- testimonials(image, alt): gray panel with five stars, a slider of testimonial() slides (caller) and a photo. -#}
+{%- macro testimonials(image, alt) -%}
+<div class="testimonials">
+  <div class="testimonials__media">{% image image, alt, "(min-width: 1025px) 367px, (min-width: 768px) 90vw, 100vw" %}</div>
+  <div class="testimonials__main">
+    {{ icons.icon("stars") }}
+    <div class="slider" data-slider aria-roledescription="carousel" aria-label="Testimonials">
+      <div class="slider__viewport">
+        <div class="slider__track" data-slider-track>
+          {{ caller() }}
+        </div>
+      </div>
+      <div class="slider__dots" data-slider-dots></div>
+    </div>
+  </div>
+</div>
+{%- endmacro -%}
+
+{#- testimonial(quote, name, details): one slide. Body paragraphs go in the caller.
+    details: list of lines shown under the name (title, company). -#}
+{%- macro testimonial(quote, name, details = []) -%}
+<figure class="testimonial" data-slide role="group" aria-roledescription="slide">
+  <blockquote>
+    <h3 class="testimonial__quote">"{{ quote }}"</h3>
+    {{ caller() }}
+  </blockquote>
+  <figcaption class="testimonial__cite">
+    <strong>{{ name }}</strong>
+    {%- for line in details %}<br><strong>{{ line }}</strong>{% endfor %}
+  </figcaption>
+</figure>
+{%- endmacro -%}
+
+{#- logoStrip(partners): row of partner logos that slides one logo every 7 seconds and loops,
+    with previous/next arrows. Data: src/_data/partners.json. Behavior is in site.js. -#}
+{%- macro logoStrip(partners) -%}
+<div class="logo-strip" data-logo-strip>
+  <button class="logo-strip__arrow logo-strip__arrow--prev" type="button" aria-label="Previous logos" data-logo-prev>{{ chevron() }}</button>
+  <div class="logo-strip__viewport" data-logo-viewport>
+    <ul class="logo-strip__list" data-logo-list>
+      {%- for p in partners %}
+      <li class="logo-strip__item">
+        <a href="{{ p.url }}" target="_blank" rel="noopener">{% image p.image, p.name + " (opens in a new tab)", "(min-width: 1025px) 224px, (min-width: 768px) 114px, 254px" %}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <button class="logo-strip__arrow logo-strip__arrow--next" type="button" aria-label="Next logos" data-logo-next>{{ chevron() }}</button>
+</div>
+{%- endmacro -%}
+
+{#- contactDetails(site): e-mail, address and phone rows with icon tiles. -#}
+{%- macro contactDetails(site) -%}
+<ul class="contact-details">
+  <li class="contact-details__row">
+    <span class="contact-details__icon">{{ icons.icon("email") }}</span>
+    <div><h3 class="contact-details__label">E-mail</h3><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+  </li>
+  <li class="contact-details__row">
+    <span class="contact-details__icon">{{ icons.icon("pin") }}</span>
+    <div><h3 class="contact-details__label">Address</h3><a href="{{ site.address.mapUrl }}" target="_blank" rel="noopener">{{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+  </li>
+  <li class="contact-details__row">
+    <span class="contact-details__icon">{{ icons.icon("phone") }}</span>
+    <div><h3 class="contact-details__label">Phone number</h3><a href="tel:{{ site.phone }}">{{ site.phone }}</a></div>
+  </li>
+</ul>
+{%- endmacro -%}
+
+{#- contactForm(id): the contact form. Not connected yet: the form backend is decided in Phase 4
+    (see context/forms-insightly-integration.md), so there is no action and submitting does nothing. -#}
+{%- macro contactForm(id = "contact") -%}
+<form class="contact-form" method="post" aria-label="Contact Us" data-contact-form novalidate>
+  <div class="contact-form__field">
+    <label for="{{ id }}-name">Name</label>
+    <input id="{{ id }}-name" name="name" type="text" autocomplete="name">
+  </div>
+  <div class="contact-form__field">
+    <label for="{{ id }}-business">Business name</label>
+    <input id="{{ id }}-business" name="business" type="text" autocomplete="organization">
+  </div>
+  <div class="contact-form__field">
+    <label for="{{ id }}-email">E-mail</label>
+    <input id="{{ id }}-email" name="email" type="email" autocomplete="email">
+  </div>
+  <div class="contact-form__field">
+    <label for="{{ id }}-phone">Phone</label>
+    <input id="{{ id }}-phone" name="phone" type="tel" autocomplete="tel">
+  </div>
+  <div class="contact-form__field contact-form__field--wide">
+    <label for="{{ id }}-message">Message</label>
+    <textarea id="{{ id }}-message" name="message"></textarea>
+  </div>
+  <button class="btn btn--navy contact-form__submit" type="submit">Send Message</button>
+</form>
+{%- endmacro -%}
+
+{#- staticMap(site): Mapbox Static Images map (streets-v12, large navy pin) linking to Google Maps.
+    Sizes match the live map: full width x 200px on desktop, x 300px on tablet, hidden on phones.
+    The Static Images API caps images at 1280px, so wider screens scale the image up (object-fit: cover). -#}
+{%- macro staticMap(site, zoom = 13) -%}
+{%- set a = site.address -%}
+{%- set base = "https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-l+002554(" + a.lng + "," + a.lat + ")/" + a.lng + "," + a.lat + "," + zoom + ",0/" -%}
+{%- set token = "?access_token=" + site.mapboxToken -%}
+{%- set address = a.street + ", " + a.city + ", " + a.state + " " + a.zip -%}
+<a class="static-map" href="{{ a.mapUrl }}" target="_blank" rel="noopener">
+  <picture>
+    <source media="(min-width: 1025px)" srcset="{{ base }}1280x200{{ token }} 1x, {{ base }}1280x200@2x{{ token }} 2x" width="1280" height="200">
+    <img src="{{ base }}1024x300{{ token }}" srcset="{{ base }}1024x300@2x{{ token }} 2x" width="1024" height="300" alt="Street map of south Reno with a pin at {{ address }}" loading="lazy" decoding="async">
+  </picture>
+  <span class="static-map__address">{{ address }} <span class="static-map__cta">Open in Google Maps<span class="visually-hidden"> (opens in a new tab)</span></span></span>
+</a>
+{%- endmacro -%}
