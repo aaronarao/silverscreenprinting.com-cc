@@ -6,5 +6,8 @@
   // of this directory are applied automatically.
   "assets": {
     "directory": "./_site"
-  }
+  },
+  // Required by `wrangler preview` (non-production branch builds). Empty: no
+  // bindings or vars to override for previews.
+  "previews": {}
 }
