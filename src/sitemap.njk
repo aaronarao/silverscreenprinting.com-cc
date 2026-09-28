@@ -9,7 +9,6 @@ sitemap: false
 {%- if item.data.sitemap !== false and item.data.canonicalUrl %}
   <url>
     <loc>{{ item.data.canonicalUrl }}</loc>
-    <lastmod>{{ item.date.toISOString().slice(0, 10) }}</lastmod>
   </url>
 {%- endif %}
 {%- endfor %}

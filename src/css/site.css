@@ -1232,6 +1232,8 @@ h6, .h6 {
   grid-template-columns: 48px 1fr 48px;
   align-items: center;
   column-gap: 6.5px;
+  padding-block: 28px;
+  border-block: 3px solid var(--navy);
   --logos: 1;
   --logo-gap: 13px;
 }
@@ -1994,8 +1996,7 @@ h6, .h6 {
 
 .service-hero__title {
   max-width: 11em;
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 32px;
 }
 
 @media (min-width: 768px) {
@@ -2003,7 +2004,7 @@ h6, .h6 {
 
   .service-hero__inner { padding: 56px 32px; }
 
-  .service-hero__title { font-size: 60px; }
+  .service-hero__title { font-size: 65px; }
 }
 
 @media (min-width: 1025px) {
@@ -2024,13 +2025,15 @@ h6, .h6 {
 .service-intro__number {
   font-family: var(--font-heading);
   font-size: 40px;
-  line-height: 1;
+  line-height: normal;
   color: var(--blue);
 }
 
 .service-intro__label {
   margin-top: 8px;
   font-weight: 400;
+  font-size: 17px;
+  line-height: normal;
 }
 
 .service-intro__title {
@@ -2039,7 +2042,6 @@ h6, .h6 {
 
 .service-intro__text p {
   margin-top: 20px;
-  line-height: 1.5;
 }
 
 @media (min-width: 768px) {
@@ -2052,11 +2054,15 @@ h6, .h6 {
 
   .service-intro__number { font-size: 60px; }
 
+  .service-intro__label { font-size: 18px; }
+
   .service-intro__title { font-size: 30px; }
 }
 
 @media (min-width: 1025px) {
   .service-intro__number { font-size: 96px; }
+
+  .service-intro__label { line-height: 27px; }
 
   .service-intro__title { font-size: 38px; }
 }
@@ -2079,12 +2085,11 @@ h6, .h6 {
 }
 
 .feature-panel__title {
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .feature-panel__box p {
   margin-top: 20px;
-  line-height: 1.5;
 }
 
 .feature-panel__button {
@@ -2101,7 +2106,7 @@ h6, .h6 {
     padding: 40px;
   }
 
-  .feature-panel__title { font-size: 30px; }
+  .feature-panel__title { font-size: 40px; }
 }
 
 @media (min-width: 1025px) {
@@ -2120,12 +2125,8 @@ h6, .h6 {
     padding: 48px 44px;
   }
 
-  .feature-panel__title { font-size: 38px; }
+  .feature-panel__title { font-size: 55px; }
 
-  .feature-panel__box p {
-    font-size: 17px;
-    line-height: 25.5px;
-  }
 }
 
 /* Two-column card grid, and cards with the icon beside the title. */
@@ -2148,8 +2149,7 @@ h6, .h6 {
 
 .card--inline .card__title {
   margin-top: 0;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 21px;
 }
 
 .card--inline .card__body {
@@ -2165,7 +2165,7 @@ h6, .h6 {
     height: 56px;
   }
 
-  .card--inline .card__title { font-size: 17px; }
+  .card--inline .card__title { font-size: 22px; }
 
   .card--inline .card__body {
     grid-column: 2;
@@ -2176,13 +2176,13 @@ h6, .h6 {
 @media (min-width: 1025px) {
   .card--inline { padding: 32px; }
 
-  .card--inline .card__title { font-size: 18px; }
+  .card--inline .card__title { font-size: 26px; }
 }
 
 /* Specialty Ink & Process Offerings */
 .offerings__lede {
   max-width: 800px;
-  margin: 24px auto 0;
+  margin: 28px auto 0;
   text-align: center;
 }
 
@@ -2201,7 +2201,7 @@ h6, .h6 {
 }
 
 .fact-sheet__title {
-  font-size: 18px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
@@ -2212,7 +2212,7 @@ h6, .h6 {
 }
 
 @media (min-width: 768px) {
-  .fact-sheet__title { font-size: 24px; }
+  .fact-sheet__title { font-size: 30px; }
 }
 
 @media (min-width: 1025px) {
@@ -2224,8 +2224,8 @@ h6, .h6 {
   }
 
   .fact-sheet__title {
-    max-width: 700px;
-    font-size: 26px;
+    max-width: 800px;
+    font-size: 38px;
   }
 }
 
@@ -2266,8 +2266,14 @@ h6, .h6 {
 .why-partner__lead {
   margin-bottom: 16px;
   font-family: var(--font-heading);
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 24px;
+  line-height: normal;
+}
+
+.why-partner__lead + p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: normal;
 }
 
 .check-list {
@@ -2291,8 +2297,7 @@ h6, .h6 {
 }
 
 .check-list__title {
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 21px;
 }
 
 .check-list__item p {
@@ -2310,7 +2315,11 @@ h6, .h6 {
 
   .why-partner__media img { height: 560px; }
 
-  .why-partner__lead { font-size: 20px; }
+  .check-list__title { font-size: 22px; }
+
+  .why-partner__lead { font-size: 26px; }
+
+  .why-partner__lead + p { font-size: 18px; }
 }
 
 @media (min-width: 1025px) {
@@ -2318,22 +2327,28 @@ h6, .h6 {
 
   .why-partner__media img { height: 640px; }
 
-  .why-partner__lead { font-size: 24px; }
+  .why-partner__lead { font-size: 30px; }
 
-  .check-list__title { font-size: 18px; }
+  .why-partner__lead + p { line-height: 27px; }
+
+  .check-list__title { font-size: 26px; }
 }
 
-/* The logo strip without its "Who we work with" heading: thin rules above and below. */
-.partners--service .band__inner { padding-block: 0; }
+/* The logo strip without its "Who we work with" heading, with room below so the bottom line
+   doesn't run into the photo band. */
+.partners--service .band__inner { padding-top: 0; padding-bottom: 45px; }
 
-.partners--service .logo-strip {
-  margin-top: 0;
-  padding-block: 24px;
-  border-block: 1px solid var(--rule);
+.partners--service .logo-strip { margin-top: 0; }
+
+@media (min-width: 768px) {
+  .partners--service .band__inner { padding-bottom: 60px; }
 }
 
 @media (min-width: 1025px) {
-  .partners--service .band__inner { max-width: var(--content-width); padding-inline: 28.8px; }
+  .partners--service .band__inner {
+    padding-top: 0;
+    padding-bottom: 77px;
+  }
 }
 
 /* Closing call to action (photo band) */
@@ -2346,8 +2361,8 @@ h6, .h6 {
 }
 
 .service-cta__title {
-  max-width: 900px;
-  font-size: 24px;
+  max-width: 1100px;
+  font-size: 32px;
 }
 
 .service-cta p {
@@ -2356,8 +2371,10 @@ h6, .h6 {
 }
 
 .service-cta .service-cta__lead {
-  font-weight: 700;
-  text-transform: uppercase;
+  max-width: none;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  line-height: normal;
 }
 
 .service-cta__button {
@@ -2369,13 +2386,17 @@ h6, .h6 {
 @media (min-width: 768px) {
   .service-cta .band__inner { padding: 96px 32px; }
 
-  .service-cta__title { font-size: 30px; }
+  .service-cta__title { font-size: 55px; }
+
+  .service-cta .service-cta__lead { font-size: 22px; }
 }
 
 @media (min-width: 1025px) {
   .service-cta .band__inner { padding: 140px 28.8px; }
 
-  .service-cta__title { font-size: 38px; }
+  .service-cta__title { font-size: 65px; }
+
+  .service-cta .service-cta__lead { font-size: 26px; }
 }
 
 /* FAQ: <details> accordion with a plus that turns into a minus. */
@@ -2415,12 +2436,29 @@ h6, .h6 {
 }
 
 .faq__question {
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .faq__answer {
   padding-bottom: 20px;
+}
+
+.faq__answer p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@media (min-width: 768px) {
+  .faq__question {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .faq__answer p {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .faq__answer p + p {
@@ -2430,7 +2468,37 @@ h6, .h6 {
 @media (min-width: 1025px) {
   .faq { margin-top: 56px; }
 
-  .faq__question { font-size: 15px; }
+  .faq__question {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .faq__answer p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
+/* Service-page body text: 16px/24px up to tablet and 17px/25.5px on desktop, like the live pages
+   (the global p is already 17px from 768px). */
+.service-intro__text p,
+.feature-panel__box p,
+.offerings__lede,
+.check-list__item p,
+.service-cta p:not(.service-cta__lead) {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 1025px) {
+  .service-intro__text p,
+  .feature-panel__box p,
+  .offerings__lede,
+  .check-list__item p,
+  .service-cta p:not(.service-cta__lead) {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
 }
 
 /* Still have a question? */
