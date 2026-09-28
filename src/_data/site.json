@@ -12,9 +12,12 @@
     "city": "Reno",
     "state": "NV",
     "zip": "89502",
-    "mapUrl": "https://maps.app.goo.gl/T9T4tY49nrxyBBX68"
+    "mapUrl": "https://maps.app.goo.gl/T9T4tY49nrxyBBX68",
+    "lat": 39.494275,
+    "lng": -119.750382
   },
   "portalUrl": "https://portal.silverscreenprinting.com/login",
+  "mapboxToken": "pk.eyJ1IjoiYWFyb25hcmFvIiwiYSI6ImNtdTRkZHZncDBsNm4yeW9ob240Zm0ybHMifQ.Vo6B4jR3Sh1ApFlJ3cLEvQ",
   "accessibilityUrl": "/accessibility-statement/",
   "designCredit": {
     "label": "Website Design",

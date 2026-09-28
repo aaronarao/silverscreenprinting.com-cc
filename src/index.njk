@@ -1,0 +1,159 @@
+---
+layout: layout-default.njk
+title: Silverscreen Decoration & Fulfillment | Reno, Nevada
+description: Silverscreen Decoration & Fulfillment provides scalable screen printing, embroidery, DTG/DTF digital printing & nationwide fulfilment from a Reno, NV facility.
+permalink: /
+---
+{#- Copy matches the live homepage (newer than the Duda export). -#}
+{%- import "macros.njk" as m -%}
+
+<section class="hero" data-hero-slideshow>
+  <div class="hero__slides">
+    <div class="hero__slide is-active">{% image "images/shared/press-floor-overview.jpg", "Wide view of the Silverscreen production floor with rows of automatic screen printing presses", "100vw", "eager", "high" %}</div>
+    <div class="hero__slide">{% image "images/shared/customer-service-office.jpg", "Silverscreen customer service office with desks, monitors and framed ink color charts", "100vw" %}</div>
+    <div class="hero__slide">{% image "images/shared/embroidery-department.jpg", "Embroidery department with multi-head embroidery machines loaded with colorful thread cones", "100vw" %}</div>
+    <div class="hero__slide">{% image "images/shared/warehouse-racking.jpg", "Fulfillment warehouse with tall blue and yellow pallet racking full of boxed inventory", "100vw" %}</div>
+  </div>
+  <div class="hero__inner">
+    <div class="hero__box">
+      <h1 class="hero__title">Silverscreen<br> Decoration &amp; Fulfillment</h1>
+      <p class="hero__tagline">Your Trusted Partner for Scalable Custom Apparel Decoration and Fulfillment</p>
+      {{ m.button("Let's Have a Discussion", "/contact-us/", "blue", "hero__button") }}
+    </div>
+  </div>
+</section>
+
+{% call m.section("gray", class="intro") %}
+  <p class="intro__text">For over two decades, Silverscreen Decoration &amp; Fulfillment has equipped businesses nationwide with customized garment decoration and reliable fulfillment services. We combine American craftsmanship with advanced technology to help your brand stand out and thrive.</p>
+  <div class="intro__buttons">
+    {{ m.button("Take A Virtual Tour", "/virtual-tour/", "blue") }}
+    {{ m.button("What We Offer", "#services", "navy") }}
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="why") %}
+  <h2 class="section-title">Why <em class="accent">Choose</em> Silverscreen Decoration &amp; Fulfillment for your Custom Apparel Decoration?</h2>
+  {{ m.divider() }}
+  <div class="card-grid">
+    {% call m.card("Experience That Matters", "award") %}
+      <p>Decades of expertise and a demonstrated history of empowering businesses like yours.</p>
+    {% endcall %}
+    {% call m.card("High-Volume, Scalable Production", "production") %}
+      <p>With over 110 dedicated garment decorators and more than 56,000 square feet of production space, we can handle any size project by working two shifts.</p>
+    {% endcall %}
+    {% call m.card("Comprehensive Services", "services") %}
+      <p><a href="/screen-print/">Screen printing</a>, <a href="/embroidery/">embroidery</a>, digital printing (<a href="/dtg-printing/">DTG</a>/<a href="/dtf/">DTF</a>), and end-to-end <a href="/fulfillment/">fulfillment</a>, all under one roof.</p>
+    {% endcall %}
+    {% call m.card("Strategic Location", "location") %}
+      <p>Enjoy faster shipping and shorter transit times from our Reno, NV facility. UPS hub for 1-2 day ground shipping to the western 11 states. LAT, S&amp;S Active Wear, and SANMAR, all located locally, offer next-day receipt of apparel for decoration.</p>
+    {% endcall %}
+    {% call m.card("Client-Focused Partnership", "partnership") %}
+      <p>Your goals influence our solutions. We function as an extension of your team. Our proprietary <a href="/technology/">customer portal</a> is built for real-time order management.</p>
+    {% endcall %}
+    {% call m.card("Consistent Quality", "quality") %}
+      <p>Each custom garment adheres to rigorous quality standards, ensuring that you uphold a consistent and polished brand image.</p>
+    {% endcall %}
+  </div>
+{% endcall %}
+
+{% call m.section("blue", id="services", class="services") %}
+  <h2 class="section-title">What We Offer</h2>
+  {{ m.divider("white") }}
+
+  {% call m.featureRow("images/shared/screen-print-press.jpg", "Automatic screen printing press on the Silverscreen production floor", '<a href="/screen-print/">Screen Printing</a>') %}
+    <p>Vibrant, bold, and built to last, our <a href="/screen-print/">screen printing</a> delivers crisp graphics and vivid colors for all your apparel needs. Designed for high-volume orders and repeated wear. Additionally, we have high-color-capacity presses and oversized capabilities.</p>
+    <div class="feature__buttons">{{ m.button("Learn More", "/screen-print/", "navy") }}</div>
+  {% endcall %}
+
+  {% call m.featureRow("images/shared/embroidery-machines.jpg", "Row of multi-head embroidery machines stitching black backpacks", '<a href="/embroidery/">Embroidery</a>', true) %}
+    <p>Elevate your brand’s look with precision <a href="/embroidery/">embroidery</a> on polos, jackets, hats, and more. Ideal for projecting a professional, premium image.</p>
+    <div class="feature__buttons">{{ m.button("Learn More", "/embroidery/", "navy") }}</div>
+  {% endcall %}
+
+  {% call m.featureRow("images/shared/dtf-printer.jpg", "Gladiator direct-to-film (DTF) printer with its powder shaker and curing unit", 'Digital Printing (<a href="/dtg-printing/">DTG</a>/<a href="/dtf/">DTF</a>)') %}
+    <p>Bring intricate, full-color designs to life with advanced digital printing. Perfect for complex artwork, photographic detail, or smaller custom runs.</p>
+    <div class="feature__buttons">
+      {{ m.button("DTF (Direct-to-Film)", "/dtf/", "navy") }}
+      {{ m.button("DTG (Direct-to-Garment)", "/dtg-printing/", "navy") }}
+    </div>
+  {% endcall %}
+
+  {% call m.featureRow("images/shared/warehouse-aisle.jpg", "Fulfillment warehouse aisle lined with shelving full of boxed inventory and a forklift at the end", '<a href="/fulfillment/">Fulfillment Services</a>', true) %}
+    <p>Expand your business with our dependable fulfillment services. We manage warehousing, inventory, pick-and-pack, and nationwide shipping—optimizing your supply chain so you can concentrate on growth.</p>
+    <div class="feature__buttons">{{ m.button("Learn More", "/fulfillment/", "navy") }}</div>
+  {% endcall %}
+{% endcall %}
+
+<section class="commitment">
+  <div class="commitment__media">{% image "images/home/lobby-logo-sign.jpg", "Backlit Silverscreen Printing and Embroidery logo sign on the wall of the front office", "(min-width: 1025px) 59vw, 100vw" %}</div>
+  <div class="commitment__text">
+    <h2 class="commitment__title">Our Commitment</h2>
+    <p>Silverscreen Decoration &amp; Fulfillment is built on unwavering quality, operational excellence, and trusted partnerships. By combining innovative processes with time-tested expertise, we deliver consistent results and help move your business forward.</p>
+    {{ m.button("Take A Virtual Tour", "/virtual-tour/", "blue", "commitment__button") }}
+  </div>
+</section>
+
+{% call m.section("white", class="reviews") %}
+  {% call m.testimonials("images/home/heat-press-safety-vest.jpg", "Navy safety vest with reflective stripes and an American flag patch on a heat press") %}
+    {% call m.testimonial("The innovative portal makes my business so much more efficient", "Barry Hagen", ["Ad Stuff"]) %}
+      <p>Having been in the business for 30 years, printing and embroidery had traditionally been a frustrating part of the advertising specialty business.</p>
+      <p>I just wanted you to know that I have been so happy with Silver Screen Printing. The innovative portal makes my business so much more efficient, and my life easier. The exact, clear communication it demands minimizes the problems that had previously come with both decoration processes.</p>
+      <p>While the portal is a great tool, it is also nice to know when needed, the staff are always willing to answer questions and make orders run smoothly.</p>
+    {% endcall %}
+    {% call m.testimonial("They are efficient and professional in all their work", "Mike Heath", ["Service Manager", "Alsco"]) %}
+      <p>Silver Screen Printing is a valuable asset to the operations here at Alsco. They are efficient and professional in all their work. Both embroidery and screen printing are completed in a short time frame which works well for Alsco, as well as its customer base.</p>
+      <p>The embroidery work is precise and stands out on the customer’s uniform, promoting a very professional appearance.</p>
+      <p>Alsco not only uses Silver Screen for our customers but, we also utilize them for all of our Management shirts as well!</p>
+    {% endcall %}
+    {% call m.testimonial("Silver Screen is everything I could ask for", "JP Zunini", ["Field Sales Representative – N. Nevada", "Eastbay Team Sales"]) %}
+      <p>Silver Screen is everything I could ask for in a screen printing and embroidery partner. Their top notch facilities, processes and amazing customer service makes for a very enjoyable experience for everyone involved. Their passion to get it right shows in the quality of their work and I wouldn't think of going anywhere else.</p>
+    {% endcall %}
+    {% call m.testimonial("Silver Screen is a great provider to the trade", "Bob Simmons", ["NDS Print & Promotions"]) %}
+      <p>Silver Screen is a great provider to the trade, from expedited delivery to unquestioned decorating quality; whether it’s embroidered or screen printed, the job is done right.</p>
+      <p class="tight">Their energy and attitude has made working with Silver Screen a joy and opens new sales opportunities.</p>
+    {% endcall %}
+    {% call m.testimonial("The customer portal is one of my favorite things about the company", "Scott Dunseath", ["Home Means Nevada Co.", "Owner"]) %}
+      <p>Working with Silver Screen has been a key factor to the growth and scalability of our business.</p>
+      <p class="tight">From small sample runs to large commercial projects the quality of work has been great.</p>
+      <p class="tight">The customer portal is one of my favorite things about the company; It is easy to use for order entry, proofing and managing project timelines.</p>
+    {% endcall %}
+    {% call m.testimonial("I enjoy working with Silver Screen and their dedication to doing the job right", "Tyler Schwab", ["B&W Advertising Specialties"]) %}
+      <p>I enjoy working with Silver Screen and their dedication to doing the job right. Easy to use customer interface and prompt customer service ensure that my projects are finished accurately, on time, and priced within budget."</p>
+      <p class="tight">Regards,</p>
+    {% endcall %}
+    {% call m.testimonial("Quick response, friendly and quality products", "Brianne Chambers, Director, NevadaFIT, University of Nevada Reno") %}
+      <p>Quick response, friendly and quality products. I was never in the dark or unsure of the process when working with Silver Screen!</p>
+      <p class="tight">Last year they helped us with a rush order and nailed it! This year we are fortunately working on a better timeline....They have been fantastic both years.</p>
+    {% endcall %}
+    {% call m.testimonial("Their quality of work & professionalism has gone beyond our expectations", "Steve Chepokas") %}
+      <p>We made the decision to partner with Silver Screen printing over a year ago, and quite frankly have never looked back! Dan Frank and his team at SSP have gone above and beyond as a premier partner of JETSET PROMOTIONS! Their quality of work &amp; professionalism has gone beyond our expectations! From Purchase order to delivery..and we are grateful and feel blessed to have them on our team for our clients! Thank you for doing what you say you'll do in a timely matter! Honesty-integrity and transparency! In over 30 years you've been the best decision ever! Thank you</p>
+    {% endcall %}
+    {% call m.testimonial("I really appreciate the excellent customer service of his company", "Jeff Morris", ["Eureka Shirt Circuit"]) %}
+      <p>Tell Dan I really appreciate the excellent customer service of his company. It's the best I've ever experienced in this industry. Thanks.</p>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
+
+{% call m.section("white", class="partners") %}
+  <h2 class="section-title">WHO We work with</h2>
+  {{ m.logoStrip(partners) }}
+{% endcall %}
+
+{% call m.section("photo", class="get-in-touch", image="images/home/embroidery-hat-machines.jpg", alt="Six-head embroidery machine stitching black caps") %}
+  <h2 class="h1 get-in-touch__title">Get in Touch</h2>
+  <p>Are you prepared to enhance your brand with high-quality custom apparel and effortless fulfillment? Allow Silverscreen Decoration &amp; Fulfillment to serve as an extension of your team.</p>
+  {{ m.button("Contact Information", "/contact-us/", "blue", "get-in-touch__button") }}
+{% endcall %}
+
+{% call m.section("white", class="lets-talk") %}
+  <div class="lets-talk__info">
+    <h2 class="section-title">Let's talk</h2>
+    <p class="lets-talk__lede">Contact us or fill out our quick form — let’s discuss your project and start building something great together.</p>
+    {{ m.contactDetails(site) }}
+  </div>
+  <div class="lets-talk__form">
+    {{ m.contactForm("home-contact") }}
+  </div>
+{% endcall %}
+
+{{ m.staticMap(site) }}
