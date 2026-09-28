@@ -82,9 +82,10 @@
 <hr class="divider divider--{{ color }}">
 {%- endmacro -%}
 
-{#- card(title, icon): bordered card with a centered icon (a name from icons.njk), title and body (caller). -#}
-{%- macro card(title, icon = "") -%}
-<div class="card">
+{#- card(title, icon, layout): bordered card with an icon (a name from icons.njk), title and body (caller).
+    layout: "stacked" (default: icon centered above the title) or "inline" (icon beside the title, text left-aligned). -#}
+{%- macro card(title, icon = "", layout = "stacked") -%}
+<div class="card{% if layout == "inline" %} card--inline{% endif %}">
   {%- if icon %}{{ icons.icon(icon) }}{% endif %}
   <h3 class="card__title">{{ title }}</h3>
   <div class="card__body">{{ caller() }}</div>
@@ -215,4 +216,98 @@
   </picture>
   <span class="static-map__address">{{ address }} <span class="static-map__cta">Open in Google Maps<span class="visually-hidden"> (opens in a new tab)</span></span></span>
 </a>
+{%- endmacro -%}
+
+
+{#- ---------- Service pages (Screen Printing, Embroidery, DTG, DTF, Fulfillment) ---------- -#}
+
+{#- serviceHero(title, image, alt): full-width photo with the page's H1 over it.
+    The photo is the page's main (LCP) image, so it loads eagerly with high priority. -#}
+{%- macro serviceHero(title, image, alt) -%}
+<section class="service-hero">
+  <div class="service-hero__media">{% image image, alt, "100vw", "eager", "high" %}</div>
+  <div class="service-hero__inner">
+    <h1 class="service-hero__title">{{ title }}</h1>
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- serviceIntro(stat, statLabel, title): a big number ("20+") and its label beside an H2 and body (caller).
+    `title` may contain the accent <em> (it's output as HTML). -#}
+{%- macro serviceIntro(stat, statLabel, title) -%}
+<section class="band service-intro">
+  <div class="band__inner service-intro__inner">
+    <div class="service-intro__stat">
+      <p class="service-intro__number">{{ stat }}</p>
+      <p class="service-intro__label">{{ statLabel }}</p>
+    </div>
+    <div class="service-intro__text">
+      <h2 class="service-intro__title">{{ title | safe }}</h2>
+      {{ caller() }}
+    </div>
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- featurePanel(image, alt, title): blue band with a photo and a white text panel (H2 + caller) overlapping it.
+    `title` may contain the accent <em>. -#}
+{%- macro featurePanel(image, alt, title) -%}
+<section class="band band--blue feature-panel">
+  <div class="band__inner feature-panel__inner">
+    <div class="feature-panel__media">{% image image, alt, "(min-width: 1025px) 740px, 100vw" %}</div>
+    <div class="feature-panel__box">
+      <h2 class="feature-panel__title">{{ title | safe }}</h2>
+      {{ caller() }}
+    </div>
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- factSheet(title, url, label): navy band with a heading and a button that opens the PDF fact sheet in a new tab. -#}
+{%- macro factSheet(title, url, label = "Download Information Sheet") -%}
+<section class="band band--navy fact-sheet">
+  <div class="band__inner fact-sheet__inner">
+    <h2 class="fact-sheet__title">{{ title }}</h2>
+    <a class="btn fact-sheet__button" href="{{ url }}" target="_blank" rel="noopener">{{ label }}<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+</section>
+{%- endmacro -%}
+
+{#- photoBand(image, alt): a full-width photo strip between sections. -#}
+{%- macro photoBand(image, alt) -%}
+<div class="photo-band">{% image image, alt, "100vw" %}</div>
+{%- endmacro -%}
+
+{#- checkList() wraps checkItem(title) rows: a check icon, an H3 title and body (caller). -#}
+{%- macro checkList() -%}
+<ul class="check-list">
+  {{ caller() }}
+</ul>
+{%- endmacro -%}
+
+{%- macro checkItem(title) -%}
+<li class="check-list__item">
+  {{ icons.icon("check") }}
+  <div>
+    <h3 class="check-list__title">{{ title }}</h3>
+    {{ caller() }}
+  </div>
+</li>
+{%- endmacro -%}
+
+{#- faq(items): accordion of questions (H3) and answers, built on <details> so it needs no script.
+    items: the page's front matter `faq` list of { q, lead, a }. The FAQPage schema in seo.njk
+    is built from the same list, so the two can't drift apart. -#}
+{%- macro faq(items) -%}
+<div class="faq">
+  {%- for item in items %}
+  <details class="faq__item">
+    <summary class="faq__summary"><h3 class="faq__question">{{ item.q }}</h3></summary>
+    <div class="faq__answer">
+      <p>{{ item.lead }}</p>
+      <p>{{ item.a }}</p>
+    </div>
+  </details>
+  {%- endfor %}
+</div>
 {%- endmacro -%}

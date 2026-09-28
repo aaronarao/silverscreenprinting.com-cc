@@ -1954,6 +1954,512 @@ h6, .h6 {
   }
 }
 
+/* ---------- Service pages (Screen Printing, Embroidery, DTG, DTF, Fulfillment) ---------- */
+
+/* Hero: full-width photo, darkened toward the bottom-left where the H1 sits. */
+.service-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 300px;
+  color: var(--white);
+}
+
+.service-hero__media,
+.service-hero__media picture {
+  position: absolute;
+  inset: 0;
+}
+
+.service-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(20deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.1) 70%);
+}
+
+.service-hero__inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+
+.service-hero__title {
+  max-width: 11em;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .service-hero { min-height: 460px; }
+
+  .service-hero__inner { padding: 56px 32px; }
+
+  .service-hero__title { font-size: 60px; }
+}
+
+@media (min-width: 1025px) {
+  .service-hero { min-height: 600px; }
+
+  .service-hero__inner { padding: 86.4px 28.8px; }
+
+  .service-hero__title { font-size: 80px; }
+}
+
+/* Intro: "20+ years of experience" beside the intro heading and text. */
+.service-intro__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.service-intro__number {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--blue);
+}
+
+.service-intro__label {
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.service-intro__title {
+  font-size: 24px;
+}
+
+.service-intro__text p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .service-intro__inner {
+    flex-direction: row;
+    gap: 6%;
+  }
+
+  .service-intro__stat { flex: 0 0 22%; }
+
+  .service-intro__number { font-size: 60px; }
+
+  .service-intro__title { font-size: 30px; }
+}
+
+@media (min-width: 1025px) {
+  .service-intro__number { font-size: 96px; }
+
+  .service-intro__title { font-size: 38px; }
+}
+
+/* Feature panel: photo with a white text box overlapping it (blue band). */
+.feature-panel__media img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.feature-panel__box {
+  position: relative;
+  margin: -40px 12px 0;
+  padding: 28px 22px;
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text);
+}
+
+.feature-panel__title {
+  font-size: 24px;
+}
+
+.feature-panel__box p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.feature-panel__button {
+  width: 200px;
+  min-height: 50px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .feature-panel__media img { height: 420px; }
+
+  .feature-panel__box {
+    margin: -80px 40px 0;
+    padding: 40px;
+  }
+
+  .feature-panel__title { font-size: 30px; }
+}
+
+@media (min-width: 1025px) {
+  .feature-panel__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .feature-panel__media { flex: 0 0 62%; }
+
+  .feature-panel__media img { height: 560px; }
+
+  .feature-panel__box {
+    flex: 1;
+    margin: 0 0 0 -12%;
+    padding: 48px 44px;
+  }
+
+  .feature-panel__title { font-size: 38px; }
+
+  .feature-panel__box p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+}
+
+/* Two-column card grid, and cards with the icon beside the title. */
+@media (min-width: 768px) {
+  .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+.card--inline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 16px;
+  text-align: left;
+}
+
+.card--inline .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.card--inline .card__title {
+  margin-top: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.card--inline .card__body {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+}
+
+@media (min-width: 768px) {
+  .card--inline { padding: 24px; }
+
+  .card--inline .icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .card--inline .card__title { font-size: 17px; }
+
+  .card--inline .card__body {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card--inline { padding: 32px; }
+
+  .card--inline .card__title { font-size: 18px; }
+}
+
+/* Specialty Ink & Process Offerings */
+.offerings__lede {
+  max-width: 800px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+
+.offerings .card-grid { margin-top: 36px; }
+
+@media (min-width: 1025px) {
+  .offerings .card-grid { margin-top: 56px; }
+}
+
+/* Fact sheet download (navy band) */
+.fact-sheet__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.fact-sheet__title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.fact-sheet__button {
+  min-width: 240px;
+  min-height: 50px;
+  padding: 10px 24px;
+}
+
+@media (min-width: 768px) {
+  .fact-sheet__title { font-size: 24px; }
+}
+
+@media (min-width: 1025px) {
+  .fact-sheet__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 64px;
+  }
+
+  .fact-sheet__title {
+    max-width: 700px;
+    font-size: 26px;
+  }
+}
+
+/* Full-width photo strip */
+.photo-band img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .photo-band img { height: 460px; }
+}
+
+@media (min-width: 1025px) {
+  .photo-band img { height: 600px; }
+}
+
+/* Why partner: photo beside a lead and a check list. */
+.why-partner .section-title a {
+  text-decoration: none;
+}
+
+.why-partner__row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 36px;
+}
+
+.why-partner__media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.why-partner__lead {
+  margin-bottom: 16px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.check-list {
+  margin-top: 24px;
+}
+
+.check-list__item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 16px;
+}
+
+.check-list__item + .check-list__item {
+  margin-top: 24px;
+}
+
+.check-list .icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--blue);
+}
+
+.check-list__title {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.check-list__item p {
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .why-partner__row {
+    flex-direction: row;
+    align-items: center;
+    gap: 6%;
+  }
+
+  .why-partner__media { flex: 0 0 40%; }
+
+  .why-partner__media img { height: 560px; }
+
+  .why-partner__lead { font-size: 20px; }
+}
+
+@media (min-width: 1025px) {
+  .why-partner__row { margin-top: 64px; }
+
+  .why-partner__media img { height: 640px; }
+
+  .why-partner__lead { font-size: 24px; }
+
+  .check-list__title { font-size: 18px; }
+}
+
+/* The logo strip without its "Who we work with" heading: thin rules above and below. */
+.partners--service .band__inner { padding-block: 0; }
+
+.partners--service .logo-strip {
+  margin-top: 0;
+  padding-block: 24px;
+  border-block: 1px solid var(--rule);
+}
+
+@media (min-width: 1025px) {
+  .partners--service .band__inner { max-width: var(--content-width); padding-inline: 28.8px; }
+}
+
+/* Closing call to action (photo band) */
+.service-cta .band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 22.5px;
+  text-align: center;
+}
+
+.service-cta__title {
+  max-width: 900px;
+  font-size: 24px;
+}
+
+.service-cta p {
+  max-width: 630px;
+  margin-top: 24px;
+}
+
+.service-cta .service-cta__lead {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.service-cta__button {
+  width: 240px;
+  min-height: 52px;
+  margin-top: 28px;
+}
+
+@media (min-width: 768px) {
+  .service-cta .band__inner { padding: 96px 32px; }
+
+  .service-cta__title { font-size: 30px; }
+}
+
+@media (min-width: 1025px) {
+  .service-cta .band__inner { padding: 140px 28.8px; }
+
+  .service-cta__title { font-size: 38px; }
+}
+
+/* FAQ: <details> accordion with a plus that turns into a minus. */
+.faq {
+  max-width: 1000px;
+  margin: 36px auto 0;
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--rule);
+}
+
+.faq__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__summary::after {
+  content: "+";
+  flex: none;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--navy);
+}
+
+.faq__item[open] .faq__summary::after {
+  content: "\2212";
+}
+
+.faq__question {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.faq__answer {
+  padding-bottom: 20px;
+}
+
+.faq__answer p + p {
+  margin-top: 1em;
+}
+
+@media (min-width: 1025px) {
+  .faq { margin-top: 56px; }
+
+  .faq__question { font-size: 15px; }
+}
+
+/* Still have a question? */
+.still-question .band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+  text-align: center;
+}
+
+.still-question__title {
+  font-size: 24px;
+}
+
+.still-question__button {
+  width: 240px;
+  min-height: 52px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .still-question__title { font-size: 30px; }
+}
+
+@media (min-width: 1025px) {
+  .still-question__title { font-size: 38px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,
