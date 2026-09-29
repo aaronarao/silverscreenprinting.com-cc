@@ -221,11 +221,12 @@
 
 {#- ---------- Service pages (Screen Printing, Embroidery, DTG, DTF, Fulfillment) ---------- -#}
 
-{#- serviceHero(title, image, alt, wide): full-width photo with the page's H1 over it.
+{#- serviceHero(title, image, alt, wide, class): full-width photo with the page's H1 over it.
     The photo is the page's main (LCP) image, so it loads eagerly with high priority.
-    wide=true lets a long title run across most of the column (Embroidery, DTG) instead of wrapping at 11em. -#}
-{%- macro serviceHero(title, image, alt, wide = false) -%}
-<section class="service-hero{% if wide %} service-hero--wide{% endif %}">
+    wide=true lets a long title run across most of the column (Embroidery, DTG) instead of wrapping at 11em.
+    class: extra class for a page's own hero sizes (Specialties). -#}
+{%- macro serviceHero(title, image, alt, wide = false, class = "") -%}
+<section class="service-hero{% if wide %} service-hero--wide{% endif %}{% if class %} {{ class }}{% endif %}">
   <div class="service-hero__media">{% image image, alt, "100vw", "eager", "high" %}</div>
   <div class="service-hero__inner">
     <h1 class="service-hero__title">{{ title }}</h1>

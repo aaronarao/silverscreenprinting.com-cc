@@ -2869,6 +2869,148 @@ h6, .h6 {
   .capabilities--dtg .capabilities__title { font-size: 46px; }
 }
 
+/* ---------- Specialties ---------- */
+
+/* Hero: shorter than the service pages, title centered, darker overlay (black at 55%, like the live page). */
+.specialties-hero {
+  align-items: center;
+  min-height: 220px;
+  text-align: center;
+}
+
+.specialties-hero .service-hero__media::after { background: rgba(0, 0, 0, 0.55); }
+
+.specialties-hero .service-hero__title { margin: 0 auto; }
+
+/* Intro paragraph on a light blue band. */
+.specialties-intro { background: #dfe5ee; }
+
+.specialties-intro__text {
+  max-width: 894px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Industry: an H2 between two blue rules, then a photo beside the subheading, text and button.
+   The photo sits above the text up to tablet, like the live page. */
+.industry .band__inner { padding-bottom: 30px; }
+
+.industry__title {
+  padding: 20px 0;
+  border-top: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  font-size: 28px;
+  text-align: center;
+}
+
+.industry .feature { margin-top: 40px; }
+
+.industry .feature__title { font-size: 28px; }
+
+.industry .feature__buttons .btn,
+.specialties-cta__button {
+  font-size: 16px;
+}
+
+/* Industry items: 3 or 4 icon cards on a gray band. */
+.industry-items .band__inner { padding-top: 36px; padding-bottom: 36px; }
+
+.industry-items .card .icon {
+  width: 55px;
+  height: 64px;
+}
+
+/* Closing band */
+.specialties-cta .specialties-cta__title {
+  max-width: 1142px;
+  font-size: 32px;
+}
+
+.specialties-cta .service-cta__button { width: 250px; }
+
+@media (min-width: 768px) {
+  .specialties-hero { min-height: 411px; }
+
+  .specialties-intro__text { font-size: 18px; }
+
+  .industry .band__inner { padding-bottom: 40px; }
+
+  .industry__title {
+    padding: 24px 0;
+    font-size: 40px;
+  }
+
+  .industry .feature {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .industry .feature__media img { height: 401px; }
+
+  .industry .feature__text { padding: 0 16px; }
+
+  .industry .feature__title { font-size: 30px; }
+
+  .industry .feature__buttons .btn {
+    width: 200px;
+    min-height: 54px;
+  }
+
+  .industry-items .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 14px;
+  }
+
+  .specialties-cta .band__inner { padding: 110px 32px; }
+
+  .specialties-cta .specialties-cta__title { font-size: 65px; }
+
+  .specialties-cta .service-cta__button { width: 310px; }
+}
+
+@media (min-width: 1025px) {
+  .specialties-hero { min-height: 506px; }
+
+  .industry .band__inner { padding-top: 76px; padding-bottom: 50px; }
+
+  .industry__title {
+    padding: 28px 0;
+    font-size: 55px;
+  }
+
+  .industry .feature {
+    flex-direction: row;
+    align-items: center;
+    gap: 4%;
+    margin-top: 50px;
+  }
+
+  .industry .feature__media img { height: 344px; }
+
+  .industry .feature__text { padding: 0; }
+
+  .industry .feature__title { font-size: 35px; }
+
+  .industry .feature__buttons .btn,
+  .specialties-cta__button {
+    font-size: 17px;
+  }
+
+  .industry-items .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+  }
+
+  .industry-items .industry-items__grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+  .specialties-cta .band__inner { padding: 170px 28.8px; }
+
+  .specialties-cta .specialties-cta__title { font-size: 80px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,
