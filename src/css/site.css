@@ -446,8 +446,15 @@ h6, .h6 {
     padding: 10px 4%;
   }
 
+  /* Duda's three columns: logo 18.74%, nav 63.03%, Portal Access 18.21%.
+     The logo is 227px but never wider than its column, so it shrinks below ~1500px. */
+  .site-header__logo {
+    width: 18.74%;
+  }
+
   .site-header__logo img {
-    width: 216px;
+    width: 100%;
+    max-width: 227px;
   }
 
   .site-header__actions {
@@ -456,13 +463,16 @@ h6, .h6 {
 
   .main-nav {
     display: flex;
-    flex: 1;
+    flex: none;
+    width: 63.03%;
     justify-content: center;
     padding: 6px 16px;
   }
 
+  /* When labels no longer fit, whole items wrap to a centered second row. */
   .main-nav .nav__list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -478,6 +488,7 @@ h6, .h6 {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    white-space: nowrap;
   }
 
   /* Services dropdown */
@@ -511,10 +522,10 @@ h6, .h6 {
   .site-header__portal {
     display: inline-flex;
     flex: none;
-    width: 168px;
+    /* 168px, but never wider than Duda's 18.21% column (less its 16px padding each side), right-aligned. */
+    width: min(168px, calc(18.21% - 32px));
     height: 50px;
-    /* Wider left margin matches Duda's column widths, which keeps the nav centered where it is on the live site. */
-    margin: 0 16px 0 57px;
+    margin: 0 16px 0 auto;
   }
 }
 
