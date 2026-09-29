@@ -1,0 +1,8 @@
+{
+  "layout": "layout-post.njk",
+  "tags": "post",
+  "permalink": "/{{ page.fileSlug }}/",
+  "templateEngineOverride": "njk,md",
+  "ogType": "article",
+  "breadcrumbParent": { "name": "Blog", "url": "/news-and-events" }
+}

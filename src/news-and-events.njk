@@ -1,0 +1,59 @@
+---
+layout: layout-default.njk
+title: Blog | Silverscreen Decoration & Fulfillment
+# Live says "fulfilment"; US spelling on purpose, like the other pages.
+description: Expert insights on custom apparel, branding, and fulfillment. Explore trends, strategies, and industry updates to strengthen your operations and grow your brand.
+permalink: /news-and-events/
+breadcrumb: Blog
+---
+{#- Copy matches the live page. Section order and images: desktop/news-and-events. No ogImage: shares the logo, like live.
+    Heading levels differ from live where needed to keep one H1 and no skipped levels; sizes are set with classes:
+    the intro's lead is an H5 on live (a <p> here) and "News & Events" is a second H1 on live (an H2 here).
+    Left out: the live page's blog search box. -#}
+{%- set posts = collections.post | byPostDate | reverse %}
+
+<section class="blog-hero">
+  <div class="blog-hero__bg">{% image "images/blog/A103+Silverscreen+25_9+7256.jpg", "Silverscreen screen printing floor with a conveyor dryer, automatic presses, an American flag and the Silverscreen Printing and Embroidery banner", "100vw", "eager", "high" %}</div>
+  <div class="blog-hero__inner">
+    <h1 class="blog-hero__title">Silverscreen Decoration &amp; Fulfillment Blog</h1>
+  </div>
+</section>
+
+<section class="band band--gray blog-intro">
+  <div class="band__inner blog-intro__inner">
+    <div class="blog-intro__titles">
+      <h2 class="blog-intro__title">The Silverscreen Decoration &amp; Fulfillment Digest</h2>
+      <h3 class="blog-intro__subtitle">Insights for Industry Leaders</h3>
+    </div>
+    <div class="blog-intro__text">
+      <p class="blog-intro__lede">Welcome to The Silverscreen Decoration &amp; Fulfillment Digest, your definitive resource for insights into brand building, custom apparel, and high-volume fulfillment. Our mission is to provide business leaders like you with the knowledge and strategies necessary to elevate your brand presence and streamline your operations.</p>
+      <p>Here, we explore topics that matter most to established businesses, from scaling production to ensuring brand consistency across global markets.</p>
+      <p>This <a href="/news-and-events">blog</a> is a hub for expert analysis, industry trends, and actionable advice tailored to the challenges and opportunities you face. We delve into the complexities of large-scale decoration, the nuances of maintaining quality control, and the latest innovations in fulfillment technology. Our goal is to empower you with the information you need to make confident, strategic decisions that drive growth and reinforce your market leadership.</p>
+      <p>Explore our articles to discover how to leverage custom apparel to enhance brand awareness, optimize your supply chain for speed and reliability, and build lasting partnerships that support your long-term success.</p>
+    </div>
+  </div>
+</section>
+
+<section class="blog-list" aria-labelledby="news-and-events">
+  <h2 class="blog-list__heading" id="news-and-events">News &amp; Events</h2>
+
+  {#- Newest first. Every post is in the HTML (so search engines see every link); site.js hides the
+      cards after the first 10 until "Show More" is clicked. Without JavaScript all of them show.
+      The card photos are lazy-loaded, so hidden cards don't load theirs until shown. -#}
+  <ul class="blog-list__items" data-show-more-list data-show-more-count="10">
+    {%- for p in posts %}
+    <li class="blog-card">
+      <a class="blog-card__photo" href="{{ p.data.pagePath }}" tabindex="-1" aria-hidden="true">{% image p.data.image, "", "(min-width: 768px) 241px, 100vw" %}</a>
+      <div class="blog-card__text">
+        <h3 class="blog-card__title"><a href="{{ p.data.pagePath }}">{{ p.data.headline }}</a></h3>
+        <p class="blog-card__date"><time datetime="{{ p.date | isoDate }}">{{ p.date | postDate }}</time></p>
+        <p class="blog-card__excerpt">{{ p.data.excerpt or p.data.description }}</p>
+        <a class="blog-card__more" href="{{ p.data.pagePath }}" aria-label="Read more: {{ p.data.headline }}">Read More →</a>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  <div class="blog-list__more">
+    <button class="btn btn--blue" type="button" data-show-more hidden>Show More</button>
+  </div>
+</section>

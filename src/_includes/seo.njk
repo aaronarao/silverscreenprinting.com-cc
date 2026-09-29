@@ -1,5 +1,5 @@
 {#- SEO tags and structured data for every page. Values come from front matter
-    (title, description, ogImage, breadcrumb, service, faq), site.json and
+    (title, description, ogImage, ogType, breadcrumb, breadcrumbParent, headline, service, faq), site.json and
     _data/eleventyComputed.js (canonicalUrl, ogImageUrl, logoUrl). -#}
 {%- set pageTitle = title or site.defaultTitle -%}
 {%- set pageDescription = description or site.defaultDescription -%}
@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="MgFaHGX28H_X2V11y9QOtsYJ0pI1KkFyk3eHhsTCdaE">
   <link rel="canonical" href="{{ canonicalUrl }}">
 
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ pageDescription }}">
@@ -48,18 +48,47 @@
   } %}
   <script type="application/ld+json">{{ business | dump | safe }}</script>
 
-  {#- Breadcrumbs on every page but the homepage. Label: front matter `breadcrumb`,
-      else the page title up to " | ". #}
+  {#- Breadcrumbs on every page but the homepage. Label: front matter `breadcrumb`, else the
+      `headline` (blog posts), else the page title up to " | ". Optional `breadcrumbParent:
+      { name, url }` adds a level between Home and the page (blog posts: Home › Blog › post). #}
   {%- if page.url != "/" %}
+  {%- set crumbName = breadcrumb or headline or pageTitle.split(" | ")[0] %}
+  {%- if breadcrumbParent %}
+  {%- set crumbItems = [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url + "/" },
+    { "@type": "ListItem", "position": 2, "name": breadcrumbParent.name, "item": site.url + breadcrumbParent.url },
+    { "@type": "ListItem", "position": 3, "name": crumbName, "item": canonicalUrl }
+  ] %}
+  {%- else %}
+  {%- set crumbItems = [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url + "/" },
+    { "@type": "ListItem", "position": 2, "name": crumbName, "item": canonicalUrl }
+  ] %}
+  {%- endif %}
   {%- set crumbs = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url + "/" },
-      { "@type": "ListItem", "position": 2, "name": breadcrumb or pageTitle.split(" | ")[0], "item": canonicalUrl }
-    ]
+    "itemListElement": crumbItems
   } %}
   <script type="application/ld+json">{{ crumbs | dump | safe }}</script>
+  {%- endif %}
+
+  {#- Blog posts: front matter `headline` and `date`; the image is the share image (the post's main photo).
+      Author and publisher point at the business. dateModified = datePublished until posts track edits. #}
+  {%- if headline %}
+  {%- set postSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": headline,
+    "description": pageDescription,
+    "image": ogImageUrl,
+    "datePublished": page.date | isoDate,
+    "dateModified": page.date | isoDate,
+    "author": { "@id": businessId },
+    "publisher": { "@id": businessId },
+    "mainEntityOfPage": canonicalUrl
+  } %}
+  <script type="application/ld+json">{{ postSchema | dump | safe }}</script>
   {%- endif %}
 
   {#- Service pages: front matter `service: { type, name, description }`. #}

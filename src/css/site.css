@@ -4066,6 +4066,512 @@ h6, .h6 {
   }
 }
 
+/* ---------- Blog posts (layout-post.njk) ---------- */
+
+/* Title block on white: H1 and the date. The header lines up with the live page's 1110px column,
+   the article text with its 1078px column (643px on tablet). */
+.post__header {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 32px 15px 24px;
+}
+
+.post__title {
+  font-size: 30px;
+}
+
+.post__date {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #616060;
+}
+
+/* Main photo: full width, cropped to a fixed height. */
+.post__hero img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.post__body,
+.post__pager {
+  max-width: 1108px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.post__body {
+  padding-top: 40px;
+}
+
+/* Article text. Direct children only, so the FAQ's own headings and text keep their styles. */
+.post__body > p,
+.post__body > ul li,
+.post__body > ol li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.post__body > * + * {
+  margin-top: 1.5em;
+}
+
+.post__body > h2 { font-size: 28px; }
+.post__body > h3 { font-size: 24px; }
+
+.post__body > h2,
+.post__body > h3,
+.post__body > h4,
+.post__body > h5 {
+  margin-top: 32px;
+}
+
+.post__body > h2 + *,
+.post__body > h3 + *,
+.post__body > h4 + *,
+.post__body > h5 + * {
+  margin-top: 12px;
+}
+
+.post__body > ul,
+.post__body > ol {
+  margin-bottom: 0;
+  padding-left: 34px;
+}
+
+.post__body > ul { list-style: disc; }
+.post__body ul ul { list-style: circle; padding-left: 24px; }
+
+.post__body a {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.post__body a.btn {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Photos in the article: at most the column width, never enlarged. */
+.post-figure {
+  margin: 1.5em 0 0;
+}
+
+.post-figure img {
+  margin: 0 auto;
+}
+
+/* Photo galleries: a grid of equal cells (--cols on desktop, --cols-tablet, --cols-phone), each photo
+   cropped to the gallery's shape (--ratio). */
+.post-gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--cols-phone, 2), 1fr);
+  gap: 16px;
+}
+
+.post-gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ratio, 1 / 1);
+  object-fit: cover;
+}
+
+/* YouTube player, 16:9. */
+.post-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.post-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.post__body > .faq {
+  max-width: none;
+}
+
+.post-cta {
+  text-align: center;
+}
+
+/* < Older Post / Newer Post > */
+.post__pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.post__pager-link {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.post__pager-link--newer {
+  margin-left: auto;
+}
+
+/* The two newest posts: stacked on phones, side by side from tablet up. */
+.post-latest {
+  display: grid;
+  gap: 40px;
+  max-width: 1172px;
+  margin: 0 auto;
+  padding: 64px 15px;
+}
+
+.post-card__photo img {
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+}
+
+.post-card__title {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.post-card__title a {
+  text-decoration: none;
+}
+
+.post-card__title a:hover {
+  text-decoration: underline;
+}
+
+.post-card__excerpt {
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .post__header { padding: 48px 62px 32px; }
+  .post__title { font-size: 60px; }
+  .post__date { font-size: 16px; }
+  .post__hero img { height: 365px; }
+
+  .post__body,
+  .post__pager {
+    max-width: 767px;
+    padding: 0 62px;
+  }
+
+  .post__body { padding-top: 64px; }
+  .post__body > h2 { font-size: 40px; }
+  .post__body > h3 { font-size: 30px; }
+
+  .post-gallery { grid-template-columns: repeat(var(--cols-tablet, var(--cols, 3)), 1fr); }
+
+  .post-latest {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 80px 32px;
+  }
+
+  .post-card__title { font-size: 22px; }
+}
+
+@media (min-width: 1025px) {
+  .post__header {
+    max-width: 1140px;
+    padding: 64px 15px 36px;
+  }
+
+  .post__hero img { height: 475px; }
+
+  .post__body,
+  .post__pager {
+    max-width: 1108px;
+    padding: 0 15px;
+  }
+
+  .post__body { padding-top: 96px; }
+
+  .post__body > p,
+  .post__body > ul li,
+  .post__body > ol li {
+    font-size: 17px;
+  }
+
+  .post__body > h2 { font-size: 55px; }
+  .post__body > h3 { font-size: 38px; }
+
+  .post-gallery {
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
+    gap: 20px;
+  }
+
+  .post__pager-link { font-size: 17px; }
+
+  .post-latest {
+    max-width: 1172px;
+    padding: 100px 15px 110px;
+  }
+}
+
+/* ---------- Blog page (news-and-events.njk) ---------- */
+
+/* Hero: photo under a light black tint (15%, like the live page), white H1 at the bottom left. */
+.blog-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 379px;
+  color: var(--white);
+}
+
+.blog-hero__bg,
+.blog-hero__bg picture {
+  position: absolute;
+  inset: 0;
+}
+
+.blog-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.blog-hero__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 40px 31px 31px;
+}
+
+/* Intro (gray band): titles and text stacked, side by side on desktop. */
+.blog-intro .band__inner {
+  padding: 54px 31px;
+}
+
+.blog-intro__title {
+  font-size: 28px;
+}
+
+@media (min-width: 768px) {
+  .blog-intro__title { font-size: 40px; }
+}
+
+@media (min-width: 1025px) {
+  .blog-intro__title { font-size: 55px; }
+}
+
+.blog-intro__subtitle {
+  margin-top: 10px;
+}
+
+.blog-intro__text {
+  margin-top: 32px;
+}
+
+.blog-intro__text p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.blog-intro__text p + p {
+  margin-top: 1.5em;
+}
+
+.blog-intro__text a {
+  text-decoration: underline;
+}
+
+/* The live page's H5 lead, without the H5 caps: Myriad Pro Regular. */
+.blog-intro__text .blog-intro__lede {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+/* News & Events and the post list. */
+.blog-list {
+  max-width: 1176px;
+  margin: 0 auto;
+  padding: 72px 23px 80px;
+}
+
+.blog-list__heading {
+  font-size: 36px;
+}
+
+.blog-list__items {
+  margin-top: 40px;
+}
+
+.blog-card + .blog-card {
+  margin-top: 48px;
+}
+
+/* Phones: the photo above the text. */
+.blog-card__photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-card__text {
+  margin-top: 16px;
+}
+
+.blog-card__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.blog-card__title a {
+  text-decoration: none;
+}
+
+.blog-card__title a:hover {
+  text-decoration: underline;
+}
+
+.blog-card__date {
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 13px;
+  color: #5d5c5c;
+}
+
+/* Three lines at most, like the live cards. */
+.blog-card__excerpt {
+  display: -webkit-box;
+  margin-top: 12px;
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.blog-card__more {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.blog-card__more:hover {
+  text-decoration: underline;
+}
+
+.blog-list__more {
+  margin-top: 48px;
+  text-align: center;
+}
+
+/* Cards past the first 10 and the button use the hidden attribute (site.js); these displays would override it. */
+.blog-card[hidden],
+.blog-list__more .btn[hidden] {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .blog-hero { min-height: 688px; }
+  .blog-hero__inner { padding-bottom: 46px; }
+
+  .blog-intro .band__inner { padding: 69px 46px; }
+
+  .blog-intro__text p { font-size: 17px; }
+  .blog-intro__text .blog-intro__lede { font-size: 18px; }
+
+  .blog-list { padding: 95px 38px 96px; }
+  .blog-list__heading { font-size: 35px; }
+  .blog-list__items { margin-top: 48px; }
+
+  /* Photo on the left, text beside it. */
+  .blog-card {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .blog-card + .blog-card { margin-top: 60px; }
+
+  .blog-card__photo {
+    flex: none;
+    width: 231px;
+  }
+
+  .blog-card__photo img { height: 240px; }
+
+  .blog-card__text {
+    flex: 1;
+    min-width: 0;
+    margin-top: 0;
+    padding: 30px 6px 0 35px;
+  }
+
+  .blog-card__title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .blog-card__date { font-size: 14px; }
+}
+
+@media (min-width: 1025px) {
+  .blog-hero { min-height: 761px; }
+
+  .blog-hero__inner {
+    max-width: 1226px;
+    padding: 40px 29px 73px;
+  }
+
+  .blog-intro .band__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 78px;
+    max-width: 1168px;
+    padding: 88px 29px;
+  }
+
+  .blog-intro__subtitle { margin-top: 20px; }
+  .blog-intro__text { margin-top: 0; }
+
+  .blog-list {
+    max-width: 1172px;
+    padding: 86px 29px 100px;
+  }
+
+  .blog-list__heading { font-size: 45px; }
+  .blog-list__items { margin-top: 72px; }
+
+  .blog-card__photo { width: 241px; }
+  .blog-card__photo img { height: 250px; }
+
+  .blog-card__text { padding: 38px 11px 0 56px; }
+
+  .blog-card__title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .blog-card__excerpt {
+    font-size: 16px;
+  }
+
+  .blog-card__more { font-size: 17px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,
