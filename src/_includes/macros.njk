@@ -299,9 +299,11 @@
 {%- endmacro -%}
 
 {#- faq(items): accordion of questions (H3) and answers, built on <details> so it needs no script.
-    items: the page's front matter `faq` list of { q, lead, a }. The FAQPage schema in seo.njk
-    is built from the same list, so the two can't drift apart. `lead` and `a` may contain links
-    (they're output as HTML; the schema strips the tags). -#}
+    items: the page's front matter `faq` list of { q, lead, a, list }. The FAQPage schema in seo.njk
+    is built from the same list, so the two can't drift apart. `lead`, `a` and `list` may contain links
+    (they're output as HTML; the schema strips the tags).
+    `a`: one paragraph (a string) or several (a list of strings). `list` (optional): bullet points
+    shown after the paragraphs. -#}
 {%- macro faq(items) -%}
 <div class="faq">
   {%- for item in items %}
@@ -309,7 +311,20 @@
     <summary class="faq__summary"><h3 class="faq__question">{{ item.q }}</h3></summary>
     <div class="faq__answer">
       <p>{{ item.lead | safe }}</p>
+      {%- if item.a is string %}
       <p>{{ item.a | safe }}</p>
+      {%- else %}
+      {%- for para in item.a %}
+      <p>{{ para | safe }}</p>
+      {%- endfor %}
+      {%- endif %}
+      {%- if item.list %}
+      <ul class="faq__list">
+        {%- for point in item.list %}
+        <li>{{ point | safe }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
     </div>
   </details>
   {%- endfor %}

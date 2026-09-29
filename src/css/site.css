@@ -2511,6 +2511,32 @@ h6, .h6 {
   margin-top: 1em;
 }
 
+/* Bullet points after an answer's paragraphs (sizes follow .faq__answer p). */
+.faq__list {
+  margin: 1em 0 0;
+  padding-left: 1.5em;
+  list-style: disc;
+}
+
+.faq__list li {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@media (min-width: 768px) {
+  .faq__list li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .faq__list li {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+
 @media (min-width: 1025px) {
   .faq { margin-top: 56px; }
 
@@ -2718,19 +2744,22 @@ h6, .h6 {
   line-height: 31.5px;
 }
 
-.service-faq--large .faq__answer p {
+.service-faq--large .faq__answer p,
+.service-faq--large .faq__list li {
   font-size: 16px;
   line-height: 24px;
 }
 
-/* Embroidery and DTG: the closing line is body text, not a heading font. */
+/* Embroidery, DTG and DTF: the closing line is body text, not a heading font. */
 .still-question--embroidery .still-question__title,
-.still-question--dtg .still-question__title {
+.still-question--dtg .still-question__title,
+.still-question--dtf .still-question__title {
   font-family: var(--font-body);
   font-weight: 300;
 }
 
-.still-question--embroidery .still-question__title {
+.still-question--embroidery .still-question__title,
+.still-question--dtf .still-question__title {
   font-size: 26px;
   line-height: 39px;
 }
@@ -2749,7 +2778,8 @@ h6, .h6 {
     line-height: 33px;
   }
 
-  .still-question--embroidery .still-question__title {
+  .still-question--embroidery .still-question__title,
+  .still-question--dtf .still-question__title {
     font-size: 27px;
     line-height: 40.5px;
   }
@@ -2768,12 +2798,14 @@ h6, .h6 {
     line-height: 39px;
   }
 
-  .service-faq--large .faq__answer p {
+  .service-faq--large .faq__answer p,
+  .service-faq--large .faq__list li {
     font-size: 17px;
     line-height: 25.5px;
   }
 
-  .still-question--embroidery .still-question__title {
+  .still-question--embroidery .still-question__title,
+  .still-question--dtf .still-question__title {
     font-size: 32px;
     line-height: 48px;
   }
