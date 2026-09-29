@@ -1,0 +1,80 @@
+---
+layout: layout-default.njk
+# The live title and description say "Fulfilment"/"programmes"; US spelling here on purpose (rest of the site, US searches).
+title: Fulfillment | Silverscreen Decoration & Fulfillment
+description: Scalable fulfillment with efficient shipping, blind delivery, warehousing & finishing services. Reliable logistics to support growing branded apparel programs.
+permalink: /fulfillment/
+breadcrumb: Fulfillment
+# The live page's og:image.
+ogImage: images/fulfillment/Silverscreen+Box+print+(1).jpg
+service:
+  type: Apparel Fulfillment
+---
+{#- Copy matches the live page (newer than the Duda export). Section order and image placement: desktop/fulfillment.
+    No FAQ and no "Still have a question?" band: the live page ends with its own closing band. -#}
+{%- import "macros.njk" as m -%}
+
+{{ m.serviceHero("Fulfillment", "images/fulfillment/A103+Silverscreen+25_9+7268-HDR.jpg", "Silverscreen's fulfillment warehouse in Reno, with tall blue and yellow pallet racks stocked with boxed garments") }}
+
+{% call m.serviceIntro("20+", "years of experience", '<em class="accent">Streamlined</em> Fulfillment and Shipping Solutions') %}
+  <p>At <a href="/">Silverscreen Decoration &amp; Fulfillment,</a> we recognize that efficient and reliable logistics are essential to your brand's success. Our comprehensive procurement, fulfillment, and shipping services are engineered to manage large-volume orders with precision, ensuring your products reach their destination on time, every time. We provide the operational backbone that allows your business to scale, expand into new markets, and maintain brand integrity with every shipment.</p>
+{% endcall %}
+
+{% call m.featurePanel("images/fulfillment/A103+Silverscreen+25_9+7294.jpg", "Warehouse racks lined with boxes of blank garments from Hanes and other brands", 'Your <em class="accent">Trusted</em> Partner in Logistics', "white", "white") %}
+  <p>We have established strong partnerships with leading carriers, including UPS, FedEx, USPS, and various LTL carriers, to provide you with a range of flexible and dependable shipping options. This network allows us to provide optimized transit times and competitive rates, whether your reach is domestic or international. Our <a href="{{ site.portalUrl }}">portal</a> is designed for efficiency, from order processing to final delivery, giving you the peace of mind that comes with a trustworthy fulfillment partner.</p>
+  {{ m.button("Contact Us Today", "/contact-us", "navy", "feature-panel__button") }}
+{% endcall %}
+
+{% call m.section("white", class="offerings") %}
+  <h2 class="section-title">Key Shipping &amp; Fulfillment <em class="accent">Services</em></h2>
+  {{ m.divider() }}
+  <div class="card-grid card-grid--2">
+    {% call m.card("Efficient Shipping Methods", "shipping", "inline") %}
+      <p>We leverage our partnerships with major carriers to select the most effective shipping method tailored to your specific needs, striking a balance between speed and cost to support your business objectives.</p>
+    {% endcall %}
+    {% call m.card("Blind Shipping for Brand Consistency", "box", "inline") %}
+      <p>Protect your brand and your client relationships with our blind shipping services. We ship directly to your customers under your brand's label, ensuring a seamless experience that keeps your business at the forefront.</p>
+    {% endcall %}
+    {% call m.card("Third-Party Billing", "receipt", "inline") %}
+      <p>Simplify your accounting processes with our flexible third-party billing options. We can bill shipping costs directly to your account or your client's account, giving you the transparency and convenience your operations need.</p>
+    {% endcall %}
+    {% call m.card("Procurement", "cart", "inline") %}
+      <p>With over $1.5 million worth of in-stock garments ready for picking, decorating, and shipping, we can manage the entire process and help you save money on unnecessary shipping and distribution costs.</p>
+    {% endcall %}
+  </div>
+{% endcall %}
+
+{{ m.factSheet("Learn more about our fulfillment services", "/files/fulfillment-facts_FINAL_updated-9.24.pdf") }}
+
+{{ m.photoBand("images/fulfillment/A103+Silverscreen+25_9+7286.jpg", "Rows of packed cardboard shipping boxes on the fulfillment floor, with a roller conveyor and warehouse racks behind") }}
+
+{% call m.section("white", class="finishing") %}
+  <h2 class="section-title"><em class="accent">Comprehensive</em> Finishing and Warehousing Programs</h2>
+  {{ m.divider() }}
+  <div class="finishing__row">
+    <div class="finishing__media">{% image "images/fulfillment/098A9782.jpeg", "Two cardboard cartons stamped Made in America by Americans on a warehouse shelf", "(min-width: 1025px) 557px, (min-width: 768px) 40vw, 100vw" %}</div>
+    <div class="finishing__text">
+      <p class="finishing__lede">Beyond shipping, we offer a suite of services designed to prepare your products for the market and manage your inventory with professional care. Our goal is to streamline your entire supply chain, from production to fulfillment, under one roof.</p>
+      {% call m.arrowList() %}
+        {% call m.arrowItem("Finishing Services") %}
+          <p>Our expert team provides a range of finishing services, including folding, poly-bagging, UPC application, and hang-tag application. Each garment is meticulously prepared to meet your quality standards and arrive in retail-ready condition, enhancing your brand's presentation.</p>
+        {% endcall %}
+        {% call m.arrowItem("Warehousing & Fulfillment Programs") %}
+          <p>For businesses that require ongoing inventory management, our programs offer a scalable solution. We store your decorated apparel in our secure facility and manage fulfillment as orders come in, enabling quick turnarounds and reducing your operational overhead. Ask our team about forward stocking at one of our partner suppliers.</p>
+        {% endcall %}
+      {% endcall %}
+    </div>
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="partners partners--service") %}
+  {{ m.logoStrip(partners) }}
+{% endcall %}
+
+{#- The export's HTML lists the "Ready to optimize" line first, but the live page shows the H2 on top. -#}
+{% call m.section("photo", class="service-cta", image="images/fulfillment/A103+Silverscreen+25_9+7311.jpg", alt="Fulfillment floor with walls of blue parts bins, packing tables and an Embroidery sign in the back") %}
+  <h2 class="service-cta__title">Enhance Your Brand Presence with a Reliable Partner</h2>
+  <p>Your brand deserves a fulfillment partner that is as committed to quality and growth as you are. Silverscreen provides the scalable infrastructure, custom solutions, and unwavering reliability needed to handle high-volume demands and accelerate your brand's journey. Let us manage the complexities of logistics so you can focus on what you do best—building your business.</p>
+  <p class="service-cta__lead">Ready to optimize your fulfillment process? Contact us today to learn how our custom solutions can support your growth.</p>
+  {{ m.button("Contact Us Today", "/contact-us", "blue", "service-cta__button") }}
+{% endcall %}

@@ -2732,6 +2732,57 @@ h6, .h6 {
   .photo-row__item img { height: 552px; }
 }
 
+/* Fulfillment: Comprehensive Finishing and Warehousing (photo beside a lead-in and an arrow list). */
+.finishing__row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 36px;
+}
+
+.finishing__media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.finishing__lede {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: normal;
+}
+
+.finishing .arrow-list { margin-top: 32px; }
+
+@media (min-width: 768px) {
+  .finishing__row {
+    flex-direction: row;
+    align-items: center;
+    gap: 6%;
+  }
+
+  .finishing__media { flex: 0 0 40%; }
+
+  .finishing__media img { height: 560px; }
+
+  .finishing__lede { font-size: 18px; }
+}
+
+@media (min-width: 1025px) {
+  .finishing__row {
+    gap: 45px;
+    margin-top: 64px;
+  }
+
+  .finishing__media { flex: 0 0 557px; }
+
+  .finishing__media img { height: 591px; }
+
+  .finishing__lede { line-height: 27px; }
+
+  .finishing .arrow-list { margin-top: 32px; }
+}
+
 /* Where a live service page's text sizes differ from Screen Printing's. */
 
 /* Embroidery and DTG: larger FAQ questions and answers, across the full column. */
