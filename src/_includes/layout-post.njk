@@ -1,0 +1,56 @@
+---
+layout: layout-default.njk
+---
+{#- Blog post page, like the live posts: title block (H1 + date), full-width main photo, the article,
+    "< Older Post / Newer Post >" (by date; either is left out on the oldest / newest post), then cards for
+    the two newest posts other than this one. Author and category aren't shown (the live site doesn't).
+    Front matter (set in each src/blog/<slug>.md): headline, date, image, imageAlt, description.
+    SEO (BlogPosting, breadcrumbs, og:type) comes from seo.njk. -#}
+{%- set posts = collections.post | byPostDate %}
+{%- set older = null %}
+{%- set newer = null %}
+{%- for p in posts %}
+  {%- if p.url == page.url %}
+    {%- if not loop.first %}{% set older = posts[loop.index0 - 1] %}{% endif %}
+    {%- if not loop.last %}{% set newer = posts[loop.index0 + 1] %}{% endif %}
+  {%- endif %}
+{%- endfor %}
+{%- set latest = [] %}
+{%- for p in posts | reverse %}
+  {%- if p.url != page.url and latest.length < 2 %}{% set _ = latest.push(p) %}{% endif %}
+{%- endfor %}
+
+<article class="post">
+  <header class="post__header">
+    <h1 class="post__title">{{ headline }}</h1>
+    <p class="post__date"><time datetime="{{ page.date | isoDate }}">{{ page.date | postDate }}</time></p>
+  </header>
+
+  <div class="post__hero">{% image image, imageAlt, "100vw", "eager", "high" %}</div>
+
+  <div class="post__body">
+{{ content | safe }}
+  </div>
+
+  {%- if older or newer %}
+  <nav class="post__pager" aria-label="More posts">
+    {%- if older %}
+    <a class="post__pager-link post__pager-link--older" href="{{ older.data.pagePath }}">&lt; Older Post</a>
+    {%- endif %}
+    {%- if newer %}
+    <a class="post__pager-link post__pager-link--newer" href="{{ newer.data.pagePath }}">Newer Post &gt;</a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+</article>
+
+{#- The two newest posts. Titles are H2s (the article's own headings come first), sized like an H3. -#}
+<section class="post-latest" aria-label="Latest posts">
+  {%- for p in latest %}
+  <div class="post-card">
+    <a class="post-card__photo" href="{{ p.data.pagePath }}" tabindex="-1" aria-hidden="true">{% image p.data.image, "", "(min-width: 768px) 50vw, 100vw" %}</a>
+    <h2 class="post-card__title"><a href="{{ p.data.pagePath }}">{{ p.data.headline }}</a></h2>
+    <p class="post-card__excerpt">{{ p.data.description }}</p>
+  </div>
+  {%- endfor %}
+</section>
