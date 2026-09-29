@@ -19,7 +19,8 @@ ogImage: images/technology/Screenshot-2024-06-11-102316.png
     <h1 class="portal-intro__title">Welcome to Your<br><span class="portal-intro__accent">Online Portal</span></h1>
     <p class="portal-intro__lead">Effortless Project Management from Start to Finish</p>
     <p class="portal-intro__text">Take control of your custom apparel projects with a <a href="{{ site.portalUrl }}">portal</a> designed to simplify your workflow. We've completely overhauled the proofing and management process to bring you a seamless, intuitive, and powerful platform. Say goodbye to confusing email chains and hello to streamlined success.</p>
-    {{ m.button("Portal Access", site.portalUrl, "blue", "portal-intro__button") }}
+    {#- Opens in a new tab, like the live page. -#}
+    <a class="btn btn--blue portal-intro__button" href="{{ site.portalUrl }}" target="_blank" rel="noopener">Portal Access<span class="visually-hidden"> (opens in a new tab)</span></a>
   </div>
 </section>
 
