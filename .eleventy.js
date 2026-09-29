@@ -3,10 +3,16 @@ const { default: Image } = require("@11ty/eleventy-img");
 
 const fs = require("node:fs");
 
+// Resized images are written to .cache/img/, not _site/img/: Cloudflare's build
+// cache keeps .cache/ between builds, so each build only resizes new or changed
+// photos. copyImages() copies the folder into _site/img/ at the end of the build.
+// The share images in src/_data/eleventyComputed.js use the same folder.
+const IMAGE_CACHE_DIR = ".cache/img/";
+
 const IMAGE_OPTIONS = {
   widths: [640, 1280, 1920, 2880],
   formats: ["avif", "webp", "auto"],
-  outputDir: "_site/img/",
+  outputDir: IMAGE_CACHE_DIR,
   urlPath: "/img/",
 };
 const RASTER = /\.(jpe?g|png|webp|gif)$/i;
@@ -28,6 +34,13 @@ async function processImages() {
       imageCache.set(src, await Image(path.join("src", src), IMAGE_OPTIONS));
     })
   );
+}
+
+// Runs after every page is written, so it also picks up the share images, which
+// are made while pages render. (A passthrough copy runs alongside rendering and
+// could miss them.)
+async function copyImages() {
+  await fs.promises.cp(IMAGE_CACHE_DIR, "_site/img/", { recursive: true });
 }
 
 // Responsive <picture>: AVIF + WebP with a fallback in the source format
@@ -82,6 +95,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
 
   eleventyConfig.on("eleventy.before", processImages);
+  eleventyConfig.on("eleventy.after", copyImages);
   eleventyConfig.addShortcode("image", imageShortcode);
 
   // Markdown (the blog posts): links to other sites open in a new tab, like the live posts.

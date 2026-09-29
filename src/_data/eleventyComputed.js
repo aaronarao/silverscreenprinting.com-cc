@@ -14,7 +14,7 @@ function canonicalPath(url) {
 
 async function absoluteImage(src, options) {
   const metadata = await Image(path.join("src", src), {
-    outputDir: "_site/img/",
+    outputDir: ".cache/img/", // copied to _site/img/ by .eleventy.js
     urlPath: "/img/",
     ...options,
   });
