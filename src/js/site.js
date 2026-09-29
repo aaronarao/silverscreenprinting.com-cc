@@ -240,3 +240,21 @@ document.querySelectorAll("[data-logo-strip]").forEach((strip) => {
 document.querySelectorAll("[data-contact-form]").forEach((form) => {
   form.addEventListener("submit", (event) => event.preventDefault());
 });
+
+// Blog page: show the first posts and a "Show More" button that reveals the rest. Every card is in
+// the HTML (and shows without JavaScript); the hidden cards' lazy photos load only once shown.
+document.querySelectorAll("[data-show-more-list]").forEach((list) => {
+  const count = Number(list.dataset.showMoreCount);
+  const extra = [...list.children].slice(count);
+  const button = list.parentElement.querySelector("[data-show-more]");
+  if (!extra.length || !button) return;
+
+  extra.forEach((item) => (item.hidden = true));
+  button.hidden = false;
+  button.addEventListener("click", () => {
+    extra.forEach((item) => (item.hidden = false));
+    button.hidden = true;
+    // Keep keyboard users in place: move focus to the first card that just appeared.
+    extra[0].querySelector(".blog-card__title a").focus();
+  });
+});
