@@ -174,30 +174,43 @@
 </ul>
 {%- endmacro -%}
 
-{#- contactForm(id, messageLabel): the contact form. messageLabel: the message box's label ("Message" on the homepage,
-    "How Can We Help You" on Contact Us, matching each live page). Not connected yet: the form backend is decided in Phase 4
-    (see context/forms-insightly-integration.md), so there is no action and submitting does nothing. -#}
-{%- macro contactForm(id = "contact", messageLabel = "Message") -%}
-<form class="contact-form" method="post" aria-label="Contact Us" data-contact-form novalidate>
-  <div class="contact-form__field">
-    <label for="{{ id }}-name">Name</label>
-    <input id="{{ id }}-name" name="name" type="text" autocomplete="name">
+{#- contactForm(site, id, messageLabel): the contact form. messageLabel: the message box's label ("Message" on the
+    homepage, "How Can We Help You" on Contact Us, matching each live page).
+    Posts straight to the Insightly Marketing form handler (site.insightlyContactFormUrl; see
+    context/forms-insightly-integration.md), which creates the lead and then redirects the visitor to /thank-you or
+    /form-error (both set in the form's settings in Insightly). The input names must match the Insightly form's field
+    names exactly, case included. All six fields are required, so the browser checks them before sending. site.js only
+    disables the button while the page is sending. "insightly_additional_field" is Insightly's own spam trap: people
+    never see it, bots fill it in, and Insightly then drops the submission. -#}
+{%- macro contactForm(site, id = "contact", messageLabel = "Message") -%}
+<form class="contact-form" action="{{ site.insightlyContactFormUrl }}" method="post" aria-label="Contact Us" data-contact-form>
+  <div class="contact-form__trap" aria-hidden="true">
+    <label for="{{ id }}-trap">Leave this field empty</label>
+    <input id="{{ id }}-trap" name="insightly_additional_field" type="text" tabindex="-1" autocomplete="off">
   </div>
   <div class="contact-form__field">
+    <label for="{{ id }}-first-name">First name</label>
+    <input id="{{ id }}-first-name" name="FirstName" type="text" autocomplete="given-name" required>
+  </div>
+  <div class="contact-form__field">
+    <label for="{{ id }}-last-name">Last name</label>
+    <input id="{{ id }}-last-name" name="LastName" type="text" autocomplete="family-name" required>
+  </div>
+  <div class="contact-form__field contact-form__field--wide">
     <label for="{{ id }}-business">Business name</label>
-    <input id="{{ id }}-business" name="business" type="text" autocomplete="organization">
+    <input id="{{ id }}-business" name="Business" type="text" autocomplete="organization" required>
   </div>
   <div class="contact-form__field">
     <label for="{{ id }}-email">E-mail</label>
-    <input id="{{ id }}-email" name="email" type="email" autocomplete="email">
+    <input id="{{ id }}-email" name="Email" type="email" autocomplete="email" required>
   </div>
   <div class="contact-form__field">
     <label for="{{ id }}-phone">Phone</label>
-    <input id="{{ id }}-phone" name="phone" type="tel" autocomplete="tel">
+    <input id="{{ id }}-phone" name="Phone" type="tel" autocomplete="tel" required>
   </div>
   <div class="contact-form__field contact-form__field--wide">
     <label for="{{ id }}-message">{{ messageLabel }}</label>
-    <textarea id="{{ id }}-message" name="message"></textarea>
+    <textarea id="{{ id }}-message" name="Message" required></textarea>
   </div>
   <button class="btn btn--navy contact-form__submit" type="submit">Send Message</button>
 </form>

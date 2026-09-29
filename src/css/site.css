@@ -1428,6 +1428,21 @@ h6, .h6 {
   resize: both;
 }
 
+/* Hidden spam trap (see the contactForm macro). Moved off-screen rather than display:none,
+   which some bots skip. */
+.contact-form__trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
 .contact-form__submit {
   justify-self: start;
   width: 220px;
@@ -2611,6 +2626,36 @@ h6, .h6 {
 
 @media (min-width: 1025px) {
   .still-question__title { font-size: 38px; }
+}
+
+/* Thank You and Form Error pages (where Insightly sends visitors after the contact form). */
+.form-result .band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.form-result__text {
+  max-width: 640px;
+  margin-top: 28px;
+}
+
+.form-result__text + .form-result__text {
+  margin-top: 12px;
+}
+
+.form-result__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.form-result__button {
+  width: 220px;
+  min-height: 52px;
 }
 
 /* Capabilities: gray band with a title and lead-in beside a list of arrow rows (side by side on desktop). */

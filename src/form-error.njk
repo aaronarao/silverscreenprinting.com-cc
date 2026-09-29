@@ -1,0 +1,22 @@
+---
+layout: layout-default.njk
+title: Message Not Sent | Silverscreen Decoration & Fulfillment
+description: Your message to Silverscreen Decoration & Fulfillment couldn't be sent. Please try again or contact us by phone or email.
+permalink: /form-error/
+# Where Insightly sends visitors if the contact form can't be sent. Kept out of search and the sitemap.
+noindex: true
+sitemap: false
+---
+{%- import "macros.njk" as m -%}
+
+{% call m.section("white", class="form-result") %}
+  <h1 class="section-title">Sorry, Something Went Wrong</h1>
+  {{ m.divider() }}
+  <p class="form-result__text">Your message couldn't be sent. Please go back and try again, or reach us directly:</p>
+  <p class="form-result__text"><a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+  <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  <div class="form-result__buttons">
+    {{ m.button("Try Again", "/contact-us", "navy", "form-result__button") }}
+    {{ m.button("Back to Home", "/", "navy", "form-result__button") }}
+  </div>
+{% endcall %}

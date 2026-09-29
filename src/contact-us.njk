@@ -9,7 +9,7 @@ ogImage: images/contact-us/IMG_1589.jpeg
 ---
 {#- Copy matches the live page. Section order and image placement: desktop/contact-us (the export and the live page agree,
     including the map at the bottom). The live page's "Contact Us" H3 above the form is hidden at every width, so it's left out.
-    The form is visual only until Phase 4, like the homepage's. -#}
+    The form posts to Insightly, like the homepage's (see the contactForm macro). -#}
 {%- import "macros.njk" as m -%}
 
 {#- Photo with a translucent steel box behind the H1 (no dark overlay), and two buttons below it. -#}
@@ -36,7 +36,7 @@ ogImage: images/contact-us/IMG_1589.jpeg
   <h2 class="contact-start__title">Start Your Project Today</h2>
   <p class="contact-start__text">Share some details about your project, and we’ll get in touch to arrange a call. We’re eager to learn about your business and help you craft something extraordinary.</p>
   <div class="contact-start__form">
-    {{ m.contactForm("contact-page", "How Can We Help You") }}
+    {{ m.contactForm(site, "contact-page", "How Can We Help You") }}
   </div>
 {% endcall %}
 
