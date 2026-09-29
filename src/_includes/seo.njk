@@ -77,14 +77,21 @@
   <script type="application/ld+json">{{ serviceSchema | dump | safe }}</script>
   {%- endif %}
 
-  {#- FAQ pages: the same front matter `faq` list the visible FAQ is built from. #}
+  {#- FAQ pages: the same front matter `faq` list the visible FAQ is built from.
+      The answer text is the lead, every paragraph of `a` and the `list` points, as plain text. #}
   {%- if faq %}
   {%- set questions = [] %}
   {%- for item in faq %}
+  {%- set parts = [item.lead | striptags] %}
+  {%- if item.a is string %}{% set _ = parts.push(item.a | striptags) %}
+  {%- else %}{% for para in item.a %}{% set _ = parts.push(para | striptags) %}{% endfor %}{% endif %}
+  {%- set points = [] %}
+  {%- for point in item.list %}{% set _ = points.push(point | striptags) %}{% endfor %}
+  {%- if points.length %}{% set _ = parts.push(points | join(", ")) %}{% endif %}
   {%- set _ = questions.push({
     "@type": "Question",
     "name": item.q,
-    "acceptedAnswer": { "@type": "Answer", "text": (item.lead | striptags) + " " + (item.a | striptags) }
+    "acceptedAnswer": { "@type": "Answer", "text": parts | join(" ") }
   }) %}
   {%- endfor %}
   {%- set faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": questions } %}
