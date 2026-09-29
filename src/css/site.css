@@ -3228,6 +3228,406 @@ h6, .h6 {
   }
 }
 
+/* ---------- Contact Us ---------- */
+
+/* Hero: photo with a translucent steel box behind the H1 (title at the bottom of the box), buttons below.
+   Buttons are centered on phones and line up with the box from tablet up. */
+.contact-hero {
+  position: relative;
+  color: var(--white);
+}
+
+.contact-hero__media,
+.contact-hero__media picture {
+  position: absolute;
+  inset: 0;
+}
+
+.contact-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-hero__inner {
+  position: relative;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.contact-hero__box {
+  display: flex;
+  align-items: flex-end;
+  min-height: 160px;
+  background: rgba(125, 155, 193, 0.71);
+}
+
+.contact-hero__title { font-size: 32px; }
+
+.contact-hero__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.contact-hero__button { width: 280px; }
+
+/* Text blocks sit 16px in from the form panel and photos, like the live page. */
+.contact-intro__title,
+.contact-intro__lede,
+.contact-start__title,
+.contact-start__text,
+.journey__text,
+.journey__subtitle,
+.journey .arrow-list,
+.have-question__info {
+  padding-inline: 16px;
+}
+
+.contact-intro__title,
+.contact-start__title,
+.have-question__title {
+  font-size: 28px;
+}
+
+.contact-intro .contact-intro__lede {
+  margin-top: 18px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.contact-start .contact-start__text {
+  margin-top: 34px;
+  font-size: 16px;
+}
+
+.contact-start__form {
+  margin-top: 47px;
+  padding: 17.25px 17.25px 34.5px;
+  background: var(--light-gray);
+}
+
+.contact-start .contact-form__submit { background: var(--blue); }
+
+.contact-start .contact-form__submit:hover { background: var(--steel); }
+
+/* Your Custom Apparel Journey (gray band): photo and text, then the "what you can expect" rows. */
+.journey__media img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.journey__text { margin-top: 30px; }
+
+.journey__title { font-size: 32px; }
+
+.journey__subtitle { font-size: 25px; }
+
+.journey__text p {
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.journey__expect { margin-top: 56px; }
+
+.journey .arrow-list { margin-top: 32px; }
+
+.journey .arrow-list__title { font-size: 21px; }
+
+.journey .arrow-list__item p { font-size: 16px; }
+
+.journey .arrow-list__item + .arrow-list__item {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top-width: 4px;
+}
+
+/* Have a Question? (navy band): contact details, then the photo. */
+.have-question .have-question__text {
+  margin-top: 24px;
+  font-size: 16px;
+}
+
+.have-question .contact-details { margin-top: 40px; }
+
+.have-question .contact-details__label { font-size: 21px; }
+
+.have-question .contact-details a { font-size: 16px; }
+
+.have-question__media { margin-top: 48px; }
+
+.have-question__media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .contact-hero__inner { padding: 16px 32px; }
+
+  .contact-hero__box {
+    min-height: 390px;
+    margin-inline: 30px;
+  }
+
+  .contact-hero__title { font-size: 65px; }
+
+  .contact-hero__buttons {
+    align-items: flex-start;
+    margin-inline: 30px;
+  }
+
+  .contact-intro__title,
+  .contact-start__title,
+  .have-question__title {
+    font-size: 40px;
+  }
+
+  .journey__title { font-size: 55px; }
+
+  .journey__subtitle { font-size: 32px; }
+
+  .journey .arrow-list__title { font-size: 22px; }
+
+  .have-question .contact-details__label { font-size: 22px; }
+
+  .contact-intro .contact-intro__lede {
+    max-width: 580px;
+    font-size: 18px;
+  }
+
+  .contact-start .contact-start__text { margin-top: 40px; }
+
+  .contact-start__form {
+    margin-top: 52px;
+    padding: 37px 51px;
+  }
+
+  .journey__media img { height: 434px; }
+
+  .journey__text { margin-top: 45px; }
+
+  .journey__expect { margin-top: 64px; }
+
+  .journey .arrow-list { margin-top: 40px; }
+
+  .have-question__media img { height: 690px; }
+}
+
+@media (min-width: 1025px) {
+  .contact-hero__inner { padding: 16px 28.8px; }
+
+  .contact-hero__box {
+    min-height: 400px;
+    margin-inline: 16px;
+  }
+
+  .contact-hero__title { font-size: 80px; }
+
+  .contact-hero__buttons { margin-inline: 16px; }
+
+  .contact-hero__button { font-size: 17px; }
+
+  .contact-intro__title,
+  .contact-start__title,
+  .have-question__title {
+    font-size: 55px;
+  }
+
+  .contact-intro .contact-intro__lede {
+    max-width: 690px;
+    margin-top: 20px;
+    line-height: 27px;
+  }
+
+  .contact-start .contact-start__text {
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .contact-start__form {
+    margin-top: 75px;
+    padding: 31.5px 41.8px;
+  }
+
+  .journey__row {
+    display: grid;
+    grid-template-columns: 557fr 540fr;
+    column-gap: 45px;
+    align-items: center;
+  }
+
+  .journey__media img { height: 455px; }
+
+  .journey__text {
+    margin-top: 0;
+    padding-inline: 0;
+  }
+
+  .journey__title { font-size: 65px; }
+
+  .journey__text p {
+    max-width: 436px;
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .journey__expect {
+    display: grid;
+    grid-template-columns: 1fr 581px;
+    column-gap: 78px;
+    align-items: start;
+    margin-top: 100px;
+  }
+
+  .journey__subtitle {
+    max-width: 466px;
+    font-size: 38px;
+  }
+
+  .journey .arrow-list {
+    margin-top: 0;
+    padding-inline: 0;
+  }
+
+  .journey .arrow-list__title { font-size: 26px; }
+
+  .journey .arrow-list__item p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .journey .arrow-list__item + .arrow-list__item {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .have-question .band__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .have-question__info { flex: 0 1 532px; }
+
+  .have-question .have-question__text {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  /* Desktop only: a white rule under each contact row. */
+  .have-question .contact-details { gap: 64px; }
+
+  .have-question .contact-details__row {
+    padding-bottom: 48px;
+    border-bottom: 2px solid var(--white);
+  }
+
+  .have-question .contact-details__label { font-size: 26px; }
+
+  .have-question .contact-details a { font-size: 18px; }
+
+  .have-question__media {
+    flex: 0 1 548px;
+    margin-top: 0;
+  }
+
+  .have-question__media img { height: 535px; }
+
+  /* The live Contact Us map is 275px tall on desktop (the homepage's is 200px). */
+  .contact-map .static-map {
+    height: 275px;
+    margin: 0;
+  }
+}
+
+/* ---------- Privacy Policy ---------- */
+
+/* One white column, 16px in from the standard content column. Blocks are spaced by one blank line,
+   like the live page: a heading, 16px, its text; a blank line before the next heading. */
+.privacy .band__inner {
+  padding: 44px 31px 42px;
+}
+
+.privacy__title { font-size: 28px; }
+
+.privacy__heading {
+  margin-top: 24px;
+  font-size: 21px;
+}
+
+.privacy__title + .privacy__heading { margin-top: 18px; }
+
+.privacy__heading + p { margin-top: 16px; }
+
+.privacy p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.privacy p + p,
+.privacy__list + p {
+  margin-top: 24px;
+}
+
+.privacy__list li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.privacy__list li::before {
+  content: "•";
+  position: absolute;
+  left: 16px;
+}
+
+@media (min-width: 768px) {
+  .privacy .band__inner { padding: 56px 47px; }
+
+  .privacy__title { font-size: 40px; }
+
+  .privacy__heading { font-size: 22px; }
+}
+
+@media (min-width: 1025px) {
+  .privacy .band__inner { padding: 89px 44.8px 87px; }
+
+  .privacy__title { font-size: 55px; }
+
+  .privacy__heading {
+    margin-top: 26px;
+    font-size: 26px;
+  }
+
+  .privacy__title + .privacy__heading { margin-top: 20px; }
+
+  .privacy p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .privacy p + p,
+  .privacy__list + p {
+    margin-top: 26px;
+  }
+
+  .privacy__list li {
+    padding-left: 34px;
+    font-size: 17px;
+  }
+
+  .privacy__list li::before { left: 17px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,

@@ -155,8 +155,9 @@
 </div>
 {%- endmacro -%}
 
-{#- contactDetails(site): e-mail, address and phone rows with icon tiles. -#}
-{%- macro contactDetails(site) -%}
+{#- contactDetails(site, mapUrl): e-mail, address and phone rows with icon tiles.
+    mapUrl (optional): where the address links; defaults to site.address.mapUrl. Contact Us passes its live page's own link. -#}
+{%- macro contactDetails(site, mapUrl = "") -%}
 <ul class="contact-details">
   <li class="contact-details__row">
     <span class="contact-details__icon">{{ icons.icon("email") }}</span>
@@ -164,7 +165,7 @@
   </li>
   <li class="contact-details__row">
     <span class="contact-details__icon">{{ icons.icon("pin") }}</span>
-    <div><h3 class="contact-details__label">Address</h3><a href="{{ site.address.mapUrl }}" target="_blank" rel="noopener">{{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}<span class="visually-hidden"> (opens in a new tab)</span></a></div>
+    <div><h3 class="contact-details__label">Address</h3><a href="{{ mapUrl or site.address.mapUrl }}" target="_blank" rel="noopener">{{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}<span class="visually-hidden"> (opens in a new tab)</span></a></div>
   </li>
   <li class="contact-details__row">
     <span class="contact-details__icon">{{ icons.icon("phone") }}</span>
@@ -173,9 +174,10 @@
 </ul>
 {%- endmacro -%}
 
-{#- contactForm(id): the contact form. Not connected yet: the form backend is decided in Phase 4
+{#- contactForm(id, messageLabel): the contact form. messageLabel: the message box's label ("Message" on the homepage,
+    "How Can We Help You" on Contact Us, matching each live page). Not connected yet: the form backend is decided in Phase 4
     (see context/forms-insightly-integration.md), so there is no action and submitting does nothing. -#}
-{%- macro contactForm(id = "contact") -%}
+{%- macro contactForm(id = "contact", messageLabel = "Message") -%}
 <form class="contact-form" method="post" aria-label="Contact Us" data-contact-form novalidate>
   <div class="contact-form__field">
     <label for="{{ id }}-name">Name</label>
@@ -194,7 +196,7 @@
     <input id="{{ id }}-phone" name="phone" type="tel" autocomplete="tel">
   </div>
   <div class="contact-form__field contact-form__field--wide">
-    <label for="{{ id }}-message">Message</label>
+    <label for="{{ id }}-message">{{ messageLabel }}</label>
     <textarea id="{{ id }}-message" name="message"></textarea>
   </div>
   <button class="btn btn--navy contact-form__submit" type="submit">Send Message</button>

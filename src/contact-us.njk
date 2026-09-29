@@ -1,0 +1,83 @@
+---
+layout: layout-default.njk
+title: Contact | Silverscreen Decoration & Fulfillment
+description: Contact our team for custom apparel projects. Fast support, expert guidance, and reliable service to bring your brand’s vision to life with quality decoration.
+permalink: /contact-us/
+breadcrumb: Contact
+# The live page's og:image.
+ogImage: images/contact-us/IMG_1589.jpeg
+---
+{#- Copy matches the live page. Section order and image placement: desktop/contact-us (the export and the live page agree,
+    including the map at the bottom). The live page's "Contact Us" H3 above the form is hidden at every width, so it's left out.
+    The form is visual only until Phase 4, like the homepage's. -#}
+{%- import "macros.njk" as m -%}
+
+{#- Photo with a translucent steel box behind the H1 (no dark overlay), and two buttons below it. -#}
+<section class="contact-hero">
+  <div class="contact-hero__media">{% image "images/contact-us/A103+Silverscreen+25_9+6887.jpg", "Silverscreen front office with desks, monitors and framed ink color charts on the wall", "100vw", "eager", "high" %}</div>
+  <div class="contact-hero__inner">
+    <div class="contact-hero__box">
+      <h1 class="contact-hero__title">Contact Silverscreen today to get started on your Project</h1>
+    </div>
+    <div class="contact-hero__buttons">
+      {{ m.button("Call Now", "tel:" + site.phone, "blue", "contact-hero__button") }}
+      {{ m.button("Contact Us Now", "#ContactForm", "blue", "contact-hero__button") }}
+    </div>
+  </div>
+</section>
+
+{% call m.section("white", class="contact-intro") %}
+  <h2 class="contact-intro__title">Let's Bring Your Vision to Life</h2>
+  <p class="contact-intro__lede">Eager to design unique apparel that truly stands out? You've come to the right spot. At Silverscreen Decoration &amp; Fulfillment, we’re not just decorators; we’re your allies in delivering your brand’s narrative through premium-quality custom apparel.</p>
+{% endcall %}
+
+{#- "Contact Us Now" in the hero jumps here. -#}
+{% call m.section("white", id="ContactForm", class="contact-start") %}
+  <h2 class="contact-start__title">Start Your Project Today</h2>
+  <p class="contact-start__text">Share some details about your project, and we’ll get in touch to arrange a call. We’re eager to learn about your business and help you craft something extraordinary.</p>
+  <div class="contact-start__form">
+    {{ m.contactForm("contact-page", "How Can We Help You") }}
+  </div>
+{% endcall %}
+
+{% call m.section("gray", class="journey") %}
+  <div class="journey__row">
+    <div class="journey__media">{% image "images/shared/IMG_1461.jpeg", "Automatic screen printing press on the Silverscreen production floor, with an American flag, a Nevada flag and a Silverscreen banner on the wall", "(min-width: 1025px) 557px, 100vw" %}</div>
+    <div class="journey__text">
+      <h2 class="journey__title">Your Custom Apparel Journey <em class="accent">Starts Here</em></h2>
+      <p>Starting a new project can feel complicated, but we make it simple. Our streamlined onboarding helps your project get moving quickly and efficiently. Just fill out the form, and let's get started.</p>
+    </div>
+  </div>
+  <div class="journey__expect">
+    <h2 class="journey__subtitle">Here’s what you can expect:</h2>
+    {% call m.arrowList() %}
+      {% call m.arrowItem("A Personal Touch") %}
+        <p>You'll be paired with a dedicated Reno, NV, Customer Support Specialist (CSS) who will guide you every step of the way. No call centers, no runaround, just one expert focused on your success.</p>
+      {% endcall %}
+      {% call m.arrowItem("Fast & Responsive Service") %}
+        <p>Have a question? Need an update? We pride ourselves on quick and clear communication. Expect a response within one business day.</p>
+      {% endcall %}
+      {% call m.arrowItem("Expert Guidance") %}
+        <p>We kick things off with a discovery call to fully understand your business needs, goals, and creative vision. We'll provide expert recommendations to ensure your final product is perfect.</p>
+      {% endcall %}
+      {% call m.arrowItem("Quality You Can Trust") %}
+        <p>With years of experience and a commitment to excellence, we guarantee a finished product that you and your customers will love.</p>
+      {% endcall %}
+      {% call m.arrowItem("Technology") %}
+        <p>Completely customize our user experience and automate the entire ordering process.</p>
+      {% endcall %}
+    {% endcall %}
+  </div>
+{% endcall %}
+
+{#- The address links to the live page's own map link (the homepage's is different). -#}
+{% call m.section("navy", class="have-question") %}
+  <div class="have-question__info">
+    <h2 class="have-question__title">Have a Question?</h2>
+    <p class="have-question__text">Contact us and we will get back to you as soon as possible.</p>
+    {{ m.contactDetails(site, "https://maps.app.goo.gl/1DwLaAbo5NRpR4H39") }}
+  </div>
+  <div class="have-question__media">{% image "images/contact-us/IMG_1589.jpeg", "Customer service office window under a large Customer Service sign, with staff working at their computers inside", "(min-width: 1025px) 548px, 100vw" %}</div>
+{% endcall %}
+
+<div class="contact-map">{{ m.staticMap(site) }}</div>
