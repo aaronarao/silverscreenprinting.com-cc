@@ -1,0 +1,20 @@
+---
+layout: layout-default.njk
+title: Thank You | Silverscreen Decoration & Fulfillment
+description: Thank you for contacting Silverscreen Decoration & Fulfillment. One of our team members will get back to you soon.
+permalink: /thank-you/
+# Where Insightly sends visitors after the contact form is sent. Kept out of search and the sitemap.
+noindex: true
+sitemap: false
+---
+{#- Wording matches the live Duda form's auto-reply. -#}
+{%- import "macros.njk" as m -%}
+
+{% call m.section("white", class="form-result") %}
+  <h1 class="section-title">Thank You</h1>
+  {{ m.divider() }}
+  <p class="form-result__text">We've received your message - thank you. One of our team members will get back to you soon.</p>
+  <div class="form-result__buttons">
+    {{ m.button("Back to Home", "/", "navy", "form-result__button") }}
+  </div>
+{% endcall %}

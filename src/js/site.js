@@ -236,9 +236,22 @@ document.querySelectorAll("[data-logo-strip]").forEach((strip) => {
   schedule();
 });
 
-// The contact form isn't connected to a backend yet (Phase 4), so don't submit it anywhere.
+// Contact form: it posts straight to Insightly (the browser checks the required fields first), and
+// Insightly redirects to /thank-you or /form-error. While it sends, disable the button so it can't be
+// clicked twice.
 document.querySelectorAll("[data-contact-form]").forEach((form) => {
-  form.addEventListener("submit", (event) => event.preventDefault());
+  const button = form.querySelector('[type="submit"]');
+
+  form.addEventListener("submit", () => {
+    button.disabled = true;
+    button.textContent = "Sending…";
+  });
+
+  // Coming back with the Back button can restore the page as it was left, button still disabled.
+  window.addEventListener("pageshow", () => {
+    button.disabled = false;
+    button.textContent = "Send Message";
+  });
 });
 
 // Blog page: show the first posts and a "Show More" button that reveals the rest. Every card is in

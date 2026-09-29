@@ -48,10 +48,10 @@
   } %}
   <script type="application/ld+json">{{ business | dump | safe }}</script>
 
-  {#- Breadcrumbs on every page but the homepage. Label: front matter `breadcrumb`, else the
+  {#- Breadcrumbs on every page but the homepage and noindex pages. Label: front matter `breadcrumb`, else the
       `headline` (blog posts), else the page title up to " | ". Optional `breadcrumbParent:
       { name, url }` adds a level between Home and the page (blog posts: Home › Blog › post). #}
-  {%- if page.url != "/" %}
+  {%- if page.url != "/" and not noindex %}
   {%- set crumbName = breadcrumb or headline or pageTitle.split(" | ")[0] %}
   {%- if breadcrumbParent %}
   {%- set crumbItems = [
