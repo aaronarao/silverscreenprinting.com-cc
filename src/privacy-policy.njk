@@ -1,0 +1,66 @@
+---
+layout: layout-default.njk
+title: Privacy Policy | Silverscreen Decoration & Fulfillment
+description: This is the Privacy Policy page for the Silverscreen Decoration & Fulfillment website.
+permalink: /privacy-policy/
+breadcrumb: Privacy Policy
+---
+{#- Copy matches the live page word for word (its URLs and e-mail addresses are plain text there, not links).
+    The live page has no H1: its "Privacy Policy" title is an H2 and the section titles are H4s. Here the title is the H1
+    and the section titles are H2s, at the live sizes. No ogImage: it falls back to the logo, like the live page.
+    The reCAPTCHA and comments sections don't describe the new site; they get reviewed before launch (roadmap Phase 2). -#}
+{%- import "macros.njk" as m -%}
+
+{% call m.section("white", class="privacy") %}
+  <h1 class="privacy__title">Privacy Policy</h1>
+
+  <h2 class="privacy__heading">Who we are</h2>
+  <p>Our website address is: https://silverscreenprinting.com. Silverscreen Decoration &amp; Fulfillment values your privacy and are committed to protecting your personal information. This Privacy Policy outlines the types of information we collect, how we use it, and how we safeguard your data. If you have any questions regarding this Privacy Policy, please contact us at info@silverscreenprinting.com</p>
+
+  <h2 class="privacy__heading">Information We Collect</h2>
+  <p>Our website may collect the following information:</p>
+  <ul class="privacy__list">
+    <li>Personal information you provide (e.g., name, email address, phone number, mailing address)</li>
+    <li>Automatically collected data such as IP addresses, browser type, and usage data</li>
+  </ul>
+
+  <h2 class="privacy__heading">How We Use Your Information</h2>
+  <p>We use the collected data to:</p>
+  <ul class="privacy__list">
+    <li>Improve website functionality</li>
+    <li>Protect our website from spam and abuse</li>
+    <li>Provide customer support and respond to inquiries</li>
+  </ul>
+
+  <h2 class="privacy__heading">Use of Google reCAPTCHA v3</h2>
+  <p>Our website uses Google reCAPTCHA v3 to protect against spam and abuse. The use of reCAPTCHA v3 is subject to Google’s Privacy Policy and Terms of Service. reCAPTCHA collects information about users to determine whether they are human. This data may include:</p>
+  <ul class="privacy__list">
+    <li>IP address</li>
+    <li>Browser and device information</li>
+    <li>Time spent on our website</li>
+  </ul>
+  <p>By using our site, you acknowledge and accept that Google reCAPTCHA v3 may be used to ensure security and functionality.</p>
+
+  <h2 class="privacy__heading">Data Sharing and Protection</h2>
+  <p>We do not sell, trade, or rent your personal information to others. Any data collected through Google reCAPTCHA is processed according to Google’s privacy policies. We implement security measures to safeguard your information.</p>
+  <p><strong>Disclosure of Non-Personal Information.&nbsp;</strong>We will disclose Non-Personal Information, in aggregate form, to potential strategic partners, advertisers, investors, customers, and others. You may not opt-out of the sharing of this information. However, it cannot be easily used to identify you personally.</p>
+  <p><strong>Disclosure to Unaffiliated Third Parties.</strong>&nbsp;We may disclose your Personal Information to prevent an emergency, to prevent harm to others, to respond to legal requirements, to protect or enforce our rights and policies, to protect or enforce the rights of a third party, or as required or permitted by law (including, without limitation, to comply with a subpoena or court order). In particular, we may disclose your information to a third party that alleges that you have infringed their intellectual property rights. Similarly, if you allege that someone is infringing upon your intellectual property rights, we may disclose your information to that person.</p>
+
+  <h2 class="privacy__heading">Comments</h2>
+  <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
+  <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+
+  <h2 class="privacy__heading">Embedded content from other websites</h2>
+  <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
+  <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
+
+  <h2 class="privacy__heading">How long we retain your data</h2>
+  <p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
+  <p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+
+  <h2 class="privacy__heading">What rights you have over your data</h2>
+  <p>You have the right to access, update, or delete your personal data. If you have concerns about your privacy, please contact us directly at info@silverscreenprinting.com</p>
+
+  <h2 class="privacy__heading">Changes to this Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and your continued use of the site constitutes acceptance of those changes.</p>
+{% endcall %}

@@ -3543,6 +3543,86 @@ h6, .h6 {
   }
 }
 
+/* ---------- Privacy Policy ---------- */
+
+/* One white column, 16px in from the standard content column. Blocks are spaced by one blank line,
+   like the live page: a heading, 16px, its text; a blank line before the next heading. */
+.privacy .band__inner {
+  padding: 44px 31px 42px;
+}
+
+.privacy__title { font-size: 28px; }
+
+.privacy__heading {
+  margin-top: 24px;
+  font-size: 21px;
+}
+
+.privacy__title + .privacy__heading { margin-top: 18px; }
+
+.privacy__heading + p { margin-top: 16px; }
+
+.privacy p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.privacy p + p,
+.privacy__list + p {
+  margin-top: 24px;
+}
+
+.privacy__list li {
+  position: relative;
+  padding-left: 32px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.privacy__list li::before {
+  content: "•";
+  position: absolute;
+  left: 16px;
+}
+
+@media (min-width: 768px) {
+  .privacy .band__inner { padding: 56px 47px; }
+
+  .privacy__title { font-size: 40px; }
+
+  .privacy__heading { font-size: 22px; }
+}
+
+@media (min-width: 1025px) {
+  .privacy .band__inner { padding: 89px 44.8px 87px; }
+
+  .privacy__title { font-size: 55px; }
+
+  .privacy__heading {
+    margin-top: 26px;
+    font-size: 26px;
+  }
+
+  .privacy__title + .privacy__heading { margin-top: 20px; }
+
+  .privacy p {
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .privacy p + p,
+  .privacy__list + p {
+    margin-top: 26px;
+  }
+
+  .privacy__list li {
+    padding-left: 34px;
+    font-size: 17px;
+  }
+
+  .privacy__list li::before { left: 17px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,
