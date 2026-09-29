@@ -84,6 +84,20 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.on("eleventy.before", processImages);
   eleventyConfig.addShortcode("image", imageShortcode);
 
+  // Markdown (the blog posts): links to other sites open in a new tab, like the live posts.
+  // Links to this site stay in the same tab.
+  eleventyConfig.amendLibrary("md", (md) => {
+    const renderLink = md.renderer.rules.link_open || ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+    md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+      const href = tokens[idx].attrGet("href") || "";
+      if (/^https?:\/\//i.test(href) && !/^https?:\/\/(www\.)?silverscreenprinting\.com/i.test(href)) {
+        tokens[idx].attrSet("target", "_blank");
+        tokens[idx].attrSet("rel", "noopener");
+      }
+      return renderLink(tokens, idx, options, env, self);
+    };
+  });
+
   // Blog dates. Post dates are UTC (the live site's datePublished), so format them in UTC.
   // postDate: "May 19, 2026". isoDate: "2026-05-19T00:11:05Z" (for JSON-LD and <time datetime>).
   eleventyConfig.addFilter("postDate", (date) =>

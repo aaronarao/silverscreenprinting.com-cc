@@ -311,4 +311,4 @@ If you are planning a project, start with these steps:
 4. Compare decoration methods based on quality and scale
 5. Choose **screen printing services** with the experience and production capacity to support your brand
 
-The right print partner does more than put ink on fabric. They help protect your brand image, support your growth, and deliver apparel that works as hard as you do. [Contact Silverscreen Decoration & Fulfillment](/contact-us) to see if screen printing is the right apparel decoration method for you project or brand.
+The right print partner does more than put ink on fabric. They help protect your brand image, support your growth, and deliver apparel that works as hard as you do. [Contact Silverscreen Decoration & Fulfillment](/contact-us) to see if screen printing is the right apparel decoration method for your project or brand.

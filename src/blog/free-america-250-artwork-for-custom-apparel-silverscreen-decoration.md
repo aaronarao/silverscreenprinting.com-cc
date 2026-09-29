@@ -1,7 +1,7 @@
 ---
 title: "Free America 250 Artwork for Custom Apparel | Silverscreen"
 description: "Celebrate America’s 250th with free, print-ready artwork packs for custom apparel. No purchase required. Get your designs from Silverscreen Decoration today."
-headline: "Free America 250 Artwork for Custom Apparel | Silverscreen Decoration"
+headline: "Free America 250 Artwork for Custom Apparel"
 date: 2026-04-17T23:52:15Z
 image: images/blog/free-america-250-artwork-for-custom-apparel-silverscreen-decoration/america-250-artwork.jpg
 imageAlt: "Five free America 250 designs on red T-shirts, with a note that each full front style is broken into 4-color art"

@@ -31,7 +31,7 @@ faq: [
   },
   {
     "q": "How do I get a quote or start a project?",
-    "lead": "Contact Silverscreen Decoration & Fulfillment by phone at <a href=\"tel:(775) 825-9079\">775-825-9079</a> or email at <a href=\"mailto:info@silverscreenprinting.com\">info@silverscreenprinting.com</a>. Our team will discuss your project and help you plan your seasonal production."
+    "lead": "Contact Silverscreen Decoration & Fulfillment by phone at <a href=\"tel:775-825-9079\">775-825-9079</a> or email at <a href=\"mailto:info@silverscreenprinting.com\">info@silverscreenprinting.com</a>. Our team will discuss your project and help you plan your seasonal production."
   }
 ]
 ---
@@ -86,7 +86,7 @@ The ORBITER turns passive "waiting" time into active pressing time, and it suppo
 
 ### What the ORBITER means for your projects
 
-DTF is ideal for complex, full-color designs and smaller custom runs. With the ORBITER, [Silverscreen Decoration & Fulfillmen](/)t can apply those transfers faster and more consistently, even on intricate artwork. The result is expanded DTF capacity and quicker delivery for the detailed, vibrant designs your summer campaigns demand.
+DTF is ideal for complex, full-color designs and smaller custom runs. With the ORBITER, [Silverscreen Decoration & Fulfillment](/) can apply those transfers faster and more consistently, even on intricate artwork. The result is expanded DTF capacity and quicker delivery for the detailed, vibrant designs your summer campaigns demand.
 
 ## How does the [M&R Eco-Rinse](https://www.mrprint.com/equipment/eco-rinse-automatic-screen-rinsing-system) improve screen processing and sustainability?
 

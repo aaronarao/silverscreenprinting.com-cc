@@ -28,7 +28,7 @@ Choosing a partner that operates entirely in the USA offers several advantages, 
 
 **1\. Superior Quality**
 
-When products are made in the USA, you can expect higher quality control standards. At Silver Screen, every product undergoes meticulous inspection to ensure excellence in craftsmanship.
+When products are made in the USA, you can expect higher quality control standards. At Silverscreen, every product undergoes meticulous inspection to ensure excellence in craftsmanship.
 
 **2\. Ethical Manufacturing Practices**
 
@@ -79,7 +79,7 @@ With access to this network, we’re more than just a print-and-ship provider—
 
 #### Growth in 2025
 
-The upcoming year marks another milestone for Silver Screen. We’ve scaled production and expanded our capabilities to better serve high-demand industries. From new equipment investments to increased production capacity, we continue to innovate with our clients’ growth in mind.
+The upcoming year marks another milestone for Silverscreen. We’ve scaled production and expanded our capabilities to better serve high-demand industries. From new equipment investments to increased production capacity, we continue to innovate with our clients’ growth in mind.
 
 #### Why Partner with Silverscreen Decoration & Fulfillment?
 
