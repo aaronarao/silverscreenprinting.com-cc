@@ -1,0 +1,91 @@
+---
+layout: layout-default.njk
+title: Virtual Tour | Silverscreen Decoration & Fulfillment
+# Live says "fulfilment"; US spelling on purpose, like the Fulfillment page.
+description: Explore our facility with a 3D virtual tour. See screen printing, embroidery, digital decoration, and fulfillment operations in action with full transparency.
+permalink: /virtual-tour/
+breadcrumb: Virtual Tour
+# The live page's og:image.
+ogImage: images/virtual-tour/3D+Explore+Our.jpg
+---
+{#- Copy matches the live page. Section order and image placement: desktop/virtual-tour.
+    Not a service page: no Service schema and no FAQ. Left out: the export's hidden section (a "Button" placeholder
+    linking to "#" and two unused background photos), which the live page hides at every width.
+    Heading levels differ from live where needed to keep one H1 and no skipped levels; sizes are set with classes. -#}
+{%- import "macros.njk" as m -%}
+
+{#- Written out rather than through section(): the background is the page's main (LCP) image, so it loads eagerly.
+    The "3D Explore Our" graphic sits beside the text on desktop, is hidden on tablet (as on the live page)
+    and stacks under the text on phones. -#}
+<section class="band band--photo vt-hero">
+  <div class="band__bg">{% image "images/virtual-tour/A103+Silverscreen+25_9+6854-HDR.jpg", "Front of the Silverscreen building in Reno on a sunny day, with trees and parked cars", "100vw", "eager", "high" %}</div>
+  <div class="band__inner vt-hero__inner">
+    <div class="vt-hero__text">
+      <h1 class="vt-hero__title">Step Inside <a href="/">Silverscreen</a>: Experience Our Operations in 3D</h1>
+      <p class="vt-hero__lede">At Silverscreen Decoration &amp; Fulfillment, our operations are built on a solid foundation of transparency and trust. Discover our Reno, NV facilities through an engaging 3D virtual tour that highlights our dedication to quality, innovation, and craftsmanship. Witness firsthand how we handle high-volume orders with the precision and reliability that your brand deserves.</p>
+      {{ m.button("Take A Look", "#Virtualtour", "blue", "vt-button") }}
+    </div>
+    <div class="vt-hero__graphic">{% image "images/virtual-tour/3D+Explore+Our.jpg", "Explore our facility: 3D virtual tour, with two overhead 3D views of the Silverscreen floor and the Silverscreen logo", "(min-width: 1025px) 384px, 289px" %}</div>
+  </div>
+</section>
+
+{% call m.section("gray", class="vt-look") %}
+  <div class="vt-look__media">{% image "images/virtual-tour/A103+Silverscreen+25_9+7168.jpg", "Warehouse interior with boxes, equipment, and the word \"logistics\" on a wall.", "(min-width: 1025px) 625px, 100vw" %}</div>
+  <div class="vt-look__text">
+    <h2 class="vt-title">A Transparent Look into <em class="accent">Excellence</em></h2>
+    <p class="vt-text">Embark on our virtual tour, your exclusive gateway to the distinctive processes that set us apart. Explore our Reno, NV facility and see firsthand how we blend cutting-edge technology with traditional craftsmanship to achieve exceptional results for our clients. This experience goes beyond a mere tour; it showcases our commitment to being your reliable partner in apparel decoration.</p>
+    {{ m.button("Take a Tour", "#Virtualtour", "blue", "vt-button") }}
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="vt-areas") %}
+  <h3 class="vt-areas__title">Explore key areas of our operation:</h3>
+  <ul class="vt-areas__list">
+    {%- for item in [
+      { title: "Expert Screen Printing", text: "Observe the precision and vibrant color application that make your designs stand out." },
+      { title: "Intricate Embroidery", text: "Discover the meticulous artistry and stringent quality control that define our embroidery work." },
+      { title: "Advanced Digital Decoration", text: "Witness the cutting-edge technology that brings complex, creative visions to life." },
+      { title: "Streamlined Fulfillment", text: "Learn how our efficient and scalable systems ensure that your orders are processed accurately and delivered on time, every time." }
+    ] %}
+    <li class="vt-areas__item">
+      <p class="vt-areas__number">0{{ loop.index }}</p>
+      <h4 class="vt-areas__name">{{ item.title }}</h4>
+      <p class="vt-text">{{ item.text }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+{% endcall %}
+
+<section class="vt-trust">
+  <div class="vt-trust__media">{% image "images/virtual-tour/A103+Silverscreen+25_9+7281.jpg", "Silverscreen warehouse with stacked boxes, carts and tall shelving full of orders", "(min-width: 1025px) 40vw, 100vw" %}</div>
+  <div class="vt-trust__text">
+    <h2 class="vt-title">Building Trust Through <em class="accent">Unmatched</em> Quality and Efficiency</h2>
+    <p class="vt-text">For businesses managing large-scale branding and <a href="/fulfillment">fulfillment</a> needs, seeing is believing. Our virtual tour showcases the robust infrastructure and streamlined workflows designed to handle your volume with unwavering consistency. Discover the operational excellence that enables us to scale with your growth and enhance your brand's market presence. We are committed to your success, and this tour showcases how we deliver on that promise.</p>
+  </div>
+</section>
+
+{#- id="Virtualtour" is the live page's anchor: the Take A Look / Take a Tour buttons (and any old links) jump here. -#}
+{% call m.section("white", id="Virtualtour", class="vt-ready") %}
+  <h2 class="vt-title vt-ready__title">Ready to See <em class="accent">How We Do It?</em></h2>
+  <p class="vt-ready__lede">Take the first step toward a partnership built on clarity and confidence. Explore our Reno facilities, understand our processes, and see the quality that has made us a leader in decoration and fulfillment.</p>
+{% endcall %}
+
+{#- The Matterport tours open in a new tab, like the live page (links only, no embeds). -#}
+<section class="vt-tours">
+  {%- for tour in [
+    { title: "Embroidery/Digital/Fulfillment", url: "https://my.matterport.com/show/?m=HMoRvkpcSJu&brand=0&mls=1&", image: "images/virtual-tour/Screenshot+by+Snip+My+on+Oct+27-+2025+at+4.12.34-PM.jpg", alt: "3D tour view of the embroidery, digital and fulfillment floor, with rows of machines and packing stations" },
+    { title: "Screen Print/Receiving/Operations", url: "https://my.matterport.com/show/?m=M7tfaFiLzoc&brand=0&mls=1&", image: "images/virtual-tour/Screenshot+by+Snip+My+on+Oct+27-+2025+at+4.14.56-PM.jpg", alt: "3D tour view of the screen printing floor, with blue carousel presses seen from above" }
+  ] %}
+  <div class="vt-tours__card">
+    <div class="vt-tours__bg">{% image tour.image, tour.alt, "(min-width: 1025px) 50vw, 100vw" %}</div>
+    {#- <wbr> lets the long labels wrap after a slash on phones. #}
+    <h3 class="vt-tours__title">{{ tour.title | replace("/", "/<wbr>") | safe }}</h3>
+    <a class="btn btn--blue vt-button vt-tours__button" href="{{ tour.url }}" target="_blank" rel="noopener">Take the Tour<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+  {%- endfor %}
+</section>
+
+{% call m.section("navy", class="vt-question") %}
+  <h2 class="vt-question__title">HAVE A QUESTION?</h2>
+  {{ m.button("Contact Us Today", "/contact-us", "blue", "vt-button vt-question__button") }}
+{% endcall %}

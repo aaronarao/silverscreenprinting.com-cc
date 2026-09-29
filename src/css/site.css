@@ -3628,6 +3628,444 @@ h6, .h6 {
   .privacy__list li::before { left: 17px; }
 }
 
+/* ---------- Virtual Tour ---------- */
+
+/* Shared: H2 titles, body text and buttons. The global p is 17px from 768px; this page keeps 16px below 1025px. */
+.vt-title { font-size: 28px; }
+
+.vt-text,
+.vt-hero .vt-hero__lede {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.vt-button {
+  width: 220px;
+  min-height: 52px;
+}
+
+/* Hero: photo behind a black gradient (Duda: black 40% to transparent, at 65%), text beside the "3D Explore Our" graphic.
+   The graphic stacks under the text on phones and is hidden on tablet, like the live page. */
+.vt-hero .band__bg img { object-position: 0% 50%; }
+
+.vt-hero .band__bg::after {
+  background: linear-gradient(90deg, #000 40%, transparent 100%);
+  opacity: 0.65;
+}
+
+.vt-hero__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.vt-hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 24px;
+  padding: 0 16px;
+}
+
+.vt-hero__title { font-size: 38px; }
+
+.vt-hero__title a { text-decoration: none; }
+
+.vt-hero__graphic {
+  align-self: center;
+  width: 309px;
+  max-width: 100%;
+  border: 10px solid #ededed;
+  box-shadow: 3px 0 11px rgba(0, 0, 0, 0.25);
+}
+
+.vt-hero__graphic img {
+  width: 100%;
+  aspect-ratio: 289 / 294;
+  object-fit: cover;
+}
+
+/* A Transparent Look: photo above the text, side by side on desktop. */
+.vt-look .band__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.vt-look__media img {
+  width: 100%;
+  height: 247px;
+  object-fit: cover;
+}
+
+.vt-look__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  row-gap: 24px;
+  padding: 15px 16px;
+}
+
+/* Explore key areas: the H3, then the four items (number, navy rule, title, text), stacked on phones,
+   two per row from tablet up, beside the H3 on desktop. */
+.vt-areas .band__inner {
+  padding-bottom: 30px;
+}
+
+.vt-areas__title { padding: 16px 16px 0; }
+
+.vt-areas__list {
+  display: grid;
+  row-gap: 32px;
+  padding: 16px;
+}
+
+.vt-areas .vt-areas__number {
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--navy);
+  margin-bottom: 28px;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: normal;
+  color: var(--blue);
+}
+
+.vt-areas__name {
+  margin-bottom: 24px;
+  font-size: 19px;
+}
+
+/* Building Trust: navy text box above the photo, side by side (photo on the left) on desktop, edge to edge. */
+.vt-trust {
+  display: flex;
+  flex-direction: column;
+}
+
+.vt-trust__text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 37.5px 30px;
+  background: var(--navy);
+  color: var(--white);
+}
+
+.vt-trust .accent { color: var(--steel); }
+
+.vt-trust__media { order: 1; }
+
+.vt-trust__media img {
+  width: 100%;
+  height: 247px;
+  object-fit: cover;
+}
+
+/* Ready to See: H2 and intro, side by side on desktop. The intro is an H5 on the live page. */
+.vt-ready .band__inner {
+  padding: 30px 15px 18.75px;
+}
+
+.vt-ready__title { padding: 0 16px; }
+
+.vt-ready .vt-ready__lede {
+  padding: 16px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+/* Tour cards: screenshot behind a dark gradient, label and button at the bottom. */
+.vt-tours {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 7.5px 15px 45px;
+}
+
+.vt-tours__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 24px;
+  padding: calc(50% + 59px) 8% 8%;
+  border-radius: 10px;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.vt-tours__bg,
+.vt-tours__bg picture {
+  position: absolute;
+  inset: 0;
+}
+
+.vt-tours__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vt-tours__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 32%, #000 100%);
+  opacity: 0.7;
+}
+
+.vt-tours__title,
+.vt-tours__button {
+  position: relative;
+}
+
+.vt-tours__title {
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.vt-tours__button { width: 280px; max-width: 100%; }
+
+/* HAVE A QUESTION? (navy band): heading on the left, button centered on phones; button beside it on desktop. */
+.vt-question .band__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 26.25px 15px 37.5px;
+}
+
+.vt-question__title {
+  padding: 0 16px;
+  font-size: 34px;
+}
+
+.vt-question__button {
+  align-self: center;
+  width: 260px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .vt-title { font-size: 40px; }
+
+  .vt-button { width: 200px; }
+
+  .vt-hero__inner {
+    justify-content: center;
+    min-height: 446px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .vt-hero__title { font-size: 41px; }
+
+  .vt-hero__graphic { display: none; }
+
+  .vt-look .band__inner { padding: 53.76px 32px 46.08px; }
+
+  .vt-look__media img { height: 400px; }
+
+  .vt-areas .band__inner { padding: 61.44px 32px 46.08px; }
+
+  .vt-areas__title { padding: 0 16px; }
+
+  .vt-areas__list {
+    grid-template-columns: 49% 49%;
+    justify-content: space-between;
+    row-gap: 40px;
+  }
+
+  .vt-areas .vt-areas__number {
+    margin-bottom: 24px;
+    font-size: 34px;
+  }
+
+  .vt-areas__name { font-size: 22px; }
+
+  .vt-trust__text {
+    row-gap: 16px;
+    padding: 53.76px 46.08px;
+  }
+
+  .vt-trust__media img { height: 468px; }
+
+  .vt-ready .band__inner { padding: 46.08px 32px 23.04px; }
+
+  .vt-ready .vt-ready__lede { font-size: 18px; }
+
+  .vt-tours {
+    row-gap: 12px;
+    padding: 15.36px 30.72px 61.44px;
+  }
+
+  .vt-tours__card { padding: calc(30% + 65px) 28.26px 28.26px; }
+
+  .vt-tours__title { font-size: 25px; }
+
+  .vt-tours__button { width: 220px; }
+
+  .vt-question .band__inner {
+    row-gap: 16px;
+    padding: 30.72px 30.72px;
+  }
+
+  .vt-question__title { font-size: 38px; }
+
+  .vt-question__button {
+    align-self: flex-start;
+    width: 240px;
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .vt-title { font-size: 55px; }
+
+  .vt-text,
+  .vt-hero .vt-hero__lede {
+    font-size: 17px;
+  }
+
+  .vt-button { font-size: 17px; }
+
+  .vt-hero__inner {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4%;
+    min-height: 707px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .vt-hero__text {
+    width: 49.3%;
+    padding: 16px;
+  }
+
+  .vt-hero__title { font-size: 48px; }
+
+  .vt-hero__graphic {
+    display: block;
+    width: 404px;
+    margin: 0 auto;
+  }
+
+  .vt-hero__graphic img { aspect-ratio: 384 / 382; }
+
+  .vt-look .band__inner {
+    flex-direction: row;
+    column-gap: 4%;
+    padding: 100.8px 28.8px;
+  }
+
+  .vt-look__media { width: 54.75%; }
+
+  .vt-look__media img { height: 491px; }
+
+  .vt-look__text { width: 41.25%; }
+
+  .vt-areas .band__inner {
+    display: grid;
+    grid-template-columns: 35.68% 60.2%;
+    column-gap: 4%;
+    align-items: start;
+    padding: 86.4px 28.8px 100.8px;
+  }
+
+  .vt-areas__title { padding: 16px; }
+
+  .vt-areas__list { row-gap: 60px; }
+
+  .vt-areas .vt-areas__number { font-size: 40px; }
+
+  .vt-areas__name { font-size: 24px; }
+
+  .vt-areas__item .vt-text { max-width: 295px; }
+
+  .vt-trust {
+    flex-direction: row;
+    column-gap: 2%;
+    padding: 28.8px 0;
+  }
+
+  .vt-trust__media {
+    order: 0;
+    width: 39.76%;
+  }
+
+  .vt-trust__media img {
+    height: 100%;
+    min-height: 428px;
+  }
+
+  .vt-trust__text {
+    width: 58.24%;
+    row-gap: 24px;
+    padding: 72px 86.4px 97px;
+  }
+
+  .vt-trust__text .vt-text { max-width: 643px; }
+
+  .vt-ready .band__inner {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 4%;
+    padding: 72px 28.8px 28.8px;
+  }
+
+  .vt-ready__title {
+    width: 45.71%;
+    padding: 16px;
+  }
+
+  .vt-ready .vt-ready__lede { width: 50.17%; }
+
+  .vt-tours {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 28.8px 28.8px 100.8px;
+  }
+
+  .vt-tours__card {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 49%;
+    padding: calc(30% + 33px) 4% 4%;
+  }
+
+  .vt-tours__title {
+    width: 60%;
+    font-size: 30px;
+  }
+
+  .vt-tours__button { width: 170px; }
+
+  .vt-question .band__inner {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4%;
+    padding: 72px 28.8px;
+  }
+
+  .vt-question__title {
+    width: 65.04%;
+    padding: 0;
+    font-size: 45px;
+  }
+
+  .vt-question__button {
+    align-self: center;
+    margin: 0 auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,
