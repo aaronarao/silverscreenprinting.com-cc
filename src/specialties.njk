@@ -1,0 +1,91 @@
+---
+layout: layout-default.njk
+title: Specialties | Silverscreen Decoration & Fulfillment
+description: Custom apparel solutions for sports teams, corporate branding, retail, and promotions. High-quality decoration with scalable production for any industry.
+permalink: /specialties/
+breadcrumb: Specialties
+# The live share image (ad-specialty-2.jpg) is only 350px wide, so the hero photo is used instead.
+ogImage: images/specialties/A103+Silverscreen+25_9+7833.jpg
+---
+{#- Copy matches the live page (newer than the Duda export). Section order and image placement: desktop/specialties.
+    Not a service page: no Service schema and no FAQ. The live closing band is a second H1; here it's an H2 at the
+    same size. The export's closing band also has a Portal Access button that the live page no longer shows. -#}
+{%- import "macros.njk" as m -%}
+
+{{ m.serviceHero("Custom Apparel Solutions for Every Industry", "images/specialties/A103+Silverscreen+25_9+7833.jpg", "Silverscreen's digital print room, with wide-format printers and a heat press in front of tall office windows", true, "specialties-hero") }}
+
+{% call m.section("white", class="specialties-intro") %}
+  <p class="specialties-intro__text">At <a href="/">Silverscreen Decoration &amp; Fulfillment</a>, we understand that high-quality decorated apparel is essential for building brand identity, fostering team spirit, and creating lasting impressions. With over two decades of experience, we have refined our processes to deliver exceptional products across a diverse range of specialties. Our commitment to quality, speed, and attention to detail ensures your brand is represented with the excellence it deserves.</p>
+{% endcall %}
+
+{% call m.section("white", class="industry") %}
+  <h2 class="industry__title">Team &amp; Sports Apparel</h2>
+  {% call m.featureRow("images/specialties/teams-1.jpg", "Green and white number 12 football jerseys laid out under a screen printing press", "Equip Your Team for Victory") %}
+    <p>We create custom-decorated apparel for team and individual sports. We've fine-tuned our processes for the wide range of textiles used in uniforms and athletic gear. For over 20 years, we have built trusted partnerships with high schools, colleges, and sports apparel brands across the western United States. We deliver reliable, high-performance apparel that creates unity and pride.</p>
+    <div class="feature__buttons">{{ m.button("Contact Us", "/contact-us") }}</div>
+  {% endcall %}
+{% endcall %}
+
+{% call m.section("gray", class="industry-items") %}
+  <div class="card-grid industry-items__grid--4">
+    {% call m.card("Uniforms", "uniform") %}<p>Custom-decorated jerseys and pants for practice and game day.</p>{% endcall %}
+    {% call m.card("Warm-Up Gear", "football") %}<p>Coordinated jackets, pants, and layers for pre-game preparation.</p>{% endcall %}
+    {% call m.card("Fan & Spirit Wear", "fans") %}<p>An extensive collection of apparel designed for fans to express their pride.</p>{% endcall %}
+    {% call m.card("Accessories", "cap") %}<p>Decorated hats and equipment bags to complete the team look.</p>{% endcall %}
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="industry") %}
+  <h2 class="industry__title">Corporate &amp; Brand Identity</h2>
+  {% call m.featureRow("images/specialties/uniform.jpg", "Smiling chef in a white jacket embroidered with the word Chef, standing behind two plated dishes in a restaurant kitchen", "Represent Your Brand with Confidence") %}
+    <p>Your company's apparel is a direct embodiment of your brand. Whether it's everyday work uniforms, shirts for special company gatherings, or branded outerwear, these items must present your business in the most favorable light. We guarantee that every piece of clothing, from a polo for the CEO to a t-shirt for a team-building occasion, is designed to uphold your exceptional standards of quality and brand consistency.</p>
+    <div class="feature__buttons">{{ m.button("Contact Us", "/contact-us") }}</div>
+  {% endcall %}
+{% endcall %}
+
+{% call m.section("gray", class="industry-items") %}
+  <div class="card-grid">
+    {% call m.card("Employee Uniforms", "briefcase") %}<p>Professional and durable apparel for daily wear.</p>{% endcall %}
+    {% call m.card("Corporate Events", "event-shirt") %}<p>Custom t-shirts and apparel for picnics, conferences, and trade shows.</p>{% endcall %}
+    {% call m.card("Branded Merchandise", "vest") %}<p>High-quality jackets, vests, and accessories that employees and clients will value.</p>{% endcall %}
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="industry") %}
+  <h2 class="industry__title">Retail &amp; Fashion</h2>
+  {% call m.featureRow("images/specialties/Retail+.jpg", "Retail shop with racks of printed t-shirts and hats under a lit Purpose Built, Home of the Trades sign", "Large-Scale Fashion & Retail Apparel Decoration") %}
+    <p>There’s truly nothing like a favorite t-shirt featuring an eye-catching design. Our enthusiasm for the retail fashion industry drives us to create garments that people are proud to wear. With our unwavering attention to detail throughout all decoration processes, we guarantee our clients receive a top-notch product that connects with their customers. Witnessing our creations worn across the nation speaks volumes about the quality and impact of our services, ensuring our clients remain loyal.</p>
+    <div class="feature__buttons">{{ m.button("Contact Us", "/contact-us") }}</div>
+  {% endcall %}
+{% endcall %}
+
+{% call m.section("gray", class="industry-items") %}
+  <div class="card-grid">
+    {% call m.card("Private Label Programs", "tag") %}<p>Full-service apparel decoration for emerging and established brands.</p>{% endcall %}
+    {% call m.card("Trend-Focused Designs", "hanger") %}<p>Expertise in current styles, fabrics, and printing techniques.</p>{% endcall %}
+    {% call m.card("High-Volume Production", "cubes") %}<p>Scalable operations to meet the demands of retail distribution.</p>{% endcall %}
+  </div>
+{% endcall %}
+
+{% call m.section("white", class="industry") %}
+  <h2 class="industry__title">Promotional Products</h2>
+  {% call m.featureRow("images/specialties/ad-specialty-2.jpg", "Silverscreen-branded promotional items: a messenger bag, a backpack, mugs, glasses, a tumbler and a flask", "Amplify Your Message With Quality Swag") %}
+    <p>Promotional items are a powerful tool for building brand awareness. We have cultivated strong relationships with Advertising Specialty vendors, enabling them to deliver high-quality, quick-turnaround products for a wide range of events and clients. From t-shirts and hats to tote bags and jogger pants, our services ensure your promotional campaigns leave a memorable impact.</p>
+    <div class="feature__buttons">{{ m.button("Contact Us", "/contact-us") }}</div>
+  {% endcall %}
+{% endcall %}
+
+{% call m.section("gray", class="industry-items") %}
+  <div class="card-grid">
+    {% call m.card("Event Giveaways", "gift-hand") %}<p>Branded items perfect for trade shows, conferences, and marketing campaigns.</p>{% endcall %}
+    {% call m.card("Client Gifting", "gift") %}<p>Premium apparel and accessories to strengthen business relationships.</p>{% endcall %}
+    {% call m.card("Quick-Turnaround Service", "stopwatch") %}<p>Efficient production to meet tight deadlines for your events.</p>{% endcall %}
+  </div>
+{% endcall %}
+
+{#- The export's HTML lists the button first, but the live page shows it below the heading and paragraph. -#}
+{% call m.section("photo", class="service-cta specialties-cta", image="images/specialties/IMG_1369.jpg", alt="Printed hoodies in gray, charcoal and tan hanging on a clothing rack in a shop") %}
+  <h2 class="service-cta__title specialties-cta__title">Partner with a Local Expert in Apparel Decoration</h2>
+  <p>Your brand deserves a partner that provides quality, scalability, and dependability. Discover how our tailored services can enhance your custom apparel.</p>
+  {{ m.button("Contact Us Today to Start Your Project", "/contact-us", "blue", "service-cta__button specialties-cta__button") }}
+{% endcall %}

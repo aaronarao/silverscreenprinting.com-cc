@@ -2869,6 +2869,365 @@ h6, .h6 {
   .capabilities--dtg .capabilities__title { font-size: 46px; }
 }
 
+/* ---------- Specialties ---------- */
+
+/* Hero: shorter than the service pages, title centered, darker overlay (black at 55%, like the live page). */
+.specialties-hero {
+  align-items: center;
+  min-height: 220px;
+  text-align: center;
+}
+
+.specialties-hero .service-hero__media::after { background: rgba(0, 0, 0, 0.55); }
+
+.specialties-hero .service-hero__title { margin: 0 auto; }
+
+/* Intro paragraph on a light blue band. */
+.specialties-intro { background: #dfe5ee; }
+
+.specialties-intro__text {
+  max-width: 894px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Industry: an H2 between two blue rules, then a photo beside the subheading, text and button.
+   The photo sits above the text up to tablet, like the live page. */
+.industry .band__inner { padding-bottom: 30px; }
+
+.industry__title {
+  padding: 20px 0;
+  border-top: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  font-size: 28px;
+  text-align: center;
+}
+
+.industry .feature { margin-top: 40px; }
+
+.industry .feature__title { font-size: 28px; }
+
+.industry .feature__buttons .btn,
+.specialties-cta__button {
+  font-size: 16px;
+}
+
+/* Industry items: 3 or 4 icon cards on a gray band. */
+.industry-items .band__inner { padding-top: 36px; padding-bottom: 36px; }
+
+.industry-items .card .icon {
+  width: 55px;
+  height: 64px;
+}
+
+/* Closing band */
+.specialties-cta .specialties-cta__title {
+  max-width: 1142px;
+  font-size: 32px;
+}
+
+.specialties-cta .service-cta__button { width: 250px; }
+
+@media (min-width: 768px) {
+  .specialties-hero { min-height: 411px; }
+
+  .specialties-intro__text { font-size: 18px; }
+
+  .industry .band__inner { padding-bottom: 40px; }
+
+  .industry__title {
+    padding: 24px 0;
+    font-size: 40px;
+  }
+
+  .industry .feature {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .industry .feature__media img { height: 401px; }
+
+  .industry .feature__text { padding: 0 16px; }
+
+  .industry .feature__title { font-size: 30px; }
+
+  .industry .feature__buttons .btn {
+    width: 200px;
+    min-height: 54px;
+  }
+
+  .industry-items .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 14px;
+  }
+
+  .specialties-cta .band__inner { padding: 110px 32px; }
+
+  .specialties-cta .specialties-cta__title { font-size: 65px; }
+
+  .specialties-cta .service-cta__button { width: 310px; }
+}
+
+@media (min-width: 1025px) {
+  .specialties-hero { min-height: 506px; }
+
+  .industry .band__inner { padding-top: 76px; padding-bottom: 50px; }
+
+  .industry__title {
+    padding: 28px 0;
+    font-size: 55px;
+  }
+
+  .industry .feature {
+    flex-direction: row;
+    align-items: center;
+    gap: 4%;
+    margin-top: 50px;
+  }
+
+  .industry .feature__media img { height: 344px; }
+
+  .industry .feature__text { padding: 0; }
+
+  .industry .feature__title { font-size: 35px; }
+
+  .industry .feature__buttons .btn,
+  .specialties-cta__button {
+    font-size: 17px;
+  }
+
+  .industry-items .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+  }
+
+  .industry-items .industry-items__grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+  .specialties-cta .band__inner { padding: 170px 28.8px; }
+
+  .specialties-cta .specialties-cta__title { font-size: 80px; }
+}
+
+/* ---------- Technology ---------- */
+
+/* Intro: centered title, lead and text over a navy-tinted background (navy at 85%, like the live page). */
+.portal-intro .band__bg::after { background: rgba(0, 37, 84, 0.85); }
+
+.portal-intro .band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 62px;
+  padding-bottom: 62px;
+  text-align: center;
+}
+
+.portal-intro__title { font-size: 32px; }
+
+.portal-intro__accent { color: var(--steel); }
+
+.portal-intro .portal-intro__lead {
+  margin-top: 42px;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  line-height: normal;
+}
+
+.portal-intro .portal-intro__text {
+  max-width: 670px;
+  margin-top: 18px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.portal-intro__button {
+  width: 220px;
+  min-height: 52px;
+  margin-top: 18px;
+}
+
+/* Photo band with a light navy tint. */
+.portal-photo .photo-band { position: relative; }
+
+.portal-photo .photo-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 29, 67, 0.45);
+  pointer-events: none;
+}
+
+.portal-photo .photo-band img { height: 259px; }
+
+/* Your Central Hub: title, lead-in and four cards with the icon beside the title and text. */
+.portal-hub__title {
+  max-width: 882px;
+  margin: 0 auto;
+  font-size: 28px;
+  text-align: center;
+}
+
+.portal-hub .portal-hub__lede {
+  max-width: 791px;
+  margin: 58px auto 0;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.portal-hub .card-grid { margin-top: 40px; }
+
+.portal-hub .card--inline {
+  align-items: start;
+  column-gap: 16px;
+  padding: 20.7px 17.25px;
+}
+
+.portal-hub .card--inline .icon {
+  grid-row: span 2;
+  width: 64px;
+  height: 64px;
+}
+
+.portal-hub .card--inline .card__body {
+  grid-column: 2;
+  margin-top: 16px;
+}
+
+/* New Member? (navy band): centered on phones, text above the button on tablet, side by side on desktop. */
+.new-member .band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.new-member__title { font-size: 28px; }
+
+.new-member .new-member__lead {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.new-member__button {
+  width: 250px;
+  min-height: 52px;
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .portal-intro .band__inner { padding-top: 71px; padding-bottom: 71px; }
+
+  .portal-intro__title { font-size: 65px; }
+
+  .portal-intro .portal-intro__lead {
+    margin-top: 48px;
+    font-size: 22px;
+  }
+
+  .portal-intro .portal-intro__text { margin-top: 24px; }
+
+  .portal-intro__button { margin-top: 24px; }
+
+  .portal-photo .photo-band img { height: 469px; }
+
+  .portal-hub__title { font-size: 40px; }
+
+  .portal-hub .portal-hub__lede { font-size: 18px; }
+
+  .portal-hub .card-grid--2 {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+
+  .portal-hub .card--inline {
+    column-gap: 33px;
+    padding: 21.2px;
+  }
+
+  .portal-hub .card--inline .icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .new-member .band__inner {
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 48px;
+    text-align: left;
+  }
+
+  .new-member__title { font-size: 40px; }
+
+  .new-member .new-member__lead { font-size: 21px; }
+}
+
+@media (min-width: 1025px) {
+  .portal-intro .band__inner { padding-top: 86.4px; padding-bottom: 86.4px; }
+
+  .portal-intro__title { font-size: 80px; }
+
+  .portal-intro .portal-intro__lead {
+    margin-top: 51px;
+    font-size: 26px;
+  }
+
+  .portal-intro .portal-intro__text {
+    margin-top: 25px;
+    font-size: 17px;
+    line-height: 25.5px;
+  }
+
+  .portal-intro__button {
+    margin-top: 25px;
+    font-size: 17px;
+  }
+
+  .portal-photo .photo-band img { height: 577px; }
+
+  .portal-hub__title { font-size: 55px; }
+
+  .portal-hub .card-grid { margin-top: 72px; }
+
+  .portal-hub .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 34px;
+    row-gap: 36px;
+  }
+
+  .portal-hub .card--inline {
+    column-gap: 24px;
+    padding: 34.27px;
+  }
+
+  .portal-hub .card--inline .card__body { margin-top: 17px; }
+
+  .new-member .band__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .new-member__title { font-size: 55px; }
+
+  .new-member .new-member__lead { font-size: 25px; }
+
+  .new-member__button {
+    margin: 0 52px 0 0;
+    font-size: 17px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__slide,
   .slider__track,

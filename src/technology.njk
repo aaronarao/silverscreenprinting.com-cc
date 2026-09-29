@@ -1,0 +1,55 @@
+---
+layout: layout-default.njk
+title: Technologies | Silverscreen Decoration & Fulfillment
+description: Streamlined project management with an intuitive portal for approvals, tracking, and collaboration. Full visibility and control for custom apparel workflows.
+permalink: /technology/
+breadcrumb: Technology
+# The live page's og:image (1565px wide).
+ogImage: images/technology/Screenshot-2024-06-11-102316.png
+---
+{#- Copy matches the live page. Section order and image placement: desktop/technology.
+    Not a service page: no Service schema and no FAQ. The live H1 is split across two H1 tags; here it's one H1
+    with a line break. The export's "New Member?" band also has a Portal Access button that the live page no longer shows. -#}
+{%- import "macros.njk" as m -%}
+
+{#- Written out rather than through section(): the background is the page's main (LCP) image, so it loads eagerly. -#}
+<section class="band band--photo portal-intro">
+  <div class="band__bg">{% image "images/technology/915617693610-5f432917.png", "Abstract background of layered gray waves", "100vw", "eager", "high" %}</div>
+  <div class="band__inner">
+    <h1 class="portal-intro__title">Welcome to Your<br><span class="portal-intro__accent">Online Portal</span></h1>
+    <p class="portal-intro__lead">Effortless Project Management from Start to Finish</p>
+    <p class="portal-intro__text">Take control of your custom apparel projects with a <a href="{{ site.portalUrl }}">portal</a> designed to simplify your workflow. We've completely overhauled the proofing and management process to bring you a seamless, intuitive, and powerful platform. Say goodbye to confusing email chains and hello to streamlined success.</p>
+    {#- Opens in a new tab, like the live page. -#}
+    <a class="btn btn--blue portal-intro__button" href="{{ site.portalUrl }}" target="_blank" rel="noopener">Portal Access<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </div>
+</section>
+
+<div class="portal-photo">{{ m.photoBand("images/technology/1-9fcd9b86.jpg", "Hands typing on a laptop keyboard while holding an orange credit card") }}</div>
+
+{% call m.section("white", class="portal-hub") %}
+  <h2 class="portal-hub__title">Your Central Hub for Creative Collaboration</h2>
+  <p class="portal-hub__lede">Discover a more innovative way to oversee your custom garment projects. Our <a href="{{ site.portalUrl }}">customer portal</a> consolidates all the essential tools you need in one place, giving you full visibility and saving you time.</p>
+  <div class="card-grid card-grid--2">
+    {% call m.card("User-Friendly Dashboard", "dashboard", "inline") %}
+      <p>Get a complete overview of all your projects the moment you log in. Your personalized dashboard displays project statuses, recent activity, and pending approvals at a glance, so you always know what needs your attention.</p>
+    {% endcall %}
+    {% call m.card("Instant Design Approval", "approval", "inline") %}
+      <p>Reviewing and approving designs is now simpler than ever. You can leave feedback directly on the creative, request modifications, and finalize approval with just one click. Our system maintains a record of all versions, ensuring complete clarity for you and your team.</p>
+    {% endcall %}
+    {% call m.card("Streamlined Project Oversight", "hierarchy", "inline") %}
+      <p>Effortlessly monitor progress from concept to completion. Track milestones, view timelines, and access all project-related files and communications in one organized space.</p>
+    {% endcall %}
+    {% call m.card("Intuitive Navigation", "navigation", "inline") %}
+      <p>Move through your projects with ease. Our clean layout and straightforward navigation mean you'll find exactly what you need without a learning curve. Spend less time searching and more time making an impact.</p>
+    {% endcall %}
+  </div>
+{% endcall %}
+
+{#- The packet opens in a new tab, like the fact sheet buttons (served inline: see _headers). -#}
+{% call m.section("navy", class="new-member") %}
+  <div class="new-member__text">
+    <h2 class="new-member__title">New Member?</h2>
+    <p class="new-member__lead">Apply for a new account now</p>
+  </div>
+  <a class="btn btn--blue new-member__button" href="/files/Silverscreen_New-Account-Packet_Jan-2025.pdf" target="_blank" rel="noopener">Apply for A New Account<span class="visually-hidden"> (opens in a new tab)</span></a>
+{% endcall %}
