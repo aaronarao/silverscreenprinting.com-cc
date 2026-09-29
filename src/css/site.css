@@ -3324,10 +3324,9 @@ h6, .h6 {
 
 .journey__text { margin-top: 30px; }
 
-.journey__title,
-.journey__subtitle {
-  font-size: 28px;
-}
+.journey__title { font-size: 32px; }
+
+.journey__subtitle { font-size: 25px; }
 
 .journey__text p {
   margin-top: 24px;
@@ -3338,7 +3337,7 @@ h6, .h6 {
 
 .journey .arrow-list { margin-top: 32px; }
 
-.journey .arrow-list__title { font-size: 16px; }
+.journey .arrow-list__title { font-size: 21px; }
 
 .journey .arrow-list__item p { font-size: 16px; }
 
@@ -3356,7 +3355,7 @@ h6, .h6 {
 
 .have-question .contact-details { margin-top: 40px; }
 
-.have-question .contact-details__label { font-size: 16px; }
+.have-question .contact-details__label { font-size: 21px; }
 
 .have-question .contact-details a { font-size: 16px; }
 
@@ -3385,11 +3384,17 @@ h6, .h6 {
 
   .contact-intro__title,
   .contact-start__title,
-  .have-question__title,
-  .journey__title,
-  .journey__subtitle {
+  .have-question__title {
     font-size: 40px;
   }
+
+  .journey__title { font-size: 55px; }
+
+  .journey__subtitle { font-size: 32px; }
+
+  .journey .arrow-list__title { font-size: 22px; }
+
+  .have-question .contact-details__label { font-size: 22px; }
 
   .contact-intro .contact-intro__lede {
     max-width: 580px;
