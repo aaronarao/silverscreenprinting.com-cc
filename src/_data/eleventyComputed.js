@@ -3,8 +3,8 @@ const path = require("node:path");
 const { default: Image } = require("@11ty/eleventy-img");
 const site = require("./site.json");
 
-const DEFAULT_OG_IMAGE = "images/shared/SSDF-Logo-Blue-Mirror.png";
-const LOGO = "images/shared/SSDF-Logo-Blue-Mirror.png";
+const DEFAULT_OG_IMAGE = "images/shared/SSDF-Logo-Light-BG-Alt.png";
+const LOGO = "images/shared/SSDF-Logo-Light-BG-Alt.png";
 
 // "/screen-print/" -> "/screen-print". The live site's URLs have no trailing
 // slash (Cloudflare's drop-trailing-slash does the same); the homepage stays "/".
