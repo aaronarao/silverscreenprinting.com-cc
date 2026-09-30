@@ -16,7 +16,7 @@ sameDateOrder: 1
 ---
 While the first quarter of the year is often a slower time for many, at Silverscreen, we hit the ground running in 2025—expanding our business, scaling production, and innovating with our customers in mind. Change is the heartbeat of our operation. We’re constantly evolving to meet shifting client needs, adapt to market trends, embrace emerging technologies, and raise the bar for production standards.
 
-#### Bigger Space, Bigger Capabilities
+## Bigger Space, Bigger Capabilities
 
 We’ve significantly expanded our production footprint to an impressive **56,000 sq ft**, which includes our offices and four specialized production departments. Our team of around 100 skilled professionals powers this space with expertise and dedication, bringing your ideas to life with precision.
 
@@ -35,7 +35,7 @@ Our four comprehensive departments include:
 
 Faster production doesn’t mean compromising quality. We maintain strict quality control checkpoints at every stage of your order, ensuring speed never sacrifices excellence.
 
-#### Fulfillment That Keeps Up
+## Fulfillment That Keeps Up
 
 We’ve invested heavily in our **fulfillment department**, aligning it with the scale and quality of our decoration services. Here’s what’s new:
 
@@ -50,7 +50,7 @@ These enhancements boost our ability to offer fast, accurate services like rapid
 
 <div class="post-gallery" style="--cols: 4; --cols-tablet: 4; --cols-phone: 2; --ratio: 3 / 2">{% image "images/blog/growth-innovation-expanded-capabilities-at-silverscreen/growth-innovation-shop-14.jpg", "Tall warehouse shelving stacked with boxes of blank garments", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/growth-innovation-expanded-capabilities-at-silverscreen/growth-innovation-stampinator.jpg", "Stampinator 480 machine", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/growth-innovation-expanded-capabilities-at-silverscreen/growth-innovation-shop-38.jpg", "Automatic screen printing press in a production room", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/growth-innovation-expanded-capabilities-at-silverscreen/growth-innovation-gladiator.jpg", "DTF printer printing rows of white designs onto film", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}</div>
 
-#### Digital Decoration at Scale
+## Digital Decoration at Scale
 
 Our digital department now operates from a dedicated **2,000 sq ft space**, enabling us to print **2,000 linear inches per hour** and handle **400 DTF orders weekly**.
 
@@ -58,13 +58,13 @@ New equipment, like the **Stampinator480**, has supercharged our digital product
 
 We’ve also refined our **post-pressing processes** for DTF transfer application with specialized heat mats, giving your garments a soft, screen-printed feel—far from the plastic-like transfers of the past.
 
-#### Next-Level Heat Press & Patch Application
+## Next-Level Heat Press & Patch Application
 
 We’ve trained extensively and upgraded our gear with the **Hotronix360**, allowing us to heat press premium patches from our partners at [World Emblem](/2024/10/10/world-emblem-partners-with-silverscreen-decoration-fulfillment). These patches adhere securely without stitching, thanks to a durable adhesive activated by dual-heating platens. Prefer the stitched look? We can simulate it with faux-stitch artwork, giving your patch the look of a sew-down with the clean, consistent results of heat press.
 
 DTF transfers aren’t just for tees—we can apply them cleanly across hat seams too. This method delivers sharp, durable graphics without needing to reduce your design’s complexity, making it a powerful alternative to embroidery for intricate or dense logos.
 
-#### All Under One Roof, All With You in Mind
+## All Under One Roof, All With You in Mind
 
 Everything we’ve done—from expanding our physical space to investing in cutting-edge technology—has been with you, our client, at the center. Our goal is to streamline your entire decoration process under one roof, with one PO, and one trusted partner.
 

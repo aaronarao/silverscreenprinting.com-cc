@@ -45,21 +45,21 @@ faq:
     shared with Embroidery, DTG, DTF and Fulfillment. -#}
 {%- import "macros.njk" as m -%}
 
-{{ m.serviceHero("Screen Printing Reno, NV", "images/screen-print/A103+Silverscreen+25_9+6958.jpg", "Silverscreen's screen printing floor in Reno, with rows of blue automatic carousel presses under a high warehouse ceiling") }}
+{{ m.serviceHero("Screen Printing Reno, NV", "images/screen-print/A103+Silverscreen+25_9+6958.jpg", "Silverscreen's screen printing floor in Reno, with rows of blue automatic carousel presses under a high warehouse ceiling", accent="Screen Printing") }}
 
-{% call m.serviceIntro("20+", "years of experience", 'Screen Printing: <em class="accent">Unmatched Quality</em> for Your Brand') %}
+{% call m.serviceIntro("20+", "years of experience", 'Screen Printing: <span class="accent-color">Unmatched</span> Quality for Your Brand') %}
   <p>At Silverscreen Decoration &amp; Fulfillment, we leverage more than 20 years of industry expertise rooted in American craftsmanship, alongside state-of-the-art technology, to deliver exceptional screen printing services. Our unwavering commitment to quality ensures that every garment faithfully reflects your brand standards, regardless of the order size. We stand as your trusted partner in producing striking, high-quality custom apparel that elevates your brand presence.</p>
 {% endcall %}
 
-{% call m.featurePanel("images/screen-print/A103+Silverscreen+25_9+7061.jpg", "Close-up of an automatic carousel screen printing press loaded with screens, with more presses lined up behind it", 'Our <em class="accent">Advanced</em> Screen Printing Capabilities') %}
+{% call m.featurePanel("images/screen-print/A103+Silverscreen+25_9+7061.jpg", "Close-up of an automatic carousel screen printing press loaded with screens, with more presses lined up behind it", 'Our <span class="accent-color">Advanced</span> Screen Printing Capabilities') %}
   <p>Our Reno, NV facility is equipped with the latest automatic screen printing presses, enabling us to handle high-volume screen-printing orders with precision and efficiency. With this technology, we maintain consistent quality and deliver rapid turnaround times, so your projects are on schedule and meet your exact specifications.</p>
   {{ m.button("Contact Us Today", "/contact-us", "navy", "feature-panel__button") }}
 {% endcall %}
 
 {% call m.section("white", class="offerings") %}
-  <h2 class="section-title">Specialty Ink &amp; Process <em class="accent">Offerings</em></h2>
+  <h2 class="section-title">Specialty Ink &amp; Process <span class="accent-color">Offerings</span></h2>
   {{ m.divider() }}
-  <p class="offerings__lede">We provide a range of specialized screen printing techniques to bring your unique vision to life. Our expertise ensures that your designs are not only printed but also expertly crafted.</p>
+  <p class="offerings__lede lead">We provide a range of specialized screen printing techniques to bring your unique vision to life. Our expertise ensures that your designs are not only printed but also expertly crafted.</p>
   <div class="card-grid card-grid--2">
     {% call m.card("Soft Hand Printing", "soft-hand", "inline") %}
       <p>This technique uses water-based or discharge inks to create a print with a remarkably soft feel, fully integrated into the fabric. It is ideal for premium apparel where comfort is as important as design, providing a high-end finish that won't crack or peel.</p>
@@ -81,11 +81,11 @@ faq:
 {{ m.photoBand("images/screen-print/A103+Silverscreen+25_9+7146.jpg", "Screen printing shop floor with stacks of printed high-visibility and gold shirts in front of a Silverscreen Printing and Embroidery banner and an American flag") }}
 
 {% call m.section("white", class="why-partner") %}
-  <h2 class="section-title"><em class="accent">Why Partner</em> with <a href="/">Silverscreen Decoration &amp; Fulfillment</a> for Screen Printing?</h2>
+  <h2 class="section-title">Why <span class="accent-color">Partner</span> with <a href="/">Silverscreen Decoration &amp; Fulfillment</a> for Screen Printing?</h2>
   <div class="why-partner__row">
     <div class="why-partner__media">{% image "images/screen-print/Oversized-Printing_19-scaled.jpg", "White T-shirt on a juniper shrub printed with a large 16 by 18 inch design reading Oversized Screen Print", "(min-width: 1025px) 480px, (min-width: 768px) 40vw, 100vw" %}</div>
     <div class="why-partner__text">
-      <p class="why-partner__lead">For established businesses, brand consistency and dependable fulfillment are essential.</p>
+      <p class="why-partner__lead lead">For established businesses, brand consistency and dependable fulfillment are essential.</p>
       <p>We recognize the challenges of expanding your branded merchandise and have designed our operations to support your growth.</p>
       {% call m.checkList() %}
         {% call m.checkItem("Unwavering Quality") %}
@@ -109,11 +109,12 @@ faq:
 {% call m.section("photo", class="service-cta", image="images/screen-print/A103+Silverscreen+25_9+6978-Pano.jpg", alt="Panoramic view of the screen printing floor with two carousel presses, drying tables and an M&R banner on the wall") %}
   <h2 class="service-cta__title">Ready to Elevate Your Brand with Superior Screen Printing Services</h2>
   <p>Ready to see how our expertise can enhance your custom apparel? Partner with an experienced decorator who understands the demands of quality, volume, and brand integrity.</p>
-  <p class="service-cta__lead">Contact us today to request a quote and discuss your next project.</p>
+  <p class="service-cta__lead lead">Contact us today to request a quote and discuss your next project.</p>
   {{ m.button("Contact Us Today", "/contact-us", "blue", "service-cta__button") }}
 {% endcall %}
 
 {% call m.section("white", class="service-faq") %}
+  <p class="eyebrow">Your questions, answered</p>
   <h2 class="section-title">Screen Printing FAQ's</h2>
   {{ m.faq(faq) }}
 {% endcall %}

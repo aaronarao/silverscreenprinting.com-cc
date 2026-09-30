@@ -22,7 +22,7 @@ The key advantages of sublimated patches lie in their durability and intricate d
 
 <div class="post-gallery" style="--cols: 2; --cols-tablet: 2; --cols-phone: 2; --ratio: 1 / 1">{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-gold-embroidered.jpg", "Las Vegas Dreamer sublimated patch", "(min-width: 1025px) 531px, (min-width: 768px) 313px, 50vw" %}{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-mountain-landscape.jpg", "Sublimated patch with a mountain landscape, orange sunset, blue water and the word Explore", "(min-width: 1025px) 531px, (min-width: 768px) 313px, 50vw" %}</div>
 
-#### Expand Your Decoration Possibilities
+## Expand Your Decoration Possibilities
 
 Your decoration method should never limit your creative potential. If your artwork features multiple colors and your preferred patch type charges extra for each thread color, sublimation offers an ideal alternative. Since sublimated patches are digitally printed onto fabric, every color in your design can be faithfully reproduced, including photorealistic images and specific PMS color matching.
 
@@ -32,7 +32,7 @@ For those seeking an added touch of luxury, faux suede sublimated patches offer 
 
 <div class="post-gallery" style="--cols: 4; --cols-tablet: 4; --cols-phone: 2; --ratio: 3 / 2">{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-tan-jacket.jpg", "Tan jacket with the Explore mountain patch on the chest", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-sunburst.jpg", "Explore mountain patch standing upright", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-black-shirt.jpg", "Black polo shirt with a Las Vegas Dreamer patch", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}{% image "images/blog/discover-the-versatility-of-sublimated-and-faux-suede-sublimated-patches/sublimated-patches-embroidered.jpg", "Colorful script-lettering patch with a blue border", "(min-width: 1025px) 257px, (min-width: 768px) 148px, 50vw" %}</div>
 
-#### Let’s Create the Perfect Patch Solution
+## Let’s Create the Perfect Patch Solution
 
 Our team of patch experts is dedicated to helping you determine the best patch type for your unique artwork. We specialize in providing creative, durable solutions that address even the most challenging decoration needs. Whether you’re looking for vibrant, high-detail sublimated patches or the refined elegance of faux suede sublimated patches, we have the expertise to bring your vision to life.
 

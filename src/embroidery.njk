@@ -42,13 +42,13 @@ faq:
 {#- Copy matches the live page (newer than the Duda export). Section order and image placement: desktop/embroidery. -#}
 {%- import "macros.njk" as m -%}
 
-{{ m.serviceHero("Embroidery: Precision, Quality, and Scale", "images/embroidery/A103+Silverscreen+25_9+7341-HDR.jpg", "Overhead view of Silverscreen's embroidery floor in Reno, with rows of multi-head embroidery machines, work tables and shelving", true) }}
+{{ m.serviceHero("Embroidery: Precision, Quality, and Scale", "images/embroidery/A103+Silverscreen+25_9+7341-HDR.jpg", "Overhead view of Silverscreen's embroidery floor in Reno, with rows of multi-head embroidery machines, work tables and shelving", true, accent="Embroidery") }}
 
-{% call m.serviceIntro("20+", "years of experience", 'Elevate Your Brand with <em class="accent">Expert Embroidery Solutions</em>') %}
+{% call m.serviceIntro("20+", "years of experience", 'Elevate Your Brand with Expert Embroidery <span class="accent-color">Solutions</span>') %}
   <p>At <a href="/">Silverscreen Decoration &amp; Fulfillment</a>, we combine over 20 years of quality American embroidery craftsmanship with advanced technology to deliver embroidery solutions that make a lasting impression. Our commitment to precision ensures every stitch enhances your brand’s identity, whether on <a href="/specialties">corporate uniforms, team apparel, or promotional products</a>. We provide the quality, scale, and reliability your business needs to stand out.</p>
 {% endcall %}
 
-{% call m.capabilities('Our <em class="accent">Advanced</em> Embroidery Capabilities', "Our embroidery shop in Reno, NV, adeptly manages projects of any scale with unparalleled efficiency and reliability. We utilize cutting-edge technology to ensure a flawless finish for each garment.") %}
+{% call m.capabilities('Our <span class="accent-color">Advanced</span> Embroidery Capabilities', "Our embroidery shop in Reno, NV, adeptly manages projects of any scale with unparalleled efficiency and reliability. We utilize cutting-edge technology to ensure a flawless finish for each garment.") %}
   {% call m.arrowList() %}
     {% call m.arrowItem("Extensive Capacity") %}
       <p>With 50 commercial embroidery machines running for 2 full shifts, we can manage orders of any size with accuracy and attention to detail.</p>
@@ -69,9 +69,9 @@ faq:
 ]) }}
 
 {% call m.section("white", class="offerings") %}
-  <h2 class="section-title">A Full Spectrum of Embroidery <em class="accent">Solutions</em></h2>
+  <h2 class="section-title">A Full Spectrum of Embroidery <span class="accent-color">Solutions</span></h2>
   {{ m.divider() }}
-  <p class="offerings__lede">We offer a comprehensive suite of embroidery services designed to bring your brand’s vision to life with texture, dimension, and durability.</p>
+  <p class="offerings__lede lead">We offer a comprehensive suite of embroidery services designed to bring your brand’s vision to life with texture, dimension, and durability.</p>
   <div class="card-grid card-grid--2">
     {% call m.card("Standard Embroidery", "needle", "inline") %}
       <p>Classic, high-quality stitching perfect for logos and branding on a wide variety of apparel and accessories.</p>
@@ -100,7 +100,7 @@ faq:
 
 {% call m.featurePanel("images/shared/embroidery-department.jpg", "Embroidery department with multi-head machines loaded with colorful thread cones and an Embroidery sign on the back wall", "Your Trusted Partner for Embroidery Apparel", "white", "navy", true) %}
   <p>Your brand merits embellishments that embody its quality and values. With our vast experience and adaptable operations, we are the dependable partner your business can rely on for all your embroidery requirements.</p>
-  <p class="feature-panel__lead">Ready to enhance your brand with high-quality embroidery? Contact us today to discuss your project and discover how our solutions can support your business goals.</p>
+  <p class="feature-panel__lead lead">Ready to enhance your brand with high-quality embroidery? Contact us today to discuss your project and discover how our solutions can support your business goals.</p>
   {{ m.button("Contact Us Today", "/contact-us", "blue", "feature-panel__button") }}
 {% endcall %}
 
@@ -109,6 +109,7 @@ faq:
 {% endcall %}
 
 {% call m.section("gray", class="service-faq service-faq--large") %}
+  <p class="eyebrow">Your questions, answered</p>
   <h2 class="section-title">Embroidery Services FAQ's</h2>
   {{ m.faq(faq) }}
 {% endcall %}
