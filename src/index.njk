@@ -8,14 +8,14 @@ permalink: /
 {%- import "macros.njk" as m -%}
 
 <section class="hero" data-hero-slideshow>
-  <div class="hero__slides">
+  <div class="hero__slides full-bleed">
     <div class="hero__slide is-active">{% image "images/shared/press-floor-overview.jpg", "Wide view of the Silverscreen production floor with rows of automatic screen printing presses", "100vw", "eager", "high" %}</div>
     <div class="hero__slide">{% image "images/shared/customer-service-office.jpg", "Silverscreen customer service office with desks, monitors and framed ink color charts", "100vw" %}</div>
     <div class="hero__slide">{% image "images/shared/embroidery-department.jpg", "Embroidery department with multi-head embroidery machines loaded with colorful thread cones", "100vw" %}</div>
     <div class="hero__slide">{% image "images/shared/warehouse-racking.jpg", "Fulfillment warehouse with tall blue and yellow pallet racking full of boxed inventory", "100vw" %}</div>
   </div>
   <div class="hero__inner">
-    <div class="hero__box">
+    <div class="hero__box shape shape--steel">
       <h1 class="hero__title">Silverscreen<br> Decoration &amp; Fulfillment</h1>
       <p class="hero__tagline lead">Your Trusted Partner for Scalable Custom Apparel Decoration and Fulfillment</p>
       {{ m.button("Let's Have a Discussion", "/contact-us", "blue", "hero__button") }}
@@ -85,7 +85,7 @@ permalink: /
 {% endcall %}
 
 <section class="commitment">
-  <div class="commitment__media">{% image "images/home/lobby-logo-sign.jpg", "Backlit Silverscreen Printing and Embroidery logo sign on the wall of the front office", "(min-width: 1025px) 59vw, 100vw" %}</div>
+  <div class="commitment__media full-bleed">{% image "images/home/lobby-logo-sign.jpg", "Backlit Silverscreen Printing and Embroidery logo sign on the wall of the front office", "(min-width: 1025px) 59vw, 100vw" %}</div>
   <div class="commitment__text">
     <h2 class="commitment__title">Our Commitment</h2>
     <p>Silverscreen Decoration &amp; Fulfillment is built on unwavering quality, operational excellence, and trusted partnerships. By combining innovative processes with time-tested expertise, we deliver consistent results and help move your business forward.</p>

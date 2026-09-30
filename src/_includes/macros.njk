@@ -70,7 +70,7 @@
 {%- macro section(variant = "white", id = "", class = "", image = "", alt = "") -%}
 <section class="band band--{{ variant }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   {%- if image %}
-  <div class="band__bg">{% image image, alt, "100vw" %}</div>
+  <div class="band__bg full-bleed">{% image image, alt, "100vw" %}</div>
   {%- endif %}
   <div class="band__inner">
     {{ caller() }}
@@ -225,7 +225,7 @@
 {%- set base = "https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-l+002554(" + a.lng + "," + a.lat + ")/" + a.lng + "," + a.lat + "," + zoom + ",0/" -%}
 {%- set token = "?access_token=" + site.mapboxToken -%}
 {%- set address = a.street + ", " + a.city + ", " + a.state + " " + a.zip -%}
-<a class="static-map" href="{{ a.mapUrl }}" target="_blank" rel="noopener">
+<a class="static-map full-bleed" href="{{ a.mapUrl }}" target="_blank" rel="noopener">
   <picture>
     <source media="(min-width: 1025px)" srcset="{{ base }}1280x200{{ token }} 1x, {{ base }}1280x200@2x{{ token }} 2x" width="1280" height="200">
     <img src="{{ base }}1024x300{{ token }}" srcset="{{ base }}1024x300@2x{{ token }} 2x" width="1024" height="300" alt="Street map of south Reno with a pin at {{ address }}" loading="lazy" decoding="async">
@@ -246,7 +246,7 @@
     heading so the accent stays readable (.service-hero--accent in site.css). -#}
 {%- macro serviceHero(title, image, alt, wide = false, class = "", accent = "") -%}
 <section class="service-hero{% if wide %} service-hero--wide{% endif %}{% if accent %} service-hero--accent{% endif %}{% if class %} {{ class }}{% endif %}">
-  <div class="service-hero__media">{% image image, alt, "100vw", "eager", "high" %}</div>
+  <div class="service-hero__media full-bleed">{% image image, alt, "100vw", "eager", "high" %}</div>
   <div class="service-hero__inner">
     <h1 class="service-hero__title">{% if accent and title.startsWith(accent) %}<span class="accent-color">{{ accent }}</span>{{ title.slice(accent | length) }}{% else %}{{ title }}{% endif %}</h1>
   </div>
@@ -278,7 +278,7 @@
 <section class="band band--{{ band }} feature-panel{% if box != "white" %} feature-panel--{{ box }}{% endif %}{% if reverse %} feature-panel--reverse{% endif %}">
   <div class="band__inner feature-panel__inner">
     <div class="feature-panel__media">{% image image, alt, "(min-width: 1025px) 740px, 100vw" %}</div>
-    <div class="feature-panel__box">
+    <div class="feature-panel__box shape">
       <h2 class="feature-panel__title">{{ title | safe }}</h2>
       {{ caller() }}
     </div>
@@ -298,7 +298,7 @@
 
 {#- photoBand(image, alt): a full-width photo strip between sections. -#}
 {%- macro photoBand(image, alt) -%}
-<div class="photo-band">{% image image, alt, "100vw" %}</div>
+<div class="photo-band full-bleed">{% image image, alt, "100vw" %}</div>
 {%- endmacro -%}
 
 {#- checkList() wraps checkItem(title) rows: a check icon, an H3 title and body (caller). -#}
@@ -387,7 +387,7 @@
     where `width` is the photo's share of the row (e.g. 643, 451 and 317 for the live page's pixel widths).
     Phones show the first two photos side by side, like the live site. -#}
 {%- macro photoRow(photos) -%}
-<div class="photo-row">
+<div class="photo-row full-bleed">
   {%- for p in photos %}
   <div class="photo-row__item" style="--share: {{ p.width }}">{% image p.image, p.alt, "50vw" %}</div>
   {%- endfor %}

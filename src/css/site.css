@@ -55,6 +55,11 @@
 
   --content-width: 1200px;
 
+  /* One corner radius for the whole site: every photo and every shape (a solid or translucent box
+     holding content over or next to a photo), plus buttons and cards. Full-bleed photos and shapes, the ones that run edge
+     to edge across the screen, stay square. The rules are in the Rounded corners section below. */
+  --radius: 10px;
+
   /* Type system (the roles are in the Type system section at the end of this file).
      Sizes scale smoothly from a 390px screen to a 1440px screen: clamp(min, rem + vw, max). */
   --font-display: "XSCALE", "Arial Black", sans-serif; /* stat numbers only */
@@ -169,6 +174,31 @@ ul {
   transform: none;
 }
 
+/* ---------- Rounded corners ----------
+   Photos: every image from the {% image %} shortcode (a <picture>) gets var(--radius) on the <img>,
+   which is the element that shows the crop (object-fit), so the corners always show.
+   Shapes: any solid or translucent box that holds content (a heading, text, buttons) and sits over or
+   next to a photo is class="shape", whatever its color: the feature panel boxes (white, gray, navy) and
+   the hero boxes. Section background bands are not shapes; they run full width and stay square.
+   .shape--steel adds the translucent steel fill (the hero boxes); set --shape-alpha to change its opacity.
+   Opt-out: put .full-bleed on the container of a photo or shape that runs edge to edge across the screen.
+   Logos (header, footer, partner strip) and the framed Virtual Tour graphic keep their own edges. */
+picture img,
+.shape {
+  border-radius: var(--radius);
+}
+
+.shape--steel {
+  background: rgb(125 155 193 / var(--shape-alpha, 0.85)); /* --steel */
+}
+
+.full-bleed img,
+.full-bleed .shape,
+.full-bleed.shape,
+:is(.site-header__logo, .site-footer__logo, .logo-strip, .vt-hero__graphic) img {
+  border-radius: 0;
+}
+
 /* ---------- Type ---------- */
 
 p {
@@ -214,7 +244,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   justify-content: center;
   padding: 10px 7px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--blue);
   color: var(--white);
   text-align: center;
@@ -828,7 +858,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   padding: 20.7px 17.25px;
   border: 1px solid #ededed;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-align: center;
   transition: box-shadow 0.4s ease-in-out;
 }
@@ -894,7 +924,6 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   height: 240px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .feature__text {
@@ -978,7 +1007,7 @@ h1, h2, h3, h4, h5, h6,
   flex-direction: column;
   gap: 30px;
   padding: 27.6px 20.7px;
-  border-radius: 10px;
+  border-radius: var(--radius);
   background: var(--light-gray);
 }
 
@@ -1144,7 +1173,7 @@ h1, h2, h3, h4, h5, h6,
   display: block;
   height: 102px;
   border: 1px solid #ededed;
-  border-radius: 8px;
+  border-radius: var(--radius);
   background: var(--white);
 }
 
@@ -1373,7 +1402,6 @@ h1, h2, h3, h4, h5, h6,
   flex-direction: column;
   align-items: center;
   padding: 16px;
-  background: rgba(125, 155, 193, 0.85);
   text-align: center;
 }
 
@@ -1782,7 +1810,7 @@ h1, h2, h3, h4, h5, h6,
     bottom: 16px;
     max-width: calc(100% - 32px);
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: var(--radius);
     background: var(--white);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   }
@@ -1896,14 +1924,12 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   height: 260px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .feature-panel__box {
   position: relative;
   margin: -40px 12px 0;
   padding: 28px 22px;
-  border-radius: 10px;
   background: var(--white);
   color: var(--text);
 }
@@ -1944,16 +1970,10 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-/* Feature panel variants: white band, gray or navy box with a shadow and square corners, text box on the left. */
+/* Feature panel variants: white band, gray or navy box with a shadow, text box on the left. */
 .feature-panel--gray .feature-panel__box,
 .feature-panel--navy .feature-panel__box {
-  border-radius: 0;
   box-shadow: 3px 0 11px rgba(0, 0, 0, 0.25);
-}
-
-.feature-panel--gray .feature-panel__media img,
-.feature-panel--navy .feature-panel__media img {
-  border-radius: 0;
 }
 
 .feature-panel--gray .feature-panel__box { background: var(--light-gray); }
@@ -2085,7 +2105,6 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   height: 360px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
 .why-partner__lead {
@@ -2754,7 +2773,7 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   align-items: flex-end;
   min-height: 160px;
-  background: rgba(125, 155, 193, 0.71);
+  --shape-alpha: 0.71;
 }
 
 .contact-hero__buttons {
@@ -3166,7 +3185,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: flex-start;
   row-gap: 24px;
   padding: calc(50% + 59px) 8% 8%;
-  border-radius: 10px;
+  border-radius: var(--radius);
   overflow: hidden;
   color: var(--white);
 }
