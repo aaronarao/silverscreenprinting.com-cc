@@ -180,8 +180,8 @@ ul {
    Shapes: any solid or translucent box that holds content (a heading, text, buttons) and sits over or
    next to a photo is class="shape", whatever its color: the feature panel boxes (white, gray, navy) and
    the hero boxes. Section background bands are not shapes; they run full width and stay square.
-   Fills: .shape--steel is translucent light steel (Contact Us hero), .shape--blue translucent medium blue
-   (homepage hero; dark enough for small white text even over a light photo). Set --shape-alpha to change
+   Fills: .shape--blue is translucent medium blue (the homepage and Contact Us heroes; dark enough for
+   small white text even over a light photo), .shape--steel translucent light steel (not in use now). Set --shape-alpha to change
    either one's opacity.
    Opt-out: put .full-bleed on the container of a photo or shape that runs edge to edge across the screen.
    Logos (header, footer, partner strip) and the framed Virtual Tour graphic keep their own edges. */
@@ -196,6 +196,11 @@ picture img,
 
 .shape--blue {
   background: rgb(50 98 149 / var(--shape-alpha, 0.9)); /* --blue */
+}
+
+/* A navy button's usual hover (blue) would vanish into a blue shape, so it darkens instead. */
+.shape--blue .btn--navy:hover {
+  background: var(--dark-navy);
 }
 
 .full-bleed img,
@@ -1423,11 +1428,6 @@ h1, h2, h3, h4, h5, h6,
   width: 220px;
   min-height: 52px;
   margin-top: 28px;
-}
-
-/* The navy button's usual hover (blue) would vanish into the blue box, so it darkens instead. */
-.hero__button:hover {
-  background: var(--dark-navy);
 }
 
 @media (min-width: 768px) {
@@ -2744,8 +2744,8 @@ h1, h2, h3, h4, h5, h6,
 
 /* ---------- Contact Us ---------- */
 
-/* Hero: photo with a translucent steel box behind the H1 (title at the bottom of the box), buttons below.
-   Buttons are centered on phones and line up with the box from tablet up. */
+/* Hero: photo with a translucent blue box holding the H1 and two buttons, centered, with the same
+   spacing as the homepage hero. The buttons stack on phones and sit side by side from tablet up. */
 .contact-hero {
   position: relative;
   color: var(--white);
@@ -2767,25 +2767,33 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 15px;
+  padding: 75px 15px;
 }
 
 .contact-hero__box {
   display: flex;
-  align-items: flex-end;
-  min-height: 160px;
-  --shape-alpha: 0.71;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.contact-hero__title {
+  text-wrap: balance;
 }
 
 .contact-hero__buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 28px;
 }
 
-.contact-hero__button { width: 280px; }
+.contact-hero__button {
+  width: 220px;
+  min-height: 52px;
+}
 
 /* Text blocks sit 16px in from the form panel and photos, like the live page. */
 .contact-intro__title,
@@ -2856,17 +2864,18 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (min-width: 768px) {
-  .contact-hero__inner { padding: 16px 32px; }
+  .contact-hero__inner { padding: 96px 32px; }
 
-  .contact-hero__box {
-    min-height: 390px;
-    margin-inline: 30px;
-  }
+  .contact-hero__box { padding: 48px 32px; }
 
   .contact-hero__buttons {
-    align-items: flex-start;
-    margin-inline: 30px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 36px;
   }
+
+  .contact-hero__button { width: 200px; }
 
   .contact-intro .contact-intro__lede {
     max-width: 580px;
@@ -2891,14 +2900,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (min-width: 1025px) {
-  .contact-hero__inner { padding: 16px 28.8px; }
+  .contact-hero__inner { padding: 216px 28.8px; }
 
-  .contact-hero__box {
-    min-height: 400px;
-    margin-inline: 16px;
-  }
+  .contact-hero__box { padding: 64px 48px; }
 
-  .contact-hero__buttons { margin-inline: 16px; }
+  .contact-hero__buttons { margin-top: 40px; }
 
   .contact-intro .contact-intro__lede {
     max-width: 690px;

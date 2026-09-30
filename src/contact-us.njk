@@ -12,16 +12,16 @@ ogImage: images/contact-us/IMG_1589.jpeg
     The form posts to Insightly, like the homepage's (see the contactForm macro). -#}
 {%- import "macros.njk" as m -%}
 
-{#- Photo with a translucent steel box behind the H1 (no dark overlay), and two buttons below it. -#}
+{#- Photo with a translucent blue box holding the H1 and two buttons, laid out like the homepage hero. -#}
 <section class="contact-hero">
   <div class="contact-hero__media full-bleed">{% image "images/contact-us/A103+Silverscreen+25_9+6887.jpg", "Silverscreen front office with desks, monitors and framed ink color charts on the wall", "100vw", "eager", "high" %}</div>
   <div class="contact-hero__inner">
-    <div class="contact-hero__box shape shape--steel">
-      <h1 class="contact-hero__title">Contact Silverscreen today to get started on your Project</h1>
-    </div>
-    <div class="contact-hero__buttons">
-      {{ m.button("Call Now", "tel:" + site.phone, "blue", "contact-hero__button") }}
-      {{ m.button("Contact Us Now", "#ContactForm", "blue", "contact-hero__button") }}
+    <div class="contact-hero__box shape shape--blue">
+      <h1 class="contact-hero__title">Start Your Project Today</h1>
+      <div class="contact-hero__buttons">
+        {{ m.button("Call Now", "tel:" + site.phone, "navy", "contact-hero__button") }}
+        {{ m.button("Contact Us Now", "#ContactForm", "navy", "contact-hero__button") }}
+      </div>
     </div>
   </div>
 </section>
