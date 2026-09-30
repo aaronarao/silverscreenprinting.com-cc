@@ -9,7 +9,7 @@ ogImage: images/blog/free-america-250-artwork-for-custom-apparel-silverscreen-de
 category: "Resources"
 keywords: ["america-250", "artwork", "free", "custom-apparel"]
 ---
-### Free, print-ready patriotic designs to help your brand stand out for America’s 250th celebration
+## Free, print-ready patriotic designs to help your brand stand out for America’s 250th celebration
 
 <figure class="post-figure">{% image "images/blog/free-america-250-artwork-for-custom-apparel-silverscreen-decoration/america-250-artwork-2.jpg", "America 250 designs on T-shirts with the recommended colors (Cardinal, Indigo, Heather Tan, Black, Navy) and blanks (Next Level 6210/3600)", "(min-width: 1025px) 1078px, (min-width: 768px) 643px, 100vw" %}</figure>
 

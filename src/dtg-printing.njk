@@ -51,12 +51,12 @@ faq:
 
 {{ m.serviceHero("DTG (Direct-to-Garment) Printing", "images/dtg-printing/A103+Silverscreen+25_9+7733.jpg", "Brother GTX direct-to-garment printer with a shirt on its platen, with a second GTX printer beside it", true) }}
 
-{% call m.serviceIntro("20+", "years of experience", 'DTG Printing: <em class="accent">Full-Color Designs</em> on Your Favorite Garments') %}
+{% call m.serviceIntro("20+", "years of experience", 'DTG Printing: <span class="accent-color">Full-Color Designs</span> on Your Favorite Garments') %}
   <p>Bring your most complex and vibrant designs to life with our <a href="/">Direct-to-Garment (DTG)</a> printing services. This advanced technology acts like a printer for fabric, applying water-based inks directly onto cotton-blend apparel to produce stunning, photorealistic images. DTG is the ideal solution for intricate artwork, detailed logos, and vibrant graphics that demand exceptional clarity and precision.</p>
   <p><a href="/">Silverscreen Decoration &amp; Fulfillment’s</a> DTG process ensures your brand’s custom designs are reproduced with unmatched quality, making it a perfect choice for promotional apparel, corporate branding, and unique merchandise.</p>
 {% endcall %}
 
-{% call m.capabilities('The Power of <em class="accent"><a href="/dtg-printing">Direct to Garment</a></em> Printing', "DTG (Direct-to-Garment) technology offers a combination of quality, versatility, and efficiency that is ideally suited for businesses requiring high-impact, custom apparel. It allows for limitless color options and precise detail, ensuring your vision is executed flawlessly.", "capabilities--dtg") %}
+{% call m.capabilities('The Power of <span class="accent-color"><a href="/dtg-printing">Direct to Garment</a></span> Printing', "DTG (Direct-to-Garment) technology offers a combination of quality, versatility, and efficiency that is ideally suited for businesses requiring high-impact, custom apparel. It allows for limitless color options and precise detail, ensuring your vision is executed flawlessly.", "capabilities--dtg") %}
   {% call m.arrowList() %}
     {% call m.arrowItem("Unlimited Color Potential") %}
       <p>Print everything from subtle gradients to bold, full-color photographs without compromising on quality. DTG handles complex color palettes with ease, ensuring every detail of your design is captured.</p>
@@ -75,9 +75,9 @@ faq:
   { image: "images/dtg-printing/A103+Silverscreen+25_9+7878.jpg", alt: "Brother GTX printer control panel beside its black, cyan, magenta, yellow and white ink cartridges", width: 781 }
 ]) }}
 
-{% call m.featurePanel("images/dtg-printing/A103+Silverscreen+25_9+7723.jpg", "Two Brother GTX direct-to-garment printers on rolling carts side by side, with a stool between them", 'Your <em class="accent">Trusted</em> Partner for DTG Printed Apparel', "white", "gray") %}
+{% call m.featurePanel("images/dtg-printing/A103+Silverscreen+25_9+7723.jpg", "Two Brother GTX direct-to-garment printers on rolling carts side by side, with a stool between them", 'Your <span class="accent-color">Trusted</span> Partner for DTG Printed Apparel', "white", "gray") %}
   <p>When brand consistency and quality are non-negotiable, you need a fulfillment partner that delivers. Silverscreen Decoration &amp; Fulfillment specializes in managing high-volume DTG orders, ensuring every garment meets your rigorous standards for color accuracy and durability. Our scalable operations are designed to support your growth, providing reliable, efficient production for all your custom apparel needs.</p>
-  <p class="feature-panel__lead">Ready to see the difference DTG can make for your brand?</p>
+  <p class="feature-panel__lead lead">Ready to see the difference DTG can make for your brand?</p>
   {{ m.button("Contact Us Today", "/contact-us", "navy", "feature-panel__button") }}
 {% endcall %}
 
@@ -86,6 +86,7 @@ faq:
 {% endcall %}
 
 {% call m.section("gray", class="service-faq service-faq--large") %}
+  <p class="eyebrow">Your questions, answered</p>
   <h2 class="section-title">DTG Printing Faq's</h2>
   {{ m.faq(faq) }}
 {% endcall %}

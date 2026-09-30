@@ -22,7 +22,7 @@ We know how difficult it can be to find a single shop that does it all—and doe
 
 By adding oversized and simulated process printing to our lineup, we’re breaking through previous limitations in screen print sizing and color counts—opening the door to a new level of creative freedom for your clients.
 
-#### Oversized Printing: Built for the Streetwear Era
+## Oversized Printing: Built for the Streetwear Era
 
 2025 marked a new phase in our shop’s evolution. We began the year with a focused initiative to expand our equipment and bring our screen printing capabilities up to speed with the trends we’re seeing in fashion today—particularly the dominance of heavyweight, oversized, and streetwear-inspired garments.
 
@@ -30,7 +30,7 @@ These garments come with larger imprint areas—wider fronts, longer backs, room
 
 <figure class="post-figure">{% image "images/blog/pushing-boundaries-silverscreens-next-chapter-in-screen-printing-innovation/pushing-boundaries-sim-process-5.jpg", "Simulated process print of a framed Shakespeare portrait on a navy shirt", "(min-width: 1025px) 1078px, (min-width: 768px) 643px, 100vw" %}</figure>
 
-#### Simulated Process Printing: The Answer to High-Color Artwork
+## Simulated Process Printing: The Answer to High-Color Artwork
 
 The rise of AI-generated and digitally complex artwork has introduced new challenges in traditional screen printing, especially when it comes to color limitations. Enter **simulated process printing**.
 
@@ -42,7 +42,7 @@ Simulated process printing is perfect for high-color-count designs—especially 
 
 <div class="post-gallery" style="--cols: 2; --cols-tablet: 2; --cols-phone: 2; --ratio: 3 / 2">{% image "images/blog/pushing-boundaries-silverscreens-next-chapter-in-screen-printing-innovation/pushing-boundaries-sim-process-2.jpg", "Close-up of a simulated process print of a draft horse pulling a carriage", "(min-width: 1025px) 531px, (min-width: 768px) 313px, 50vw" %}{% image "images/blog/pushing-boundaries-silverscreens-next-chapter-in-screen-printing-innovation/pushing-boundaries-sim-process-3.jpg", "Close-up of a simulated process print of a Shakespeare portrait", "(min-width: 1025px) 531px, (min-width: 768px) 313px, 50vw" %}</div>
 
-#### Innovation Is in Our DNA
+## Innovation Is in Our DNA
 
 Every upgrade we’ve made—from expanding equipment to adopting advanced design software—is about saying **YES** to more. More creativity. More flexibility. More opportunities to grow your business and exceed your clients’ expectations.
 

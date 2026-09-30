@@ -34,7 +34,7 @@ The 5 Pillars of the Alliance
 
 We’re not just bringing logistics together—we’re creating innovative solutions that streamline the fulfillment process, elevate brands, and enhance customer experiences all in a single PO. Recognizing the evolving market needs, Silverscreen has spearheaded the creation of a centralized "control tower" for our Alliance clients. This system provides a single point of contact for contracts, standardized operating procedures (SOPs) and purchase orders, and overall process management. By consolidating these critical elements, we ensure a streamlined, cohesive, and transparent workflow for businesses looking to optimize their decoration and fulfillment processes.
 
-### [Decoration & Fulfillment Alliance](https://www.decoalliance.com/) can help you navigate the challenges of product decoration and distribution. How?
+## [Decoration & Fulfillment Alliance](https://www.decoalliance.com/) can help you navigate the challenges of product decoration and distribution. How?
 
 1. Competitive Pricing Pressures - Lower pricing helps you maintain strong margins and win more bids.
 2. Strategic partnerships—like our collaboration with World Emblem—bring you wholesale pricing and fast, reliable patch procurement.

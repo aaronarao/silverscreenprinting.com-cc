@@ -65,7 +65,8 @@
 {#- section(variant, id, class, image, alt): a full-width background band with a centered content column.
     variant: "white" (default), "gray", "blue", "navy" or "photo".
     For "photo", pass `image` (path under src/) and `alt`; the photo sits behind a navy overlay.
-    Heading accent pattern: wrap one word in <em class="accent">, e.g. Why <em class="accent">Choose</em> Silverscreen. -#}
+    Heading accent pattern: wrap one word in <span class="accent-color">, e.g. Why <span class="accent-color">Choose</span>
+    Silverscreen. It turns light steel blue on dark bands (see the Type system section at the end of site.css). -#}
 {%- macro section(variant = "white", id = "", class = "", image = "", alt = "") -%}
 <section class="band band--{{ variant }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   {%- if image %}
@@ -239,18 +240,21 @@
 {#- serviceHero(title, image, alt, wide, class): full-width photo with the page's H1 over it.
     The photo is the page's main (LCP) image, so it loads eagerly with high priority.
     wide=true lets a long title run across most of the column (Embroidery, DTG) instead of wrapping at 11em.
-    class: extra class for a page's own hero sizes (Specialties). -#}
-{%- macro serviceHero(title, image, alt, wide = false, class = "") -%}
-<section class="service-hero{% if wide %} service-hero--wide{% endif %}{% if class %} {{ class }}{% endif %}">
+    class: extra class for a page's own hero sizes (Specialties).
+    accent: the words at the start of `title` to color as the heading accent, e.g.
+    title="Embroidery: Precision, Quality, and Scale", accent="Embroidery". The overlay then darkens behind the
+    heading so the accent stays readable (.service-hero--accent in site.css). -#}
+{%- macro serviceHero(title, image, alt, wide = false, class = "", accent = "") -%}
+<section class="service-hero{% if wide %} service-hero--wide{% endif %}{% if accent %} service-hero--accent{% endif %}{% if class %} {{ class }}{% endif %}">
   <div class="service-hero__media">{% image image, alt, "100vw", "eager", "high" %}</div>
   <div class="service-hero__inner">
-    <h1 class="service-hero__title">{{ title }}</h1>
+    <h1 class="service-hero__title">{% if accent and title.startsWith(accent) %}<span class="accent-color">{{ accent }}</span>{{ title.slice(accent | length) }}{% else %}{{ title }}{% endif %}</h1>
   </div>
 </section>
 {%- endmacro -%}
 
 {#- serviceIntro(stat, statLabel, title): a big number ("20+") and its label beside an H2 and body (caller).
-    `title` may contain the accent <em> (it's output as HTML). -#}
+    `title` may contain the accent <span class="accent-color"> (it's output as HTML). -#}
 {%- macro serviceIntro(stat, statLabel, title) -%}
 <section class="band service-intro">
   <div class="band__inner service-intro__inner">
@@ -267,7 +271,7 @@
 {%- endmacro -%}
 
 {#- featurePanel(image, alt, title, band, box, reverse): a photo with a text panel (H2 + caller) overlapping it.
-    `title` may contain the accent <em>.
+    `title` may contain the accent <span class="accent-color">.
     band: "blue" (default) or "white". box: "white" (default), "gray" or "navy" (the gray and navy boxes cast a shadow).
     reverse=true puts the text panel on the left and the photo on the right on desktop. -#}
 {%- macro featurePanel(image, alt, title, band = "blue", box = "white", reverse = false) -%}
@@ -348,13 +352,14 @@
 {%- endmacro -%}
 
 {#- capabilities(title, lede, class): gray band with an H2 and a lead-in on the left and an arrowList (caller) on the right.
-    `title` may contain the accent <em> (it's output as HTML). Stacks below desktop. -#}
+    `title` may contain the accent (it's output as HTML). Stacks below desktop.
+    The lead-in has the `lead` class, which only has styles on pages on the new type system. -#}
 {%- macro capabilities(title, lede, class = "") -%}
 <section class="band band--gray capabilities{% if class %} {{ class }}{% endif %}">
   <div class="band__inner capabilities__inner">
     <div class="capabilities__intro">
       <h2 class="capabilities__title">{{ title | safe }}</h2>
-      <p class="capabilities__lede">{{ lede }}</p>
+      <p class="capabilities__lede lead">{{ lede }}</p>
     </div>
     {{ caller() }}
   </div>

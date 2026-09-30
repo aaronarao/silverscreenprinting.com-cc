@@ -79,7 +79,6 @@ module.exports = function (eleventyConfig) {
     "pt-sans/files/pt-sans-latin-400-normal.woff2",
     "pt-sans/files/pt-sans-latin-400-italic.woff2",
     "pt-sans/files/pt-sans-latin-700-normal.woff2",
-    "comfortaa/files/comfortaa-latin-400-normal.woff2",
   ]) {
     eleventyConfig.addPassthroughCopy({
       [`node_modules/@fontsource/${file}`]: `fonts/${path.basename(file)}`,
