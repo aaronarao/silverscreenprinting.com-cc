@@ -180,7 +180,9 @@ ul {
    Shapes: any solid or translucent box that holds content (a heading, text, buttons) and sits over or
    next to a photo is class="shape", whatever its color: the feature panel boxes (white, gray, navy) and
    the hero boxes. Section background bands are not shapes; they run full width and stay square.
-   .shape--steel adds the translucent steel fill (the hero boxes); set --shape-alpha to change its opacity.
+   Fills: .shape--steel is translucent light steel (Contact Us hero), .shape--blue translucent medium blue
+   (homepage hero; dark enough for small white text even over a light photo). Set --shape-alpha to change
+   either one's opacity.
    Opt-out: put .full-bleed on the container of a photo or shape that runs edge to edge across the screen.
    Logos (header, footer, partner strip) and the framed Virtual Tour graphic keep their own edges. */
 picture img,
@@ -190,6 +192,10 @@ picture img,
 
 .shape--steel {
   background: rgb(125 155 193 / var(--shape-alpha, 0.85)); /* --steel */
+}
+
+.shape--blue {
+  background: rgb(50 98 149 / var(--shape-alpha, 0.9)); /* --blue */
 }
 
 .full-bleed img,
@@ -1401,51 +1407,46 @@ h1, h2, h3, h4, h5, h6,
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding: 32px 16px; /* the same space above the H1 as below the button */
   text-align: center;
 }
 
-.hero__title {
-  align-self: stretch;
-  text-align: left;
+.hero__eyebrow {
+  margin-bottom: 12px;
 }
 
-.hero__tagline {
-  max-width: 560px;
-  margin-top: 24px;
+.hero__title {
+  text-wrap: balance;
 }
 
 .hero__button {
   width: 220px;
   min-height: 52px;
-  margin-top: 36px;
+  margin-top: 28px;
+}
+
+/* The navy button's usual hover (blue) would vanish into the blue box, so it darkens instead. */
+.hero__button:hover {
+  background: var(--dark-navy);
 }
 
 @media (min-width: 768px) {
   .hero__inner { padding: 96px 32px; }
 
-  .hero__title { text-align: center; }
-
-  .hero__tagline {
-    margin-top: 28px;
-  }
+  .hero__box { padding: 48px 32px; }
 
   .hero__button {
     width: 200px;
-    margin-top: 46px;
+    margin-top: 36px;
   }
 }
 
 @media (min-width: 1025px) {
   .hero__inner { padding: 216px 28.8px; }
 
-  .hero__box { padding: 0; }
+  .hero__box { padding: 64px 48px; }
 
-  .hero__tagline {
-    margin-top: 29px;
-  }
-
-  .hero__button { margin-top: 45px; }
+  .hero__button { margin-top: 40px; }
 }
 
 /* Intro text and buttons (gray band) */
@@ -3961,9 +3962,14 @@ h2,
   --label-color: var(--muted);
 }
 
-:is(.service-hero, .band--blue, .band--navy, .band--photo, .feature-panel--navy .feature-panel__box, .vt-trust__text, .portal-intro) {
+:is(.hero, .service-hero, .band--blue, .band--navy, .band--photo, .feature-panel--navy .feature-panel__box, .vt-trust__text, .portal-intro) {
   --accent: var(--steel);
   --label-color: var(--muted-on-dark);
+}
+
+/* The homepage hero's blue box is lighter than the navy bands, so its eyebrow is full white. */
+.hero__box {
+  --label-color: var(--white);
 }
 
 /* A feature panel's white box sits on the blue band, but its text is on white. */
