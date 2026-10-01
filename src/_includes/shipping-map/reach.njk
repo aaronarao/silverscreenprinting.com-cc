@@ -1,0 +1,69 @@
+{#- Homepage "Close partners, far reach." map widget: two tabs, each a white map card with option chips.
+    Data: src/_data/shippingMap.json and supplierMap.json, built by scripts/shipping-map/ (see its README).
+    The US map SVG (src/maps/us-zip3.svg) loads when the section nears the viewport; the Reno map is inline.
+    Option chips sit right of the map from 1025px, in a row under it from 768px, and in a pop-up menu on phones.
+    Behavior is in site.js ("Shipping reach map"). -#}
+{%- set days = [1, 2, 3, 4, 5] -%}
+<div class="reach__widget" data-reach>
+  <div class="reach__tabs" role="tablist" aria-label="Map">
+    <button class="reach__tab" type="button" role="tab" id="reach-tab-local" aria-controls="reach-panel-local" aria-selected="false" tabindex="-1">Supplier Network</button>
+    <button class="reach__tab" type="button" role="tab" id="reach-tab-us" aria-controls="reach-panel-us" aria-selected="true">US Shipping Speed</button>
+  </div>
+
+  <div class="reach__panel" role="tabpanel" id="reach-panel-local" aria-labelledby="reach-tab-local" hidden>
+    <div class="reach__card" data-reach-card>
+      <div class="reach__map reach-local" data-reach-map data-value="sanmar" role="img" aria-label="Map of Reno and Sparks showing the drive from Silverscreen to SanMar: 33 minutes, 17.7 miles.">
+        {% include "shipping-map/supplier-map.svg" %}
+        {%- for label in supplierMap.labels %}
+        <span class="reach-local__label reach-local__label--{{ label.kind }}" style="left: {{ label.x }}%; top: {{ label.y }}%">{{ label.text }}</span>
+        {%- endfor %}
+        {%- for id, route in supplierMap.routes %}
+        <span class="reach-callout" data-route="{{ id }}" style="left: {{ route.callout.x }}%; top: {{ route.callout.y }}%">{{ route.label }}</span>
+        {%- endfor %}
+        {%- for id, place in supplierMap.places %}
+        <span class="reach-marker reach-marker--{{ id }}" data-place="{{ id }}" style="left: {{ place.x }}%; top: {{ place.y }}%"><span class="reach-marker__name">{{ place.name }}</span></span>
+        {%- endfor %}
+        <a class="reach-local__credit" href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>
+      </div>
+      <button class="reach__menu-button" type="button" aria-expanded="false" aria-controls="reach-options-local" data-reach-menu-button><span class="visually-hidden">Supplier: </span><span data-reach-current>SanMar</span> <span aria-hidden="true">▾</span></button>
+      <div class="reach__options" id="reach-options-local" data-reach-options>
+        <div class="reach__options-head">
+          <p class="reach__options-title" id="reach-options-local-title">Supplier</p>
+          <button class="reach__close" type="button" aria-label="Close" data-reach-close>×</button>
+        </div>
+        <div class="reach__chips reach__chips--suppliers" role="radiogroup" aria-labelledby="reach-options-local-title">
+          <button class="reach__chip" type="button" role="radio" aria-checked="true" data-value="sanmar" data-label="Map of Reno and Sparks showing the drive from Silverscreen to SanMar: 33 minutes, 17.7 miles.">SanMar</button>
+          <button class="reach__chip" type="button" role="radio" aria-checked="false" tabindex="-1" data-value="ss" data-label="Map of Reno and Sparks showing the drive from Silverscreen to S&amp;S Activewear: 23 minutes, 14.8 miles.">S&amp;S Activewear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reach__panel" role="tabpanel" id="reach-panel-us" aria-labelledby="reach-tab-us">
+    <div class="reach__card" data-reach-card>
+      <div class="reach__map reach-us" data-reach-map data-value="2" data-us-map="/maps/us-zip3.svg" role="img" aria-label="US map: areas of the contiguous U.S. reached by ground shipping within 2 business days of Reno are shaded.">
+        <span class="reach-marker reach-marker--home" style="left: {{ shippingMap.reno.x }}%; top: {{ shippingMap.reno.y }}%"></span>
+      </div>
+      <button class="reach__menu-button" type="button" aria-expanded="false" aria-controls="reach-options-us" data-reach-menu-button><span class="visually-hidden">Transit days: </span><span data-reach-current>2 Day</span> <span aria-hidden="true">▾</span></button>
+      <div class="reach__options" id="reach-options-us" data-reach-options>
+        <div class="reach__options-head">
+          <p class="reach__options-title" id="reach-options-us-title">Transit days</p>
+          <button class="reach__close" type="button" aria-label="Close" data-reach-close>×</button>
+        </div>
+        <div class="reach__chips reach__chips--days" role="radiogroup" aria-labelledby="reach-options-us-title">
+          {%- for day in days %}
+          <button class="reach__chip" type="button" role="radio" aria-checked="{{ 'true' if day == 2 else 'false' }}"{% if day != 2 %} tabindex="-1"{% endif %} data-value="{{ day }}" data-label="US map: areas of the contiguous U.S. reached by ground shipping within {{ day }} business day{{ 's' if day > 1 }} of Reno are shaded."><span class="reach__swatch reach__swatch--{{ day }}" aria-hidden="true"></span>{{ day }} Day</button>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+    <p class="reach__caption">Ground transit times in business days from {{ shippingMap.origin }}.</p>
+  </div>
+
+  {#- Text version of both maps, for screen readers and search engines. -#}
+  <p class="visually-hidden">From Reno, NV, ground shipping reaches
+    {%- for day in days %}
+    {{ day }}-day: {{ shippingMap.statesFirstReached[day] | join(", ") }}{{ ";" if not loop.last else "." }}
+    {%- endfor %}
+    Every state in the contiguous U.S. is reached in 5 business days or less. SanMar is 33 minutes (17.7 mi) away; S&amp;S Activewear is 23 minutes (14.8 mi) away.</p>
+</div>

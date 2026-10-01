@@ -84,6 +84,13 @@ permalink: /
   {% endcall %}
 {% endcall %}
 
+{% call m.section("gray", id="shipping-reach", class="reach") %}
+  <h2 class="section-title">Close partners, far reach.</h2>
+  {{ m.divider() }}
+  <p class="reach__lede lead">SanMar and S&amp;S Activewear are both less than 35 minutes from our Reno facility, so blanks reach us fast. From here, ground shipping covers the entire contiguous U.S. in five business days or less.</p>
+  {% include "shipping-map/reach.njk" %}
+{% endcall %}
+
 <section class="commitment">
   <div class="commitment__media full-bleed">{% image "images/home/lobby-logo-sign.jpg", "Backlit Silverscreen Printing and Embroidery logo sign on the wall of the front office", "(min-width: 1025px) 59vw, 100vw" %}</div>
   <div class="commitment__text">

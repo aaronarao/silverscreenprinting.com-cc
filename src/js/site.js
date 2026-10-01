@@ -271,3 +271,112 @@ document.querySelectorAll("[data-show-more-list]").forEach((list) => {
     extra[0].querySelector(".blog-card__title a").focus();
   });
 });
+
+// Shipping reach map (homepage): two tabs, each with a radio-style group of option chips.
+// The US map SVG is fetched when the section nears the viewport, then inlined so CSS can color it.
+// On phones the chips live in a pop-up menu opened from the button in the map card's corner.
+document.querySelectorAll("[data-reach]").forEach((reach) => {
+  const tabs = [...reach.querySelectorAll('[role="tab"]')];
+  const phone = window.matchMedia("(max-width: 767px)");
+
+  // Tabs: click or arrow keys (automatic activation); only the selected tab is in the Tab order.
+  function selectTab(tab, focus) {
+    tabs.forEach((t) => {
+      const selected = t === tab;
+      t.setAttribute("aria-selected", String(selected));
+      t.tabIndex = selected ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !selected;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => selectTab(tab));
+    tab.addEventListener("keydown", (event) => {
+      const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      selectTab(tabs[(next + tabs.length) % tabs.length], true);
+    });
+  });
+
+  reach.querySelectorAll("[data-reach-card]").forEach((card) => {
+    const map = card.querySelector("[data-reach-map]");
+    const chips = [...card.querySelectorAll('[role="radio"]')];
+    const menuButton = card.querySelector("[data-reach-menu-button]");
+    const current = menuButton.querySelector("[data-reach-current]");
+    const options = card.querySelector("[data-reach-options]");
+
+    function openMenu() {
+      options.classList.add("is-open");
+      menuButton.setAttribute("aria-expanded", "true");
+      (chips.find((c) => c.tabIndex === 0) || chips[0]).focus();
+    }
+    function closeMenu(returnFocus = true) {
+      if (!options.classList.contains("is-open")) return;
+      options.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      if (returnFocus) menuButton.focus();
+    }
+
+    // Chips: one checked at a time; arrow keys move and select, like native radio buttons.
+    function choose(chip, focus) {
+      chips.forEach((c) => {
+        const checked = c === chip;
+        c.setAttribute("aria-checked", String(checked));
+        c.tabIndex = checked ? 0 : -1;
+      });
+      map.dataset.value = chip.dataset.value;
+      map.setAttribute("aria-label", chip.dataset.label);
+      current.textContent = chip.textContent.trim();
+      if (focus) chip.focus();
+    }
+    chips.forEach((chip, i) => {
+      chip.addEventListener("click", () => {
+        choose(chip);
+        if (phone.matches) closeMenu();
+      });
+      chip.addEventListener("keydown", (event) => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+        if (!step) return;
+        event.preventDefault();
+        choose(chips[(i + step + chips.length) % chips.length], true);
+      });
+    });
+
+    menuButton.addEventListener("click", () => (options.classList.contains("is-open") ? closeMenu() : openMenu()));
+    card.querySelector("[data-reach-close]").addEventListener("click", () => closeMenu());
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && options.classList.contains("is-open")) {
+        event.stopPropagation();
+        closeMenu();
+      }
+    });
+    // Tabbing out of the open menu closes it (focus has already moved on, so leave it there).
+    card.addEventListener("focusout", (event) => {
+      if (event.relatedTarget && !options.contains(event.relatedTarget) && event.relatedTarget !== menuButton) closeMenu(false);
+    });
+    phone.addEventListener("change", () => closeMenu(false));
+  });
+
+  // Lazy-load the US map once the section is within about a screen of the viewport.
+  const usMap = reach.querySelector("[data-us-map]");
+  if (!usMap) return;
+  const load = () =>
+    fetch(usMap.dataset.usMap)
+      .then((response) => (response.ok ? response.text() : Promise.reject(response.status)))
+      .then((svg) => {
+        usMap.insertAdjacentHTML("afterbegin", svg);
+        usMap.classList.add("is-loaded");
+      })
+      .catch(() => {}); // The placeholder stays; the caption and text summary still describe the map.
+  if (!("IntersectionObserver" in window)) {
+    load();
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    load();
+  }, { rootMargin: "600px 0px" });
+  observer.observe(reach);
+});
