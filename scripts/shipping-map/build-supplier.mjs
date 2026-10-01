@@ -15,13 +15,13 @@ import { RAW, ROOT, MAP_W, MAP_H } from "./lib.mjs";
 const UA = "silverscreenprinting.com map build (one-time)";
 const MAPSHAPER = path.join(ROOT, "node_modules/.bin/mapshaper");
 
-// Locations: OSM building footprints (Washoe County GIS) for Silverscreen, SanMar and Live & Tell.
+// Locations: OSM building footprints (Washoe County GIS) for Silverscreen, SanMar and LAT Apparel.
 // 9550 N Virginia St isn't in OSM; this sits between 9530 and 9560 on the same frontage.
 const PLACES = {
   silverscreen: { name: "Silverscreen", lonlat: [-119.7503, 39.4944] },
   sanmar: { name: "SanMar", lonlat: [-119.7087, 39.6805] },
   ss: { name: "S&S", lonlat: [-119.869, 39.6115] },
-  livetell: { name: "Live & Tell", lonlat: [-119.7045, 39.5281] }, // 2070 Brierley Way, Sparks
+  lat: { name: "LAT Apparel", lonlat: [-119.7045, 39.5281] }, // 2070 Brierley Way, Sparks
 };
 const ROUTES = {
   // Greg St → Vista Blvd → Disc Dr/Sparks Blvd → NV-445 Pyramid Way
@@ -29,8 +29,8 @@ const ROUTES = {
   // Longley → Airway → Moana → I-580/US-395 N → Lemmon Dr → N Virginia St
   ss: { via: [[-119.7759, 39.486]], label: "23 min · 14.8 mi" },
   // Veterans Pkwy → Sparks Blvd → I-80 E → exit 21 Vista Blvd → Brierley Way
-  // The route is short, so its callout sits just above the Live & Tell marker (calloutAt, in % of the map).
-  livetell: { via: [[-119.71175, 39.51508], [-119.7092, 39.52745]], label: "11 min · 5.9 mi", calloutAt: { x: 65.03, y: 61 } },
+  // The route is short, so its callout sits just above the LAT Apparel marker (calloutAt, in % of the map).
+  lat: { via: [[-119.71175, 39.51508], [-119.7092, 39.52745]], label: "11 min · 5.9 mi", calloutAt: { x: 65.03, y: 61 } },
 };
 // Frame: Silverscreen and all three suppliers with margin, at the US map's 1.6:1 aspect.
 const FRAME = { south: 39.448, north: 39.722, west: -120.07, east: -119.51 };

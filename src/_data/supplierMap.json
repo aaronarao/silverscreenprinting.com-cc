@@ -16,8 +16,8 @@
    "x": 36.11,
    "y": 40.38
   },
-  "livetell": {
-   "name": "Live & Tell",
+  "lat": {
+   "name": "LAT Apparel",
    "x": 65.03,
    "y": 70.81
   }
@@ -37,7 +37,7 @@
     "y": 70.45
    }
   },
-  "livetell": {
+  "lat": {
    "label": "11 min · 5.9 mi",
    "callout": {
     "x": 65.03,
