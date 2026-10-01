@@ -12,9 +12,14 @@
    "y": 15.17
   },
   "ss": {
-   "name": "S&S Activewear",
+   "name": "S&S",
    "x": 36.11,
    "y": 40.38
+  },
+  "livetell": {
+   "name": "Live & Tell",
+   "x": 65.03,
+   "y": 70.81
   }
  },
  "routes": {
@@ -30,6 +35,13 @@
    "callout": {
     "x": 51.04,
     "y": 70.45
+   }
+  },
+  "livetell": {
+   "label": "11 min · 5.9 mi",
+   "callout": {
+    "x": 65.03,
+    "y": 61
    }
   }
  },

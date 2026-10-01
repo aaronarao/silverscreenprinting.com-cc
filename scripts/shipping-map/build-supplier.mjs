@@ -15,20 +15,24 @@ import { RAW, ROOT, MAP_W, MAP_H } from "./lib.mjs";
 const UA = "silverscreenprinting.com map build (one-time)";
 const MAPSHAPER = path.join(ROOT, "node_modules/.bin/mapshaper");
 
-// Locations: OSM building footprints (Washoe County GIS) for Silverscreen and SanMar.
+// Locations: OSM building footprints (Washoe County GIS) for Silverscreen, SanMar and Live & Tell.
 // 9550 N Virginia St isn't in OSM; this sits between 9530 and 9560 on the same frontage.
 const PLACES = {
   silverscreen: { name: "Silverscreen", lonlat: [-119.7503, 39.4944] },
   sanmar: { name: "SanMar", lonlat: [-119.7087, 39.6805] },
-  ss: { name: "S&S Activewear", lonlat: [-119.869, 39.6115] },
+  ss: { name: "S&S", lonlat: [-119.869, 39.6115] },
+  livetell: { name: "Live & Tell", lonlat: [-119.7045, 39.5281] }, // 2070 Brierley Way, Sparks
 };
 const ROUTES = {
   // Greg St → Vista Blvd → Disc Dr/Sparks Blvd → NV-445 Pyramid Way
   sanmar: { via: [[-119.7003, 39.53]], label: "33 min · 17.7 mi" },
   // Longley → Airway → Moana → I-580/US-395 N → Lemmon Dr → N Virginia St
   ss: { via: [[-119.7759, 39.486]], label: "23 min · 14.8 mi" },
+  // Veterans Pkwy → Sparks Blvd → I-80 E → exit 21 Vista Blvd → Brierley Way
+  // The route is short, so its callout sits just above the Live & Tell marker (calloutAt, in % of the map).
+  livetell: { via: [[-119.71175, 39.51508], [-119.7092, 39.52745]], label: "11 min · 5.9 mi", calloutAt: { x: 65.03, y: 61 } },
 };
-// Frame: Silverscreen and both suppliers with margin, at the US map's 1.6:1 aspect.
+// Frame: Silverscreen and all three suppliers with margin, at the US map's 1.6:1 aspect.
 const FRAME = { south: 39.448, north: 39.722, west: -120.07, east: -119.51 };
 
 async function cached(file, url, init) {
@@ -133,7 +137,7 @@ const mid = (line) => line[Math.floor(line.length * 0.55)];
 const data = {
   _source: "Built by scripts/shipping-map/build-supplier.mjs from OpenStreetMap data; do not edit by hand. Drive times and miles are Google Maps figures.",
   places: Object.fromEntries(Object.entries(PLACES).map(([id, p]) => [id, { name: p.name, ...pct(p.lonlat) }])),
-  routes: Object.fromEntries(Object.entries(ROUTES).map(([id, r]) => [id, { label: r.label, callout: pct(mid(routes[id])) }])),
+  routes: Object.fromEntries(Object.entries(ROUTES).map(([id, r]) => [id, { label: r.label, callout: r.calloutAt || pct(mid(routes[id])) }])),
   labels: [
     { text: "Reno", ...pct([-119.8138, 39.5296]), kind: "city" },
     { text: "Sparks", ...pct([-119.752, 39.5575]), kind: "city" },

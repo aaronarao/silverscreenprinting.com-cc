@@ -1938,7 +1938,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .reach-local[data-value="sanmar"] .reach-local__route[data-route="sanmar"],
-.reach-local[data-value="ss"] .reach-local__route[data-route="ss"] {
+.reach-local[data-value="ss"] .reach-local__route[data-route="ss"],
+.reach-local[data-value="livetell"] .reach-local__route[data-route="livetell"] {
   display: block;
   animation: reach-draw 1.1s ease-in-out both;
 }
@@ -1976,12 +1977,14 @@ h1, h2, h3, h4, h5, h6,
 /* Supplier markers show only for the selected supplier; Silverscreen always shows. */
 .reach-local .reach-marker--sanmar,
 .reach-local .reach-marker--ss,
+.reach-local .reach-marker--livetell,
 .reach-callout {
   display: none;
 }
 
 .reach-local[data-value="sanmar"] :is(.reach-marker--sanmar, .reach-callout[data-route="sanmar"]),
-.reach-local[data-value="ss"] :is(.reach-marker--ss, .reach-callout[data-route="ss"]) {
+.reach-local[data-value="ss"] :is(.reach-marker--ss, .reach-callout[data-route="ss"]),
+.reach-local[data-value="livetell"] :is(.reach-marker--livetell, .reach-callout[data-route="livetell"]) {
   display: block;
 }
 
