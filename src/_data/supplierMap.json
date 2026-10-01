@@ -1,0 +1,74 @@
+{
+ "_source": "Built by scripts/shipping-map/build-supplier.mjs from OpenStreetMap data; do not edit by hand. Drive times and miles are Google Maps figures.",
+ "places": {
+  "silverscreen": {
+   "name": "Silverscreen",
+   "x": 56.98,
+   "y": 83.09
+  },
+  "sanmar": {
+   "name": "SanMar",
+   "x": 64.29,
+   "y": 15.17
+  },
+  "ss": {
+   "name": "S&S",
+   "x": 36.11,
+   "y": 40.38
+  },
+  "lat": {
+   "name": "LAT Apparel",
+   "x": 65.03,
+   "y": 70.81
+  }
+ },
+ "routes": {
+  "sanmar": {
+   "label": "33 min · 17.7 mi",
+   "callout": {
+    "x": 62.45,
+    "y": 53.78
+   }
+  },
+  "ss": {
+   "label": "23 min · 14.8 mi",
+   "callout": {
+    "x": 51.04,
+    "y": 70.45
+   }
+  },
+  "lat": {
+   "label": "11 min · 5.9 mi",
+   "callout": {
+    "x": 65.03,
+    "y": 61
+   }
+  }
+ },
+ "labels": [
+  {
+   "text": "Reno",
+   "x": 45.82,
+   "y": 70.26,
+   "kind": "city"
+  },
+  {
+   "text": "Sparks",
+   "x": 56.68,
+   "y": 60.08,
+   "kind": "city"
+  },
+  {
+   "text": "I-80",
+   "x": 17.48,
+   "y": 76.86,
+   "kind": "road"
+  },
+  {
+   "text": "US-395",
+   "x": 22.22,
+   "y": 20.65,
+   "kind": "road"
+  }
+ ]
+}

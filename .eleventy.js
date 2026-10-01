@@ -73,6 +73,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/maps"); // US ZIP3 map for the homepage shipping section (lazy-loaded)
 
   // Self-hosted webfonts from @fontsource: only the weights the CSS uses.
   for (const file of [

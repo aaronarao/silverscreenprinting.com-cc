@@ -162,3 +162,6 @@ _to_delete/
 
 # Wrangler local dev state
 .wrangler/
+
+# Shipping-map build script downloads (large, regenerable)
+scripts/shipping-map/raw/
